@@ -1286,6 +1286,47 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
   text-shadow:none!important;
 }
 </style>
+<style id="pp-special-preference-style">
+#quotePreferenceField{order:9}#specialCoverageField{order:10}
+#quotePreferenceField[hidden],#specialCoverageField[hidden],#companyPreferenceField[hidden],.pp-special-item[hidden]{display:none!important}
+.pp-route-choice,.pp-special-item{display:flex!important;gap:12px;align-items:flex-start;padding:14px!important;margin:8px 0;border:1px solid #28699b;border-radius:12px;background:#0b2542;color:#e9f5ff!important;line-height:1.7;font-size:16px!important;font-weight:400!important;cursor:pointer}
+.pp-route-choice:has(input:checked),.pp-special-item:has(input:checked){border-color:#58c9ff;box-shadow:0 0 12px #1a7cce33}
+.pp-route-choice input,.pp-special-item input{width:19px;height:19px;flex:0 0 19px;margin-top:4px;accent-color:#42beff}
+.pp-special-item small{display:block;color:#b9d7ef}#quoteRequestReview{margin:18px 0;padding:16px;border:1px solid #28699b;border-radius:12px;white-space:pre-line;line-height:1.8}
+#companyPreferenceField .company-none{display:flex!important;grid-column:1/-1!important}
+</style>
+
+<style id="pp-route-cards-v5">
+#quotePreferenceField>label:first-child{display:block;margin-bottom:15px;font-size:clamp(18px,2.5vw,21px);line-height:1.65;color:#f0f8ff}
+#quotePreferenceField .pp-route-choice{display:grid!important;grid-template-columns:24px 46px minmax(0,1fr);align-items:center;gap:14px;padding:22px 20px!important;margin:12px 0;border:1px solid #2c608c;border-radius:18px;background:linear-gradient(115deg,#102f51,#0a1e37);box-shadow:0 8px 24px #020b1833;color:#eaf6ff!important;transition:border-color .18s,background .18s,box-shadow .18s;isolation:isolate}
+#quotePreferenceField .pp-route-choice input{appearance:auto!important;width:22px!important;height:22px!important;min-width:22px;margin:0!important;accent-color:#42cfff;cursor:pointer}
+#quotePreferenceField .pp-route-icon{display:grid;place-items:center;width:46px;height:46px;border:1px solid #3276a8;border-radius:13px;background:#15446d;color:#72daff;box-shadow:inset 0 0 16px #42cfff0d}
+#quotePreferenceField .pp-route-icon svg{display:block;width:27px;height:27px}
+#quotePreferenceField .pp-route-copy{display:block;min-width:0}
+#quotePreferenceField .pp-route-copy strong{display:block;color:#f3f9ff!important;font-size:17px;font-weight:700;line-height:1.65;overflow-wrap:anywhere}
+#quotePreferenceField .pp-route-description{display:block;margin-top:6px;color:#b2cce3;font-size:14px;line-height:1.75}
+#quotePreferenceField .pp-route-choice:hover{border-color:#5dcfff;background:linear-gradient(115deg,#163f65,#102b49)}
+#quotePreferenceField .pp-route-choice:has(input:checked){border:2px solid #42cfff;padding:21px 19px!important;background:linear-gradient(115deg,#174d79,#102d50);box-shadow:0 0 0 3px #42cfff15,0 0 30px #1a7cce33}
+#quotePreferenceField .pp-route-choice:has(input:checked) .pp-route-icon{background:#216490;border-color:#74e0ff;color:#e1faff;box-shadow:0 0 17px #42cfff29}
+#quotePreferenceField .pp-route-choice:focus-within{outline:2px solid #a0eaff;outline-offset:4px}
+@media(max-width:480px){#quotePreferenceField .pp-route-choice{grid-template-columns:22px 38px minmax(0,1fr);gap:10px;padding:18px 13px!important;border-radius:15px}#quotePreferenceField .pp-route-choice:has(input:checked){padding:17px 12px!important}#quotePreferenceField .pp-route-icon{width:38px;height:42px;border-radius:11px}#quotePreferenceField .pp-route-icon svg{width:24px;height:24px}#quotePreferenceField .pp-route-copy strong{font-size:16px}#quotePreferenceField .pp-route-description{font-size:13px}}
+@media(prefers-reduced-motion:reduce){#quotePreferenceField .pp-route-choice{transition:none}}
+</style>
+
+<style id="pp-special-visibility-v7">
+html body#insuranceQuoteTest #checkForm #specialCoverageField[hidden],
+html body#insuranceQuoteTest #checkForm #companyPreferenceField[hidden],
+html body#insuranceQuoteTest #checkForm #specialCoverageField .pp-special-item[hidden]{display:none!important}
+</style>
+
+<script id="pp-eye-level-scroll-v10">
+function ppInsuranceEyeOffset(){
+ var viewport=window.visualViewport?window.visualViewport.height:window.innerHeight;
+ var bar=document.querySelector('.topbar');
+ var header=bar?bar.getBoundingClientRect().height:0;
+ return Math.max(header+24,Math.min(260,viewport*0.28));
+}
+</script>
 </head>
 <body id="insuranceQuoteTest">
   <header class="topbar">
@@ -1383,7 +1424,17 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
             </select>
             <p class="hint" id="coverageHint">เลือกประเภทที่ต้องการให้เจ้าหน้าที่เช็กเบี้ย โดยเจ้าหน้าที่จะตรวจสอบเงื่อนไขการรับประกันอีกครั้ง</p>
           </div>
-          <div class="field full" id="companyPreferenceField">
+          <div class="field full pp-special-route" id="quotePreferenceField">
+<label>อยากให้ประกันรถของคุณครั้งนี้ ดูแลคุณเพิ่มเติมในเรื่องใดบ้าง?</label>
+<label class="pp-route-choice"><input type="radio" name="quotePreference" value="special"><span class="pp-route-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3 7.5 7.5 9.5 4.5-2 7.5-5 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.3 2.3 4.7-4.8"/></svg></span><span class="pp-route-copy"><strong>ระบุความคุ้มครองพิเศษ</strong><span class="pp-route-description">เลือกความคุ้มครองพิเศษเพิ่มเติมที่ต้องการ เพื่อให้พี่ผึ้งนำเสนอเฉพาะบริษัทที่มีแผนที่เกี่ยวข้อง</span></span></label>
+<label class="pp-route-choice"><input type="radio" name="quotePreference" value="company"><span class="pp-route-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1m-5 6v-3h4v3"/></svg></span><span class="pp-route-copy"><strong>ไม่ระบุ</strong><span class="pp-route-description">ระบุเฉพาะบริษัทประกันที่ต้องการด้วยตนเอง</span></span></label>
+</div>
+<div class="field full pp-special-route" id="specialCoverageField" hidden>
+<label>ความคุ้มครองพิเศษเพิ่มเติมที่คุณต้องการ <span class="optional">(เลือกได้มากกว่า 1 ข้อ)</span></label>
+<div id="specialCoverageOptions"></div>
+<p class="hint">พี่ผึ้งจะนำเสนอแพ็กเกจที่รวมสิทธิที่ต้องการไว้แล้ว พร้อมแจ้งวงเงินและเงื่อนไขให้พิจารณาค่ะ</p>
+</div>
+<div class="field full" id="companyPreferenceField" hidden>
             <label>บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย <span class="optional">(เลือกได้ 1–3 บริษัท หรือไม่ระบุ)</span></label>
             <div class="company-options" id="companyOptions" role="group" aria-label="บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย"></div>
             <p class="hint">เลือกบริษัทได้สูงสุด 3 บริษัท หรือเลือก “ไม่ระบุ” เพื่อให้เจ้าหน้าที่แนะนำ</p>
@@ -1420,6 +1471,7 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
         <h3>ให้เจ้าหน้าที่ตรวจสอบและเสนอราคาเบี้ยประกันภัย</h3>
         <p>กรอกชื่อและเบอร์โทรศัพท์ เพื่อให้เจ้าหน้าที่ติดต่อกลับและตรวจสอบเงื่อนไขให้</p>
         <form id="contactForm" novalidate>
+<div id="quoteRequestReview" aria-live="polite"></div>
 <p>การส่งคำขอนี้ยังไม่ใช่การยืนยันราคา การรับประกันภัย หรือการออกกรมธรรม์</p>
 <div class="pp-broker-disclosure" role="note">
   <p>ให้คำแนะนำและเสนอเบี้ยประกันภัยโดย<br><strong>นางวรันทร พงศธรธีรา</strong><br>นายหน้าประกันวินาศภัย ใบอนุญาตเลขที่ <strong>6304006858</strong></p>
@@ -1461,8 +1513,51 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
       function sortThai(list) { return (list || []).slice().sort(function (a, b) { return String(a).localeCompare(String(b), 'th'); }); }
       function setOptions(select, values, placeholder, valueKey, labelKey) { select.innerHTML = ''; var first = document.createElement('option'); first.value = ''; first.textContent = placeholder; select.appendChild(first); (values || []).forEach(function (item) { var option = document.createElement('option'); var rawValue = valueKey ? item[valueKey] : item; option.value = rawValue; option.textContent = labelKey ? item[labelKey] : (select === els.category && rawValue === 'รถยนต์นั่งส่วนบุคคล' ? 'รถยนต์นั่งส่วนบุคคล / SUV / กระบะสี่ประตู' : item); select.appendChild(option); }); }
       function setDisabled(select, disabled) { select.disabled = disabled; }
+      var specialCoverageDefinitions = [
+        {id:'travel_compensation',label:'เงินชดเชยค่าเดินทางระหว่างรถเข้าซ่อม'},
+        {id:'hospital_cash',label:'เงินชดเชยกรณีนอนโรงพยาบาลจากอุบัติเหตุรถยนต์'},
+        {id:'natural_perils',label:'ความคุ้มครองภัยธรรมชาติ'},
+        {id:'flood',label:'ความคุ้มครองภัยน้ำท่วม'},
+        {id:'overturn_offroad',label:'ความคุ้มครองพลิกคว่ำ/ตกทาง',types:['2+','3+']},
+        {id:'glass',label:'ความคุ้มครองกระจกรถ',types:['2+','3+']},
+        {id:'roadside',label:'บริการช่วยเหลือฉุกเฉิน',service:true}
+      ];
+      function quotePreferenceMode() { var input=els.form.querySelector('input[name="quotePreference"]:checked');return input?input.value:''; }
+      function selectedSpecialCoverage() {return Array.from($('specialCoverageOptions').querySelectorAll('input:checked')).map(function(input){return specialCoverageDefinitions.find(function(item){return item.id===input.value;});}).filter(function(item){return item && (!item.types || item.types.indexOf(els.coverageType.value)>=0);});}
+      function noCompanyPreferenceSelected() { return !!(els.companyOptions && els.companyOptions.querySelector('input[data-no-preference="true"]:checked')); }
+      function quotePreferenceError() {
+        var mode=quotePreferenceMode();
+        if(!mode)return 'กรุณาเลือกแนวทางรับข้อเสนอประกันภัย';
+        if(mode==='special' && !selectedSpecialCoverage().length)return 'กรุณาเลือกความคุ้มครองพิเศษเพิ่มเติมอย่างน้อย 1 ข้อ';
+        if(mode==='company' && !selectedPreferredInsurers().length && !noCompanyPreferenceSelected())return 'กรุณาเลือกบริษัทประกันที่ต้องการ หรือเลือกไม่ระบุบริษัท';
+        return '';
+      }
+      function quotePreferenceNote() {
+        if(quotePreferenceMode()!=='special')return '';
+        return ['แนวทาง: ให้พี่ผึ้งนำเสนอเฉพาะบริษัทที่มีแผนที่เกี่ยวข้อง','ความคุ้มครองพิเศษเพิ่มเติมที่ต้องการ (เฉพาะสิทธิที่รวมในแพ็กเกจ):'].concat(selectedSpecialCoverage().map(function(item){return '- '+item.label+(item.service?' (บริการเสริม)':'');})).join('\n');
+      }
+      function renderQuotePreferenceReview() {
+        var note=quotePreferenceNote();
+        $('quoteRequestReview').textContent='ประเภทประกันภัย: '+els.coverageType.value+'\n'+(note || 'บริษัทที่ต้องการ: '+(noCompanyPreferenceSelected()?'ไม่ระบุบริษัท — ให้พี่ผึ้งนำเสนอ':selectedPreferredInsurers().join(', ')));
+      }
+      function syncQuotePreference() {
+        var mode=quotePreferenceMode();
+        $('specialCoverageField').hidden=mode!=='special';$('companyPreferenceField').hidden=mode!=='company';
+        specialCoverageDefinitions.forEach(function(item){var input=$('special-'+item.id);if(!input)return;var allowed=!item.types || item.types.indexOf(els.coverageType.value)>=0;input.closest('label').hidden=!allowed;if(!allowed)input.checked=false;});
+      }
+      function initQuotePreference() {
+        var container=$('specialCoverageOptions');
+        specialCoverageDefinitions.forEach(function(item){var label=document.createElement('label');label.className='pp-special-item';var input=document.createElement('input');input.type='checkbox';input.id='special-'+item.id;input.value=item.id;var text=document.createElement('span');text.textContent=item.label;if(item.service){var small=document.createElement('small');small.textContent='บริการเสริม';text.appendChild(small);}label.appendChild(input);label.appendChild(text);container.appendChild(label);});
+        els.form.querySelectorAll('input[name="quotePreference"]').forEach(function(input){input.addEventListener('change',function(){
+          els.companyOptions.querySelectorAll('input').forEach(function(item){item.checked=false;});state.preferredInsurers=[];setCompanyPreferenceMessage('');
+          container.querySelectorAll('input').forEach(function(item){item.checked=false;});syncQuotePreference();els.contact.style.display='none';
+        });});
+        els.form.addEventListener('change',function(event){if(event.target===els.coverageType){container.querySelectorAll('input').forEach(function(item){item.checked=false;});els.contact.style.display='none';}syncQuotePreference();if(event.target.closest('#specialCoverageField'))els.contact.style.display='none';});
+        new MutationObserver(syncQuotePreference).observe(els.coverageType,{childList:true});
+        syncQuotePreference();
+      }
       function selectedPreferredInsurers() {
-        if (!els.companyOptions) return [];
+        if (!els.companyOptions || quotePreferenceMode()!=='company') return [];
         return Array.prototype.slice.call(els.companyOptions.querySelectorAll('input[data-company-name]:checked')).map(function (input) {
           return input.dataset.companyName;
         }).filter(Boolean);
@@ -1528,7 +1623,7 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
         if (input.checked && (input.dataset.noPreference === 'true' || selected.length === 3)) {
           requestAnimationFrame(function () {
             var bar = document.querySelector('.topbar');
-            var offset = bar ? bar.getBoundingClientRect().height + 20 : 24;
+            var offset = ppInsuranceEyeOffset();
             window.scrollTo({top: Math.max(0, els.findButton.getBoundingClientRect().top + window.scrollY - offset), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
           });
         }
@@ -1661,7 +1756,7 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
       }
       function bindStaffButton() { var button = $('staffButton'); if (button) button.addEventListener('click', function () { showContact(); }); }
       function showContact() { els.contact.style.display = 'block'; els.contact.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-      function resetAll() { els.form.reset(); state.currentInput = null; state.rates = []; state.compareRates = []; hideComparison(); setOptions(els.coverageType, [], 'กรุณาเลือกข้อมูลรถให้ครบถ้วนก่อน'); els.coverageType.disabled = true; updateFindButtonLabel(); resetSelect(els.make, 'เลือกประเภทรถก่อน'); resetSelect(els.year, 'เลือกรุ่นรถก่อน'); resetSelect(els.model, 'เลือกยี่ห้อรถก่อน'); resetSelect(els.submodel, 'เลือกปีรถก่อน'); els.modificationField.classList.add('hidden'); els.results.style.display = 'none'; els.dltReference.textContent = ''; els.dltReference.classList.remove('show'); els.contact.style.display = 'none'; els.filters.classList.remove('show'); clearStatus(); if (state.options) { setOptions(els.category, state.options.vehicleCategories || [], 'เลือกประเภทรถ'); setOptions(els.province, state.options.provinces || [], 'เลือกจังหวัดที่จดทะเบียนรถ'); setOptions(els.usage, state.options.usageTypes || [], 'เลือกลักษณะการใช้งานรถ'); setCompanyOptions(state.options.companies || []); } window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      function resetAll() { els.form.reset(); syncQuotePreference(); $('quoteRequestReview').textContent=''; state.currentInput = null; state.rates = []; state.compareRates = []; hideComparison(); setOptions(els.coverageType, [], 'กรุณาเลือกข้อมูลรถให้ครบถ้วนก่อน'); els.coverageType.disabled = true; updateFindButtonLabel(); resetSelect(els.make, 'เลือกประเภทรถก่อน'); resetSelect(els.year, 'เลือกรุ่นรถก่อน'); resetSelect(els.model, 'เลือกยี่ห้อรถก่อน'); resetSelect(els.submodel, 'เลือกปีรถก่อน'); els.modificationField.classList.add('hidden'); els.results.style.display = 'none'; els.dltReference.textContent = ''; els.dltReference.classList.remove('show'); els.contact.style.display = 'none'; els.filters.classList.remove('show'); clearStatus(); if (state.options) { setOptions(els.category, state.options.vehicleCategories || [], 'เลือกประเภทรถ'); setOptions(els.province, state.options.provinces || [], 'เลือกจังหวัดที่จดทะเบียนรถ'); setOptions(els.usage, state.options.usageTypes || [], 'เลือกลักษณะการใช้งานรถ'); setCompanyOptions(state.options.companies || []); } window.scrollTo({ top: 0, behavior: 'smooth' }); }
       function legacySubmitContact(event) { event.preventDefault(); var name = $('contactName').value.trim(); var phone = $('contactPhone').value.trim(); if (!name || !phone) { els.contactMessage.textContent = 'กรุณากรอกชื่อและเบอร์โทรศัพท์'; els.contactMessage.className = 'form-message error'; return; } els.contactButton.disabled = true; els.contactMessage.textContent = 'กำลังส่งข้อมูล...'; els.contactMessage.className = 'form-message'; var payload = Object.assign({}, state.currentInput || formPayload(), { name: name, phone: phone, quoteId: state.selectedRate ? state.selectedRate.quoteId : '', rateId: state.selectedRate ? state.selectedRate.rateId : '', insurer: state.selectedRate ? state.selectedRate.insurer : '', packageName: state.selectedRate ? state.selectedRate.packageName : '', premium: state.selectedRate ? state.selectedRate.premium : '', sumInsuredLabel: state.selectedRate ? state.selectedRate.sumInsuredLabel : '' }); runServer('webSubmitInsuranceLead', [payload], function (data) { els.contactButton.disabled = false; els.contactMessage.textContent = data && data.message ? data.message : 'ส่งข้อมูลเรียบร้อยแล้ว'; els.contactMessage.className = 'form-message success'; els.contactForm.reset(); }, function (error) { els.contactButton.disabled = false; els.contactMessage.textContent = error && error.message ? error.message : 'ยังไม่สามารถส่งข้อมูลได้ในขณะนี้'; els.contactMessage.className = 'form-message error'; }); }
 
       var quoteSubmissionKey = null, quoteSubmissionPending = false;
@@ -1732,6 +1827,8 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
         event.preventDefault();
         if (quoteSubmissionPending) return;
         if (!enoughForTypeFilter() || !els.category.value || !els.make.value || !els.model.value || !els.coverageType.value) { showError('กรุณาเลือกข้อมูลรถและประเภทประกันให้ครบ'); return; }
+        var preferenceError=quotePreferenceError();if(preferenceError){showError(preferenceError);return;}
+        renderQuotePreferenceReview();
         state.currentInput = formPayload(); state.selectedRate = null;
         els.results.style.display = 'none'; els.contact.style.display = 'block';
         els.contact.scrollIntoView({behavior:'smooth',block:'start'});
@@ -1743,9 +1840,10 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
         if (name.length < 2 || !/^0\d{8,9}$/.test(phone)) { fail('กรุณาตรวจสอบชื่อและเบอร์โทรศัพท์'); return; }
         if (!$('quoteConsent').checked) { fail('กรุณายินยอมให้ใช้ข้อมูลเพื่อดำเนินการเช็กเบี้ย'); return; }
         if (!enoughForTypeFilter() || !els.coverageType.value) { fail('กรุณาเลือกข้อมูลรถและประเภทประกันให้ครบ'); return; }
+        var preferenceError=quotePreferenceError();if(preferenceError){fail(preferenceError);return;}
         try { quoteSubmissionKey = quoteSubmissionKey || newQuoteSubmissionKey(); } catch(error) { fail(error.message); return; }
         var input = formPayload(), preferred = input.preferredInsurers || [];
-        var payload = {customer_name:name,customer_phone:phone,vehicle_id:input.vehicleId,vehicle_category:input.vehicleCategory,vehicle_make:input.vehicleMake,vehicle_model:input.vehicleModel,vehicle_submodel:input.vehicleSubmodel,registration_year:input.vehicleYear,registration_province:input.registrationProvince,usage_type:input.usageType,modification:input.modification,insurance_type:input.coverageType,preferred_insurers:preferred.length?preferred:['ไม่ระบุ'],consent:true,submission_key:quoteSubmissionKey};
+        var payload = {customer_name:name,customer_phone:phone,vehicle_id:input.vehicleId,vehicle_category:input.vehicleCategory,vehicle_make:input.vehicleMake,vehicle_model:input.vehicleModel,vehicle_submodel:input.vehicleSubmodel,registration_year:input.vehicleYear,registration_province:input.registrationProvince,usage_type:input.usageType,modification:input.modification,insurance_type:input.coverageType,preferred_insurers:preferred.length?preferred:['ไม่ระบุ'],contact_note:quotePreferenceNote(),consent:true,submission_key:quoteSubmissionKey};
         quoteSubmissionPending = true; els.contactButton.disabled = true; els.resetButton.disabled = true; els.form.querySelectorAll('select,input').forEach(function(el){el.dataset.quoteWasDisabled=el.disabled?'1':'0';el.disabled=true;});
         els.contactMessage.textContent = 'กำลังบันทึกคำขอ...'; els.contactMessage.className = 'form-message';
         function finish() { quoteSubmissionPending=false;els.contactButton.disabled=false;els.resetButton.disabled=false;els.form.querySelectorAll('select,input').forEach(function(el){el.disabled=el.dataset.quoteWasDisabled==='1';delete el.dataset.quoteWasDisabled;}); }
@@ -1760,6 +1858,7 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
       }
       els.resetButton.addEventListener('click',function(){ if(quoteSubmissionPending)return;hideQuoteLineLink();quoteSubmissionKey=null;els.contactForm.reset();els.contactMessage.textContent='';els.contactButton.disabled=false; });
       els.companyOptions.addEventListener('change', onCompanyPreferenceChange); els.category.addEventListener('change', onCategoryChange); els.make.addEventListener('change', onMakeChange); els.year.addEventListener('change', onYearChange); els.model.addEventListener('change', onModelChange); els.submodel.addEventListener('change', onSubmodelChange); els.province.addEventListener('change', onBasicChange); els.usage.addEventListener('change', onBasicChange); els.modification.addEventListener('change', onBasicChange); els.coverageType.addEventListener('change', function () { els.findButton.disabled = !els.coverageType.value; updateFindButtonLabel(); }); els.form.addEventListener('submit', submitCheck); els.resetButton.addEventListener('click', resetAll); els.contactForm.addEventListener('submit', submitContact); els.resultsBody.addEventListener('click', function (event) { var button = event.target.closest('.rate-contact'); if (!button) return; state.selectedRate = state.rates.filter(function (rate) { return rate.rateId === button.dataset.rateId; })[0] || null; showContact(); }); els.compareButton.addEventListener('click', renderComparison);
+      initQuotePreference();
       loadOptions();
     }());
   </script>
@@ -2074,7 +2173,7 @@ html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
 
     replaceLeaf("บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย","บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย");
     replaceLeaf("เลือกบริษัทที่ต้องการดูแพ็กเกจได้สูงสุด 4 บริษัท หรือเลือก “ไม่ระบุ” เพื่อดูบริษัทที่เข้าเงื่อนไขทั้งหมด","เลือกได้สูงสุด 3 บริษัท หรือเลือก “ไม่ระบุบริษัท” เพื่อดูทางเลือกที่เข้าเงื่อนไขทั้งหมด");
-    replaceLeaf("ไม่ระบุ — ให้เจ้าหน้าที่แนะนำบริษัท","ไม่ระบุบริษัท — แสดงทางเลือกที่เข้าเงื่อนไข");
+    replaceLeaf("ไม่ระบุ — ให้เจ้าหน้าที่แนะนำบริษัท","ไม่ระบุบริษัท — ให้พี่ผึ้งนำเสนอ");
   }
 
   patchCopy();
@@ -2331,6 +2430,18 @@ html body#insuranceQuoteTest #contactSection .form-message.success{color:#B8F2D0
 @media(max-width:700px){html body#insuranceQuoteTest #checkForm .form-card,html body#insuranceQuoteTest #contactSection .contact-card{padding:26px 20px!important;}html body#insuranceQuoteTest #checkForm .fields{gap:22px!important;}}
 </style>
 
+
+<style id="pp-special-heading-logo-v8">
+html body#insuranceQuoteTest #checkForm #quotePreferenceField>label:first-child{color:#42CFFF!important;-webkit-text-fill-color:#42CFFF!important;text-shadow:0 0 20px rgba(66,207,255,.22)!important}
+html body#insuranceQuoteTest #checkForm #quotePreferenceField .pp-route-copy strong{color:#82DFFF!important;-webkit-text-fill-color:#82DFFF!important;text-shadow:0 0 14px rgba(66,207,255,.15)!important}
+html body#insuranceQuoteTest #checkForm #quotePreferenceField .pp-route-description{color:#B2CCE3!important;-webkit-text-fill-color:#B2CCE3!important;font-weight:400!important}
+html body#insuranceQuoteTest #checkForm #companyOptions.company-options{align-items:start!important}
+html body#insuranceQuoteTest #checkForm #companyOptions.company-options>.company-choice.company-logo-card{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;aspect-ratio:1/1!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;box-sizing:border-box!important;padding:36px 10px 12px!important;gap:0!important;overflow:visible!important}
+html body#insuranceQuoteTest #checkForm #companyOptions.company-options>.company-choice.company-logo-card .pp-logo-wrap{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;min-width:0!important;width:100%!important;min-height:0!important;height:auto!important;flex:1 1 auto!important;gap:8px!important}
+html body#insuranceQuoteTest #checkForm #companyOptions.company-options>.company-choice.company-logo-card .pp-company-logo{width:clamp(48px,5.8vw,72px)!important;height:clamp(48px,5.8vw,72px)!important;max-width:100%!important;object-fit:contain!important;flex:0 0 auto!important;margin:0 auto!important}
+html body#insuranceQuoteTest #checkForm #companyOptions.company-options>.company-choice.company-logo-card .pp-company-name{display:block!important;width:100%!important;max-width:100%!important;min-height:2.7em!important;margin:0!important;font-size:12px!important;font-weight:600!important;line-height:1.35!important;white-space:normal!important;word-break:normal!important;overflow-wrap:anywhere!important;letter-spacing:normal!important;transform:none!important;text-align:center!important}
+@media(max-width:600px){html body#insuranceQuoteTest #checkForm #companyOptions.company-options>.company-choice.company-logo-card .pp-company-logo{width:64px!important;height:64px!important}}
+</style>
 </body>
 <style id="pp-previous-insurance-side-by-side-v1">
 #checkForm .fields > #coverageField,
@@ -2553,12 +2664,12 @@ html body#insuranceQuoteTest #top #howItWorks .step-num{
         }
       }
       if (!next && event.target.id === 'coverageType') {
-        next = document.getElementById('companyPreferenceField');
+        next = document.getElementById('quotePreferenceField');
       }
       if (!next) return;
 
       var bar = document.querySelector('.topbar');
-      var offset = bar ? bar.getBoundingClientRect().height + 20 : 24;
+      var offset = ppInsuranceEyeOffset();
       var top = next.getBoundingClientRect().top + window.scrollY - offset;
       var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       window.scrollTo({
@@ -2840,7 +2951,7 @@ html body#insuranceQuoteTest #quoteLinePanel .line-connect-status:empty {display
   if(!consent.checked)return;
   requestAnimationFrame(function(){
    var bar=document.querySelector('.topbar');
-   var offset=bar?bar.getBoundingClientRect().height+20:24;
+   var offset=ppInsuranceEyeOffset();
    name.focus({preventScroll:true});
    window.scrollTo({top:Math.max(0,name.parentElement.getBoundingClientRect().top+window.scrollY-offset),behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   });

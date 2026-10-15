@@ -1,6 +1,6 @@
 /** Insurance TEST receipt and authenticated forwarding endpoint. Keeps the 31-column sheet. */
 function insuranceQuoteReceiptFlex_(data) {
-  function field(label, value) {
+  function field(label, value, maxLength) {
     return {
       type: 'box',
       layout: 'vertical',
@@ -9,7 +9,7 @@ function insuranceQuoteReceiptFlex_(data) {
         {type: 'text', text: label, color: '#8195AB', size: 'xs'},
         {
           type: 'text',
-          text: String(value || 'ไม่ระบุ').slice(0, 600),
+          text: String(value || 'ไม่ระบุ').slice(0, maxLength || 600),
           wrap: true,
           color: '#EDF5FF',
           size: 'sm'
@@ -55,6 +55,7 @@ function insuranceQuoteReceiptFlex_(data) {
           field('การใช้งาน', data.usage_type),
           field('ประเภทประกัน', 'ชั้น ' + data.insurance_type),
           field('บริษัทที่สนใจ', data.preferred_insurers),
+          field('ความต้องการเพิ่มเติม / หมายเหตุ', data.contact_note, 2000),
           {
             type: 'text',
             text: 'กรุณาตรวจสอบข้อมูลด้านบน แล้วกดยืนยัน เพื่อให้เจ้าหน้าที่จัดข้อเสนอเบี้ยและเปรียบเทียบความคุ้มครองให้คุณ',
@@ -218,7 +219,7 @@ function insuranceQuoteLiffReview_(requestId,idToken) {
   try {
     var row=insuranceQuoteLiffOwnedRow_(identity), detail={};
     ['request_id','customer_name','customer_phone','vehicle_make','vehicle_model','vehicle_submodel',
-     'registration_year','registration_province','usage_type','insurance_type','preferred_insurers'].forEach(function(k){detail[k]=String(row.data[k]||'');});
+     'registration_year','registration_province','usage_type','insurance_type','preferred_insurers','contact_note'].forEach(function(k){detail[k]=String(row.data[k]||'');});
     return {ok:true,requestId:identity.requestId,detail:detail,confirmed:row.data.request_status==='CUSTOMER_CONFIRMED',acknowledged:row.data.line_link_status==='CUSTOMER_CONFIRMED_ACK_SENT'};
   } finally {lock.releaseLock();}
 }

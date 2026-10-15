@@ -1,0 +1,4 @@
+Production version: 60
+Released: 2026-10-15
+Previous version: 59
+LINE configuration preserved.
