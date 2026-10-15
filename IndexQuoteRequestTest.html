@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ประกันภัยรถยนต์ | PP Asset Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+/* Align the hero frame with the lower check-premium section */
+.hero {
+  width: min(1180px, calc(100% - 40px)) !important;
+}
+@media (max-width: 500px) {
+  .hero {
+    width: min(100% - 28px, 1180px) !important;
+  }
+}
+    
+    /* Keep the hero frame on the same vertical edges as the check section */
+html body #top.hero {
+  width: min(1180px, calc(100% - 40px)) !important;
+}
+@media (max-width: 500px) {
+  html body #top.hero {
+    width: min(100% - 28px, 1180px) !important;
+  }
+}
+/* Restore the approved blue Preview styling and hero controls */
+:root {
+  --lime-500: #1266D9 !important;
+  --lime-600: #1266D9 !important;
+  --lime-700: #1266D9 !important;
+}
+.topbar { border-bottom-color: rgba(18,102,217,.18) !important; }
+.brand-mark, .nav-cta { background: var(--lime-500) !important; color: #06142e !important; }
+.brand-name small, .nav-links a:hover, .eyebrow, .hero-points span::before { color: var(--lime-500) !important; }
+.nav-cta:hover { background: var(--lime-600) !important; color: #06142e !important; }
+.hero::after { border-color: rgba(18,102,217,.24) !important; box-shadow: 0 0 0 42px rgba(18,102,217,.05), 0 0 0 84px rgba(18,102,217,.035) !important; }
+.hero { box-shadow: 0 24px 80px rgba(0,0,0,.34), 0 0 36px rgba(18,102,217,.28) !important; }
+.hero-brand { color: #1266D9 !important; }
+.hero-accent { background: linear-gradient(90deg,#1266D9 0%,#1266D9 48%,#1266D9 100%) !important; text-shadow: 0 0 34px rgba(18,102,217,.22) !important; }
+.service-dot { background: var(--lime-500) !important; box-shadow: 0 0 16px rgba(18,102,217,.90) !important; }
+#howItWorks .steps .step { border-color: rgba(18,102,217,.52) !important; box-shadow: 0 0 0 1px rgba(18,102,217,.18), 0 0 18px rgba(18,102,217,.24) !important; }
+.step-num, #howItWorks .steps .step .step-num { color: #06142e !important; background: var(--lime-500) !important; box-shadow: 0 0 0 1px rgba(18,102,217,.22), 0 0 16px rgba(18,102,217,.42) !important; }
+html body .hero-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 26px 0 8px !important;
+}
+html body .hero-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 12px 22px !important;
+  border-radius: 999px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+html body .hero-button-primary {
+  background: linear-gradient(135deg, #1266D9, #1266D9) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(18,102,217,.28) !important;
+}
+html body .hero-button-secondary {
+  background: rgba(255,255,255,.04) !important;
+  color: #fff !important;
+  border: 1px solid rgba(1
+  03,185,255,.8) !important;
+}
+html body .steps-wrap.pp-steps-structure-fixed { margin-top: 24px !important; }
+@media (max-width: 800px) {
+  html body .hero-actions { flex-direction: column !important; align-items: stretch !important; }
+  html body .hero-button { width: 100% !important; }
+}
+html body #top.hero { box-shadow: 0 24px 80px rgba(0,0,0,.34), 0 0 36px rgba(18,102,217,.28) !important; }
+html body #top.hero::after { border-color: rgba(18,102,217,.24) !important; box-shadow: 0 0 0 42px rgba(18,102,217,.05), 0 0 0 84px rgba(18,102,217,.035) !important; }
+html body #top .hero-brand { color: #1266D9 !important; }
+html body #howItWorks .steps .step { border-color: rgba(18,102,217,.52) !important; box-shadow: 0 0 0 1px rgba(18,102,217,.18), 0 0 18px rgba(18,102,217,.24) !important; }
+html body #howItWorks .steps .step .step-num { color: #06142e !important; background: #1266D9 !important; box-shadow: 0 0 0 1px rgba(18,102,217,.22), 0 0 16px rgba(18,102,217,.42) !important; }
+/* Preview: align hero actions with the copy and keep clear of the lower frame edge */
+html body #top .hero-actions {
+  padding-left: 58px !important;
+  padding-right: 58px !important;
+  margin-bottom: 24px !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 800px) {
+  html body #top .hero-actions {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    margin-bottom: 20px !important;
+  }
+}
+@media (max-width: 430px) {
+  html body #top .hero-actions {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    margin-bottom: 18px !important;
+  }
+}
+/* Preview: green action for the LINE contact button */
+html body #top .hero-button-secondary {
+  background: linear-gradient(135deg, #7fe23c, #5ebd27) !important;
+  color: #fff !important;
+  border-color: rgba(126,226,60,.85) !important;
+  box-shadow: 0 8px 20px rgba(94,189,39,.34) !important;
+}
+:root {
+      --navy-950: #06142e;
+      --navy-900: #081c3c;
+      --navy-800: #0b2b57;
+      --blue-700: #1266D9;
+      --blue-600: #1266D9;
+      --blue-500: #1266D9;
+      --blue-100: #eaf4ff;
+      --lime-500: #9cff5b;
+      --lime-600: #7fe23c;
+      --lime-700: #5ebd27;
+      --ink: #102850;
+      --muted: #5f7395;
+      --line: #d3dfef;
+      --surface: #ffffff;
+      --page: #f4f8fd;
+      --danger: #b72c3c;
+      --shadow: 0 18px 45px rgba(6, 20, 46, .12);
+
+#resultsSection .rate-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:18px !important;
+  align-items:stretch !important;
+}
+#resultsSection .rate-card{
+  min-width:0 !important;
+  aspect-ratio:1 / 1 !important;
+  min-height:0 !important;
+  height:auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  overflow:auto !important;
+  border-radius:18px !important;
+}
+#resultsSection .rate-card-top{
+  flex:0 0 auto !important;
+  min-height:66px !important;
+}
+#resultsSection .rate-card-top h3{
+  display:-webkit-box !important;
+  -webkit-line-clamp:2 !important;
+  -webkit-box-orient:vertical !important;
+  overflow:hidden !important;
+}
+#resultsSection .rate-card .compare-select{
+  flex:0 0 auto !important;
+  padding-top:8px !important;
+}
+#resultsSection .rate-card .rate-price{
+  flex:0 0 auto !important;
+  padding:12px 14px !important;
+}
+#resultsSection .rate-card .rate-details{
+  flex:0 0 auto !important;
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:9px !important;
+}
+#resultsSection .rate-card .mod-coverage{
+  flex:0 0 auto !important;
+  margin-top:8px !important;
+  padding:9px 10px !important;
+}
+#resultsSection .rate-card .form-actions{
+  margin-top:auto !important;
+  flex:0 0 auto !important;
+  padding-top:10px !important;
+}
+@media (max-width:900px){
+  #resultsSection .rate-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+@media (max-width:620px){
+  #resultsSection .rate-grid{grid-template-columns:1fr !important;}
+  #resultsSection .rate-card{
+    width:min(100%,360px) !important;
+    margin-inline:auto !important;
+  }
+}
+
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: "Noto Sans Thai", "Sarabun", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      color: #fff;
+      background: rgba(6, 20, 46, .97);
+      border-bottom: 1px solid rgba(156, 255, 91, .15);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      width: min(1180px, calc(100% - 40px));
+      min-height: 74px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: .04em; }
+    .brand-mark {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      color: var(--navy-950);
+      background: var(--lime-500);
+      clip-path: polygon(50% 0, 93% 17%, 86% 72%, 50% 100%, 14% 72%, 7% 17%);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .brand-name { line-height: 1.15; }
+    .brand-name small { display: block; color: var(--lime-500); font-size: 10px; font-weight: 500; letter-spacing: .16em; }
+    .nav-links { display: flex; align-items: center; gap: 23px; color: #c8d8ef; font-size: 14px; }
+    .nav-links a:hover { color: var(--lime-500); }
+    .nav-cta {
+      padding: 9px 17px;
+      color: var(--navy-950);
+      background: var(--lime-500);
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .nav-cta:hover { background: #b6ff86; color: var(--navy-950); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(122deg, var(--navy-950), var(--navy-800));
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -130px;
+      top: -215px;
+      border: 1px solid rgba(156,255,91,.2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 42px rgba(156,255,91,.04), 0 0 0 84px rgba(156,255,91,.03);
+    }
+    .hero-inner { width: min(1180px, calc(100% - 40px)); margin: auto; padding: 74px 0 66px; position: relative; z-index: 1; }
+    .eyebrow { color: var(--lime-500); font-size: 14px; font-weight: 600; letter-spacing: .08em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 700px; margin: 10px 0 13px; font-size: clamp(33px, 5vw, 56px); line-height: 1.18; letter-spacing: -.035em; }
+    .hero-copy { max-width: 650px; margin-bottom: 27px; color: #d2e1f4; font-size: 18px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 10px 22px; color: #e8f2ff; font-size: 14px; }
+    .hero-points span::before { content: '✓'; margin-right: 7px; color: var(--lime-500); font-weight: 700; }
+
+    .steps-wrap { width: min(1180px, calc(100% - 40px)); margin: -28px auto 0; position: relative; z-index: 2; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; background: #cad9eb; border-radius: 18px; box-shadow: var(--shadow); }
+    .step { min-height: 93px; padding: 20px 24px; background: var(--surface); }
+    .step-num { display: inline-grid; width: 28px; height: 28px; place-items: center; margin-right: 8px; color: #fff; background: var(--blue-600); border-radius: 50%; font-size: 13px; font-weight: 700; }
+    .step strong { font-size: 16px; }
+    .step p { margin: 5px 0 0 38px; color: var(--muted); font-size: 13px; }
+
+    .main { width: min(1180px, calc(100% - 40px)); margin: 46px auto 76px; }
+    .section-heading { max-width: 720px; margin-bottom: 24px; }
+    .section-heading h2 { margin: 6px 0 8px; font-size: 31px; line-height: 1.25; }
+    .section-heading p { color: var(--muted); margin-bottom: 0; }
+    .form-card, .results-card, .contact-card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 8px 24px rgba(8, 28, 60, .05); }
+    .form-card { padding: clamp(22px, 4vw, 38px); }
+    .form-intro { display: flex; justify-content: space-between; gap: 24px; padding-bottom: 20px; margin-bottom: 26px; border-bottom: 1px solid var(--line); }
+    .form-intro h3 { margin-bottom: 4px; font-size: 21px; }
+    .form-intro p { margin: 0; color: var(--muted); font-size: 14px; }
+    .required-note { align-self: center; color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .required-note::before { content: '*'; color: var(--danger); margin-right: 4px; }
+    .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 22px; }
+    .field { min-width: 0; }
+    .fields > .field:nth-child(1) { order: 1; }
+    .fields > .field:nth-child(2) { order: 2; }
+    .fields > .field:nth-child(3) { order: 3; }
+    .fields > .field:nth-child(4) { order: 4; }
+    .fields > .field:nth-child(5) { order: 5; }
+    .fields > .field:nth-child(6) { order: 6; }
+    .fields > .field:nth-child(7) { order: 7; }
+    .fields > .field:nth-child(8) { order: 8; }
+    .fields > .field:nth-child(9) { order: 9; }
+    #coverageField { order: 9; }
+    #companyPreferenceField { order: 10; }
+    .field.full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 7px; font-weight: 600; }
+    label .optional { color: var(--muted); font-size: 13px; font-weight: 400; }
+    .control {
+      width: 100%;
+      min-height: 50px;
+      padding: 11px 14px;
+      color: var(--ink);
+      background: #fbfdff;
+      border: 1px solid #c8d6e7;
+      border-radius: 12px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    .control:focus { border-color: var(--blue-500); box-shadow: 0 0 0 4px rgba(18,102,217, .13); background: #fff; }
+    .control:disabled { color: #9aaac0; background: #f1f5fa; cursor: not-allowed; }
+    .company-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: #f8fbff; }
+    .company-choice { display: flex; align-items: center; gap: 9px; min-width: 0; min-height: 44px; padding: 10px 12px; border: 1px solid #d4dfed; border-radius: 10px; background: #fff; color: var(--ink); cursor: pointer; font-size: 14px; font-weight: 500; }
+    .company-choice:hover { border-color: var(--blue-500); background: #f7fbff; }
+    .company-choice input { width: 17px; height: 17px; margin: 0; accent-color: var(--blue-600); flex: 0 0 auto; }
+    .company-choice span { min-width: 0; overflow-wrap: anywhere; }
+    .company-choice.company-none { grid-column: 1 / -1; border-color: #b8d7f7; background: var(--blue-100); }
+    .company-selection-note { min-height: 19px; margin-top: 7px; color: var(--muted); font-size: 12px; }
+    .company-selection-note.error { color: var(--danger); }
+    .hint { margin: 6px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .field.hidden { display: none; }
+    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 29px; }
+    .primary-btn, .secondary-btn {
+      min-height: 48px;
+      padding: 11px 23px;
+      border: 0;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .primary-btn { color: var(--navy-950); background: var(--lime-500); box-shadow: 0 8px 18px rgba(94, 189, 39, .2); }
+    .primary-btn:hover { background: var(--lime-600); transform: translateY(-1px); }
+    .primary-btn:disabled { color: #8090a5; background: #dfe7f0; box-shadow: none; cursor: not-allowed; transform: none; }
+    .secondary-btn { color: var(--blue-700); background: var(--blue-100); }
+    .secondary-btn:hover { background: #d9ecff; }
+    .status-line { color: var(--muted); font-size: 13px; }
+    .spinner { display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px; border: 2px solid #bdd2e9; border-top-color: var(--blue-600); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #resultsSection { display: none; margin-top: 52px; scroll-margin-top: 96px; }
+    .results-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+    .results-head h2 { margin: 5px 0 0; font-size: 29px; }
+    .results-head p { margin: 4px 0 0; color: var(--muted); }
+    .result-count { color: var(--blue-700); font-size: 14px; font-weight: 600; white-space: nowrap; }
+    .notice { display: flex; gap: 11px; align-items: flex-start; margin-bottom: 19px; padding: 14px 17px; color: #34567f; background: #edf6ff; border: 1px solid #cfe6fb; border-radius: 13px; font-size: 13px; }
+    .notice-icon { color: var(--blue-600); font-weight: 700; }
+    .reference-price { display: none; margin: 0 0 19px; padding: 12px 15px; color: #34567f; background: #f7fbff; border: 1px solid #d6e7f8; border-radius: 11px; font-size: 13px; }
+    .reference-price.show { display: block; }
+    .filters { display: none; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 19px; }
+    .filters.show { display: flex; }
+    .filters-label { margin-right: 3px; color: var(--muted); font-size: 13px; }
+    .filter-chip { padding: 6px 13px; color: var(--blue-700); background: #fff; border: 1px solid #bfd3ea; border-radius: 999px; font-size: 13px; }
+    .filter-chip.active, .filter-chip:hover { color: #fff; background: var(--blue-600); border-color: var(--blue-600); }
+        .rate-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    @media (max-width: 900px) { .rate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 600px) { .rate-grid { grid-template-columns: 1fr; } }
+
+    .compare-bar { display: none; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 19px; padding: 15px 18px; background: #f6fbff; border: 1px solid #cfe2f6; border-radius: 14px; }
+    .compare-bar.show { display: flex; }
+    .compare-bar strong { display: block; color: var(--navy-900); }
+    .compare-hint, .compare-count { color: var(--muted); font-size: 13px; }
+    .compare-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 10px; }
+    .compare-button { min-height: 40px; padding: 9px 16px; font-size: 13px; }
+    .compare-button:disabled { color: #8090a5; background: #dfe7f0; box-shadow: none; cursor: not-allowed; }
+    .compare-select { margin: 0 0 14px; }
+    .compare-select label { display: inline-flex; align-items: center; gap: 7px; color: var(--blue-700); font-size: 13px; font-weight: 700; cursor: pointer; }
+    .compare-toggle { width: 16px; height: 16px; accent-color: var(--blue-600); }
+    .compare-panel { display: none; margin: 0 0 22px; padding: 20px; background: #fff; border: 1px solid var(--line); border-radius: 17px; overflow: auto; }
+    .compare-panel.show { display: block; }
+    .compare-panel h3 { margin: 0 0 14px; font-size: 20px; }
+    .compare-table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 13px; }
+    .compare-table th, .compare-table td { padding: 11px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .compare-table th:first-child { width: 140px; color: var(--muted); font-weight: 600; }
+    .compare-table th:not(:first-child) { color: var(--blue-700); }
+    .compare-table td strong { color: var(--navy-900); }
+    .compare-table tr:last-child th, .compare-table tr:last-child td { border-bottom: 0; }
+
+        .rate-card {
+      display: flex;
+      min-width: 0;
+      aspect-ratio: 1 / 1;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0;
+      background: var(--surface);
+      border: 1px solid rgba(18,102,217, .95);
+      border-radius: 18px;
+      color: var(--ink);
+      box-shadow: 0 0 0 1px rgba(18,102,217, .28), 0 0 20px rgba(18,102,217, .42), 0 10px 24px rgba(8, 28, 60, .14);
+    }
+    .rate-card .head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 78px;
+      padding: 14px 15px 10px;
+      border-bottom: 1px solid #dcecf6;
+    }
+    .rate-card .head > div:first-child {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .rate-card .head-right {
+      display: flex;
+      flex: 0 0 126px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      text-align: right;
+    }
+    .rate-card .company {
+      margin: 0;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.35;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: visible;
+      text-overflow: clip;
+    }
+    .rate-card .package-name {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .rate-card .type-line {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      min-height: 26px;
+    }
+    .rate-card .type-pill {
+      flex: 0 0 auto;
+      padding: 4px 8px;
+      border: 1px solid var(--blue-500);
+      border-radius: 999px;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-size: 11px;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+    .rate-card .repair-value {
+      color: var(--blue-700);
+      font-size: 11px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .rate-card .capital {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0;
+      color: var(--muted);
+      line-height: 1.25;
+      text-align: right;
+    }
+    .rate-card .capital-label {
+      display: block;
+      font-size: 10px;
+    }
+    .rate-card .capital-value {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .rate-card .card-details {
+      display: flex;
+      min-height: 0;
+      flex: 1 1 auto;
+      flex-direction: column;
+    }
+    .rate-card .price {
+      margin: 0;
+      padding: 8px 15px 9px;
+      background: linear-gradient(110deg, #e9f7ff 0%, #f7fcff 100%);
+    }
+    .rate-card .price-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .rate-card .price-label {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+    .rate-card .price-value {
+      display: inline-block;
+      color: #075f9e;
+      font-size: clamp(23px, 3vw, 29px);
+      line-height: 1.2;
+      font-weight: 500;
+    }
+    .rate-card .price-unit {
+      margin-left: 3px;
+      color: #4f7188;
+      font-size: 11px;
+    }
+    .rate-card .compare {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+      margin: 0;
+      color: #536b7c;
+      font-size: 11px;
+      line-height: 1.35;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .rate-card .compare input {
+      width: 14px;
+      height: 14px;
+      order: 2;
+      margin: 0;
+      accent-color: var(--blue-600);
+    }
+    .rate-card .extra {
+      padding: 0 15px 8px;
+    }
+    .rate-card .extra-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+    .rate-card .extra-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      max-height: 44px;
+      overflow: hidden;
+    }
+    .rate-card .extra-item {
+      padding: 3px 6px;
+      border: 1px solid #9bdcff;
+      border-radius: 7px;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-size: 10px;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+    .rate-card .mod-coverage {
+      display: none;
+      margin: 0 15px;
+      padding: 8px 0 0;
+      border-top: 1px dashed var(--line);
+    }
+    .rate-card .mod-coverage.show {
+      display: block;
+    }
+    .rate-card .mod-title {
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .rate-card .mod-statuses {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      max-height: 28px;
+      overflow: hidden;
+    }
+    .rate-card .mod-status {
+      padding: 3px 6px;
+      background: var(--blue-100);
+      border: 1px solid #9bdcff;
+      border-radius: 7px;
+      font-size: 10px;
+    }
+    .rate-card .mod-status strong {
+      color: var(--blue-700);
+    }
+    .rate-card .foot {
+      padding: 9px 15px 12px;
+      border-top: 1px solid #dcecf6;
+    }
+    .rate-card .form-actions {
+      gap: 0;
+    }
+    .rate-card .rate-contact {
+      width: 100%;
+      min-height: 34px;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .rate-card-top { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 16px; }
+    .rate-card h3 { margin: 3px 0 2px; font-size: 18px; line-height: 1.35; }
+    .company { color: var(--blue-700); font-size: 14px; font-weight: 700; }
+    .type-pill { padding: 4px 9px; color: var(--navy-800); background: var(--lime-500); border-radius: 999px; height: fit-content; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .rate-price { display: flex; align-items: baseline; gap: 7px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .rate-price strong { color: var(--navy-900); font-size: 28px; line-height: 1; }
+    .rate-price span { color: var(--muted); font-size: 13px; }
+    .rate-details { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .detail-label { color: var(--muted); font-size: 12px; }
+    .detail-value { margin-top: 2px; font-weight: 600; }
+    .mod-coverage { display: none; margin-top: 18px; padding-top: 15px; border-top: 1px dashed var(--line); }
+    .mod-coverage.show { display: block; }
+    .mod-title { margin-bottom: 8px; font-size: 13px; font-weight: 700; }
+    .mod-statuses { display: flex; flex-wrap: wrap; gap: 8px; }
+    .mod-status { padding: 6px 10px; background: #f5f8fc; border: 1px solid #d9e3ef; border-radius: 9px; font-size: 12px; }
+    .mod-status strong { color: var(--blue-700); }
+    .empty-state { padding: 34px 22px; text-align: center; background: #fbfdff; border: 1px dashed #bfd1e5; border-radius: 16px; }
+    .empty-state h3 { margin-bottom: 6px; }
+    .empty-state p { margin-bottom: 17px; color: var(--muted); }
+    .staff-box { padding: 25px; background: linear-gradient(135deg, #f2faed, #f3f9ff); border: 1px solid #cde5bd; border-radius: 17px; }
+    .staff-box h3 { margin-bottom: 7px; }
+    .staff-box p { margin-bottom: 16px; color: var(--muted); }
+
+    #contactSection { display: none; margin-top: 30px; scroll-margin-top: 96px; }
+    .contact-card { padding: 26px; }
+    .contact-card h3 { margin-bottom: 5px; font-size: 22px; }
+    .contact-card > p { color: var(--muted); }
+    .contact-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 18px; }
+    .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; margin-top: 18px; }
+    .form-message { min-height: 26px; color: var(--muted); font-size: 13px; }
+    .form-message.error { color: var(--danger); }
+    .form-message.success { color: #287c32; }
+
+    .footer { padding: 31px 0; color: #b9cbe2; background: var(--navy-950); }
+    .footer-inner { width: min(1180px, calc(100% - 40px)); margin: auto; display: flex; justify-content: space-between; gap: 20px; font-size: 13px; }
+    .footer strong { color: #fff; }
+
+    @media (max-width: 800px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero-inner { padding: 55px 0 58px; }
+      .steps { grid-template-columns: 1fr; }
+      .step { min-height: auto; }
+      .fields, .rate-grid, .contact-fields { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .form-intro, .results-head, .footer-inner { align-items: flex-start; flex-direction: column; }
+      .required-note { align-self: flex-start; }
+    }
+    @media (max-width: 500px) {
+      .nav, .hero-inner, .steps-wrap, .main, .footer-inner { width: min(100% - 28px, 1180px); }
+      .nav { min-height: 66px; }
+      .brand-name { font-size: 14px; }
+      .nav-cta { padding: 8px 12px; font-size: 13px; }
+      h1 { font-size: 34px; }
+      .hero-copy { font-size: 16px; }
+      .rate-details { grid-template-columns: 1fr; }
+    }
+  
+/* PP ASSET SERVICE — LOAN HEADER PARITY PREVIEW */
+.topbar { display: none !important; }
+.hero {
+  width: min(1120px, calc(100% - 28px));
+  min-height: 430px;
+  margin: 26px auto 0;
+  padding: 0;
+  border: 1px solid rgba(121, 167, 216, .24);
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(13, 27, 50, .98), rgba(7, 19, 37, .92));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .34), 0 0 36px rgba(57, 255, 20, .18);
+}
+.hero-inner {
+  width: auto;
+  padding: 58px 58px 46px;
+}
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px;
+  border: 1px solid rgba(120, 169, 220, .34);
+  border-radius: 999px;
+  color: #b8c7da;
+  background: rgba(8, 20, 38, .62);
+  font-size: 14px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+.service-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--lime-500);
+  box-shadow: 0 0 16px rgba(156, 255, 91, .95);
+}
+.hero-brand {
+  margin-top: 30px;
+  color: #b8ff86;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.hero-title-line,
+.hero-accent {
+  display: block;
+}
+.hero h1 {
+  max-width: none;
+  margin: 10px 0 14px;
+  color: #f8fbff;
+  font-size: clamp(44px, 4.6vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+}
+.hero-accent {
+  background: linear-gradient(90deg, #d7ffb8 0%, #7dff5a 48%, #39ff14 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 34px rgba(57, 255, 20, .22);
+}
+.hero-copy {
+  max-width: 680px;
+  margin: 0;
+  color: #aebbd0;
+  line-height: 1.85;
+  font-size: 17px;
+}
+.hero-points { color: #e8f2ff; }
+.steps-wrap {
+  width: min(760px, calc(100% - 28px));
+  margin: -28px auto 0;
+}
+.steps {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+.step {
+  min-height: 118px;
+  padding: 14px 15px;
+  border: 1px solid rgba(121, 167, 216, .18);
+  border-radius: 15px;
+  color: #aab9cc;
+  background: rgba(12, 27, 50, .58);
+  box-shadow: none;
+}
+.step-num {
+  width: 38px;
+  height: 38px;
+  margin: 0 0 10px;
+  color: #07140a;
+  background: var(--lime-500);
+  border-radius: 12px;
+  font-size: 16px;
+}
+.step strong {
+  display: block;
+  color: #f6faff;
+  font-size: 14px;
+}
+.step p {
+  margin: 3px 0 0;
+  color: #aab9cc;
+  font-size: 13px;
+  line-height: 1.55;
+}
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+    margin-top: 10px;
+    border-radius: 22px;
+  }
+  .hero-inner { padding: 32px 22px; }
+  .hero h1 { font-size: 40px; }
+  .steps-wrap {
+    width: min(100% - 18px, 760px);
+    margin: -20px auto 0;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .step { min-height: 0; }
+}
+@media (max-width: 430px) {
+  .hero h1 { font-size: 32px; }
+  .hero-copy { font-size: 15px; }
+}
+
+
+เลือกตามทุน:
+.steps .step strong {
+  font-size: 21px !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+}
+.steps .step p {
+  margin-top: 10px !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+#companyOptions > label.pp-wow-card {
+  border-color: #0F2B46 !important;
+  box-shadow: 0 0 0 1px rgba(15, 43, 70, .22), 0 0 18px rgba(15, 43, 70, .34), 0 4px 12px rgba(6, 20, 46, .10) !important;
+}
+#companyOptions > label.pp-wow-card > .pp-wow-badge {
+  background: #B8C7DA !important;
+  color: #0F2B46 !important;
+  border-color: #0F2B46 !important;
+  box-shadow: 0 0 0 1px rgba(184, 199, 218, .65), 0 2px 8px rgba(15, 43, 70, .30) !important;
+}
+@media (max-width: 800px) {
+  .steps .step strong {
+    font-size: 18px !important;
+  }
+  .steps .step p {
+    margin-top: 8px !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+เลือกตามทุน:#top .hero-actions{margin-bottom:40px !important;}@media (max-width:720px){#top .hero-actions{margin-bottom:28px !important;}}<script id="pp-hero-layout-fix-v1">(function(){if(window.__ppHeroLayoutFixV1)return;window.__ppHeroLayoutFixV1=true;function clean(){var h=document.querySelector("#top .hero-inner");if(!h)return;Array.prototype.slice.call(h.childNodes).forEach(function(n){if(n.nodeType===3&&n.previousElementSibling&&n.previousElementSibling.classList.contains("hero-copy")&&n.nextElementSibling&&n.nextElementSibling.classList.contains("hero-points"))n.nodeValue="";});}clean();window.setTimeout(clean,700);})();</script>
+เลือกตามทุน:
+/* PP ASSET SERVICE — FINAL LOAN PARITY OVERRIDES */
+.topbar { display: none !important; }
+.hero {
+  width: min(1120px, calc(100% - 28px)) !important;
+  min-height: 430px !important;
+  margin: 26px auto 0 !important;
+  padding: 0 !important;
+  border: 1px solid rgba(121, 167, 216, .24) !important;
+  border-radius: 30px !important;
+  background: linear-gradient(135deg, rgba(13, 27, 50, .98), rgba(7, 19, 37, .92)) !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .34), 0 0 36px rgba(57, 255, 20, .18) !important;
+}
+.hero-inner { width: auto !important; padding: 58px 58px 46px !important; }
+.service-pill { display: inline-flex !important; align-items: center !important; gap: 9px !important; padding: 8px 13px !important; border: 1px solid rgba(120, 169, 220, .34) !important; border-radius: 999px !important; color: #b8c7da !important; background: rgba(8, 20, 38, .62) !important; font-size: 14px !important; font-weight: 700 !important; }
+.service-dot { width: 9px !important; height: 9px !important; border-radius: 50% !important; background: var(--lime-500) !important; box-shadow: 0 0 16px rgba(156, 255, 91, .95) !important; }
+.hero-brand { display: block !important; margin-top: 30px !important; color: #b8ff86 !important; font-size: 15px !important; font-weight: 800 !important; letter-spacing: .08em !important; }
+.hero-title-line, .hero-accent { display: block !important; }
+.hero h1 { max-width: none !important; margin: 10px 0 14px !important; color: #f8fbff !important; font-size: clamp(44px, 4.6vw, 62px) !important; line-height: 1.08 !important; letter-spacing: -.03em !important; }
+.hero-accent { background: linear-gradient(90deg, #d7ffb8 0%, #7dff5a 48%, #39ff14 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+.hero-copy { max-width: 680px !important; margin: 0 !important; color: #aebbd0 !important; line-height: 1.85 !important; font-size: 17px !important; }
+.steps-wrap { width: min(760px, calc(100% - 28px)) !important; margin: -28px auto 0 !important; }
+.steps { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 12px !important; overflow: visible !important; background: transparent !important; border-radius: 0 !important; box-shadow: none !important; }
+.step { min-height: 118px !important; padding: 14px 15px !important; border: 1px solid rgba(121, 167, 216, .18) !important; border-radius: 15px !important; color: #aab9cc !important; background: rgba(12, 27, 50, .58) !important; box-shadow: none !important; }
+.step-num { width: 38px !important; height: 38px !important; margin: 0 0 10px !important; color: #07140a !important; background: var(--lime-500) !important; border-radius: 12px !important; font-size: 16px !important; }
+.step strong { display: block !important; color: #f6faff !important; font-size: 14px !important; }
+.step p { margin: 3px 0 0 !important; color: #aab9cc !important; font-size: 13px !important; line-height: 1.55 !important; }
+@media (max-width: 760px) {
+  .hero { min-height: 0 !important; margin-top: 10px !important; border-radius: 22px !important; }
+  .hero-inner { padding: 32px 22px !important; }
+  .hero h1 { font-size: 40px !important; }
+  .steps-wrap { width: min(100% - 18px, 760px) !important; margin: -20px auto 0 !important; }
+  .steps { grid-template-columns: 1fr !important; gap: 9px !important; }
+  .step { min-height: 0 !important; }
+}
+@media (max-width: 430px) { .hero h1 { font-size: 32px !important; } .hero-copy { font-size: 15px !important; } }
+
+#howItWorks .steps .step{min-height:118px !important;padding:14px 15px !important;border:1px solid rgba(121,167,216,.18) !important;border-radius:15px !important;color:#aab9cc !important;background:rgba(12,27,50,.58) !important;box-shadow:none !important}#howItWorks .steps .step .step-num{width:38px !important;height:38px !important;margin:0 0 10px !important;color:#07140a !important;background:var(--lime-500) !important;border-radius:12px !important;font-size:16px !important}#howItWorks .steps .step strong{display:block !important;color:#f6faff !important;font-size:14px !important}#howItWorks .steps .step p{margin:3px 0 0 !important;color:#aab9cc !important;font-size:13px !important;line-height:1.55 !important}@media (max-width:760px){#howItWorks .steps .step{min-height:0 !important}}เลือกตามทุน:#top .hero h1 .hero-title-line,#top .hero h1 .hero-accent{display:block !important}เลือกตามทุน:#top .hero-inner h1{display:block !important}เลือกตามทุน:#top .hero-actions{margin-left:0 !important;padding-left:0 !important;padding-right:0 !important;display:flex !important;flex-wrap:wrap !important;align-items:center !important;gap:12px !important}#top .hero-button{max-width:100% !important;white-space:normal !important}#howItWorks .steps .step{background:linear-gradient(145deg,rgba(15,43,70,.96),rgba(6,16,31,.94)) !important;border-color:rgba(121,167,216,.28) !important;color:#b8c7da !important;box-shadow:0 12px 28px rgba(6,16,31,.20) !important}#howItWorks .steps .step strong{color:#f5f9ff !important}#howItWorks .steps .step p{color:#b8c7da !important}@media (max-width:760px){#top .hero-actions{margin-left:0 !important;gap:10px !important}#top .hero-button{flex:0 1 auto !important;min-width:0 !important}}@media (max-width:430px){#top .hero-actions{align-items:stretch !important}#top .hero-button{width:100% !important}}เลือกตามทุน:#top .hero-actions{position:relative !important;left:0 !important;right:auto !important;transform:none !important;width:auto !important;margin-left:0 !important;padding-left:0 !important;padding-right:0 !important;display:flex !important;flex-wrap:wrap !important;gap:12px !important}#top .hero-button{max-width:100% !important;white-space:normal !important}@media (max-width:430px){#top .hero-actions{width:100% !important}#top .hero-button{width:100% !important}}เลือกตามทุน:#top .hero-inner .hero-actions{margin-left:0 !important;padding-left:0 !important;position:relative !important;left:0 !important;transform:none !important;width:auto !important}เลือกตามทุน:#top .hero-actions{box-sizing:border-box !important;padding-left:58px !important;padding-right:58px !important}@media (max-width:760px){#top .hero-actions{padding-left:22px !important;padding-right:22px !important}}@media (max-width:430px){#top .hero-actions{padding-left:18px !important;padding-right:18px !important}}#howItWorks .steps-wrap,#howItWorks.steps-wrap{width:min(1120px,calc(100% - 28px)) !important}#howItWorks .steps{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:16px !important}#howItWorks .steps .step{background:#fff !important;color:#0f2b46 !important;border:1px solid rgba(57,255,20,.8) !important;box-shadow:0 0 0 1px rgba(57,255,20,.2),0 0 22px rgba(57,255,20,.32),0 8px 22px rgba(6,20,46,.12) !important;min-height:150px !important}#howItWorks .steps .step strong{color:#0f2b46 !important}#howItWorks .steps .step p{color:#5b6b7f !important}@media(max-width:760px){#howItWorks.steps-wrap,#howItWorks .steps-wrap{width:calc(100% - 18px) !important}#howItWorks .steps{grid-template-columns:1fr !important}}#top .hero-actions{scroll-margin-top:20px}#howItWorks .steps{gap:12px !important;padding-left:12px !important;padding-right:12px !important;box-sizing:border-box !important}@media(max-width:760px){#howItWorks .steps{gap:9px !important;padding-left:9px !important;padding-right:9px !important}}</style>
+
+<style id="pp-step-number-glow-v1">
+html body #top #howItWorks .steps .step .step-num {
+  color: #ffffff !important;
+  background: #1266D9 !important;
+  border: 1px solid rgba(18,102,217, 0.95) !important;
+  box-shadow:
+    0 0 10px rgba(18,102,217, 0.90),
+    0 0 22px rgba(18,102,217, 0.58) !important;
+  text-shadow: 0 1px 3px rgba(0, 27, 61, 0.45) !important;
+}
+</style>
+
+
+<style id="pp-find-button-white-text-v1">
+html body #findButton {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+</style>
+
+
+<style id="pp-quote-selection-v1">
+html body #resultsSection .rate-card .compare {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 8px 11px !important;
+  border: 1px solid rgba(18,102,217, 0.55) !important;
+  border-radius: 10px !important;
+  background: rgba(18,102,217, 0.10) !important;
+  color: #0f5f9f !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+html body #resultsSection .rate-card .compare input.compare-toggle {
+  appearance: auto !important;
+  -webkit-appearance: checkbox !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  margin: 0 !important;
+  accent-color: #1266D9 !important;
+  cursor: pointer !important;
+}
+</style>
+
+<style id="pp-insurance-line-link-v1">
+#quoteLinePanel [hidden]{display:none!important;}
+#quoteLinePanel .primary-btn{background:#1266D9!important;color:#01122B!important;-webkit-text-fill-color:#01122B!important;border:1px solid #1266D9!important;border-radius:16px!important;text-decoration:none;}
+#quoteLinePanel p{line-height:1.8;}
+</style>
+<style id="pp-insurance-loan-popup-v2">    .line-connect-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 12000;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(8px, 2vh, 20px);
+      background: rgba(1, 7, 17, .82);
+      backdrop-filter: blur(14px);
+    }
+
+    .line-connect-modal.show {
+      display: flex;
+    }
+
+    .line-connect-modal-card {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      max-height: calc(100vh - 16px);
+      max-height: calc(100dvh - 16px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      box-sizing: border-box;
+      padding: clamp(18px, 2.8vh, 30px);
+      border: 1px solid rgba(var(--green-rgb), .42);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(var(--green-rgb), .12), transparent 32%),
+        linear-gradient(180deg, #0b1d34 0%, #071425 100%);
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, .60),
+        0 0 45px rgba(var(--green-rgb), .13);
+      animation: linePopupIn .24s ease-out;
+    }
+
+    .line-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      min-height: 38px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      color: #aebbd0;
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .line-connect-modal .line-connect-kicker {
+      margin-bottom: 9px;
+      color: var(--green-300);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .line-connect-modal .line-connect-title {
+      padding-right: 42px;
+      margin-bottom: 0;
+      color: #ffffff;
+      font-size: 27px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .line-connect-modal .line-connect-desc {
+      margin-top: 8px;
+      color: #aebbd0;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .line-required-note {
+      margin-top: 12px;
+      padding: 11px 13px;
+      border: 1px solid rgba(var(--green-rgb), .22);
+      border-radius: 12px;
+      background: rgba(var(--green-rgb), .06);
+      color: var(--green-200);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
+    .line-benefit-list {
+      margin-top: 12px;
+    }
+
+    .line-benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: clamp(7px, 1.2vh, 11px) 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .line-benefit-item:last-child {
+      border-bottom: 0;
+    }
+
+    .line-benefit-item > span {
+      width: 34px;
+      min-width: 34px;
+      font-size: 23px;
+      text-align: center;
+    }
+
+    .line-benefit-item strong {
+      display: block;
+      color: #f5f9ff;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .line-benefit-item small {
+      display: block;
+      margin-top: 3px;
+      color: #899bb2;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .line-connect-modal .line-login-button {
+      width: 100%;
+      min-width: 0;
+      min-height: 54px;
+      margin-top: 14px;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(105deg, var(--green-300) 0%, var(--green-400) 55%, var(--green-600) 100%);
+      color: var(--green-950);
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow:
+        0 12px 34px rgba(var(--green-rgb), .25),
+        0 0 30px rgba(var(--green-rgb), .13);
+    }
+
+    .line-connect-modal .line-login-button:hover:not(:disabled) {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .line-later-button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border: 0;
+      background: transparent;
+      color: #899bb2;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .line-later-button:hover {
+      color: #ffffff;
+    }
+
+    .line-connect-modal .line-connect-status {
+      margin-top: 13px;
+      text-align: center;
+    }
+
+    .line-connect-modal .line-profile {
+      margin-top: 14px;
+    }
+
+    .line-connect-modal .existing-lead-notice {
+      margin-top: 12px;
+    }
+
+    body.line-modal-open {
+      overflow: hidden;
+    }
+
+    @keyframes linePopupIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .line-connect-modal {
+        padding: 8px;
+      }
+
+      .line-connect-modal-card {
+        max-height: calc(100vh - 16px);
+        max-height: calc(100dvh - 16px);
+        padding: 18px 15px;
+        border-radius: 18px;
+      }
+
+      .line-connect-modal .line-connect-title {
+        font-size: 23px;
+      }
+
+      .line-connect-modal .line-connect-desc {
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .line-benefit-item > span {
+        width: 28px;
+        min-width: 28px;
+        font-size: 20px;
+      }
+
+      .line-benefit-item strong {
+        font-size: 14px;
+      }
+
+      .line-benefit-item small {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+    }
+
+/* PP_BRAND_MOBILE_FIX */
+@media (max-width:600px) {
+  .line-connect-modal {
+    box-sizing:border-box;
+    padding:12px;
+    overflow:hidden;
+  }
+  .line-connect-modal-card {
+    width:100%;
+    min-width:0;
+    max-width:100%;
+    max-height:calc(100dvh - 24px);
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:16px 12px;
+  }
+  .line-connect-modal .line-login-button {
+    box-sizing:border-box;
+    max-width:100%;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    font-size:16px;
+    padding:12px;
+  }
+  .line-connect-modal .line-benefit-item > div {
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+}
+
+/* PP_POPUP_ALL_SCREENS */
+.line-connect-modal {
+  box-sizing:border-box;
+  padding:16px;
+  overflow:hidden;
+}
+.line-connect-modal-card {
+  box-sizing:border-box;
+  min-width:0;
+  max-width:100%;
+  max-height:calc(100vh - 32px);
+  max-height:calc(100dvh - 32px);
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+/* PP_COMPACT_LINE_POPUP */
+.line-connect-modal .line-connect-modal-card {
+  width:100%;
+  max-width:560px;
+  min-width:0;
+  max-height:calc(100vh - 32px);
+  max-height:calc(100dvh - 32px);
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:24px;
+}
+.line-connect-modal .line-connect-kicker,
+.line-connect-modal .line-benefit-list,
+.line-connect-modal div.line-required-note {
+  display:none;
+}
+.line-connect-modal .line-connect-title {
+  font-size:24px;
+  padding-right:0;
+}
+.line-connect-modal .line-connect-desc {
+  font-size:15px;
+  line-height:1.6;
+}
+
+@media (max-width:600px) {
+  .line-connect-modal .line-connect-modal-card {
+    padding:18px 14px;
+  }
+  .line-connect-modal .line-connect-title {
+    font-size:21px;
+  }
+}
+
+/* PP_AGREED_POPUP_V1 */
+.line-connect-modal { box-sizing:border-box; padding:12px; }
+.line-connect-modal .line-connect-modal-card {
+ width:min(100%,560px); max-width:560px; box-sizing:border-box;
+ max-height:calc(100vh - 24px); max-height:calc(100dvh - 24px);
+ overflow:auto; padding:24px; border-radius:24px;
+}
+.line-connect-modal .line-benefit-list { display:block; }
+.line-connect-modal div.line-required-note { display:block; }
+.line-connect-modal .line-connect-kicker { display:none; }
+.line-connect-modal .line-benefit-item { padding:10px 0; }
+.line-connect-modal .line-benefit-item > div { min-width:0; }
+.line-connect-modal .line-login-button { box-sizing:border-box; max-width:100%; white-space:normal; }
+#lineFriendConnectLink[hidden], #lineLoginDirectLink[hidden], #lineLoginButton[hidden] { display:none !important; }
+#lineConnectStatus:empty { display:none; }
+#lineConnectStatus.processing::before {
+ content:""; display:inline-block; width:16px; height:16px; margin-right:8px;
+ vertical-align:middle; border:2px solid #619DC4; border-top-color:#6BA232;
+ border-radius:50%; animation:ppProcessingSpin .8s linear infinite;
+}
+@media(max-width:600px) {
+ .line-connect-modal .line-connect-modal-card { padding:18px 16px; }
+ .line-connect-modal .line-connect-title { font-size:21px; line-height:1.35; }
+ .line-connect-modal .line-benefit-item strong { font-size:15px; }
+ .line-connect-modal .line-benefit-item small { font-size:13px; line-height:1.5; }
+ .line-connect-modal .line-benefit-item > span { font-size:26px; }
+}
+
+#quoteLinePanel {--green-rgb:156,255,91;--green-200:#D2FFB3;--green-300:#B9FF86;--green-400:#9CFF5B;--green-600:#82E647;--green-950:#102006;}
+#quoteLinePanel [hidden]{display:none!important} #quoteLinePanel a.line-login-button{display:block;text-align:center;text-decoration:none} #quoteLinePanel .line-modal-close{right:10px;top:10px} #quoteLinePanel .line-connect-title{padding-right:34px} #quoteLinePanel .line-connect-status{color:#aebbd0;line-height:1.6} </style>
+
+<style id="pp-insurance-blue-1266d9-v1">
+/* White labels on the approved blue surfaces; behavior is unchanged. */
+html body#insuranceQuoteTest .nav-links .nav-cta,
+html body#insuranceQuoteTest #top .hero-button-primary,
+html body#insuranceQuoteTest #findButton,
+html body#insuranceQuoteTest #contactButton,
+html body#insuranceQuoteTest #top #howItWorks .step-num,
+html body#insuranceQuoteTest .primary-btn,
+html body#insuranceQuoteTest #quoteLinePanel .primary-btn {
+  color:#FFFFFF!important;
+  -webkit-text-fill-color:#FFFFFF!important;
+  text-shadow:none!important;
+}
+</style>
+</head>
+<body id="insuranceQuoteTest">
+  <header class="topbar">
+    <nav class="nav" aria-label="เมนูหลัก">
+      <a class="brand" href="#top" aria-label="PP Asset Service">
+        <span class="brand-mark">PP</span>
+        <span class="brand-name">PP ASSET SERVICE<small>วิเคราะห์ก่อนแนะนำ</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#howItWorks">วิธีใช้งาน</a>
+                <a href="#checkForm">เช็กเบี้ยประกันรถยนต์</a>
+        <a class="nav-cta" href="#contactSection">ติดต่อเจ้าหน้าที่</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="service-pill"><span class="service-dot"></span>ระบบประเมินพร้อมใช้งาน</div>
+      <div class="hero-brand">PP ASSET SERVICE • SMART INSURANCE</div>
+      <h1><span class="hero-title-line">เช็คเบี้ยประกันภัย</span><span class="hero-accent">เบื้องต้น</span></h1>
+      <p class="hero-copy">กรอกข้อมูลจากเล่มทะเบียนรถ เพื่อให้เราคัดกรองประเภทประกันภัยและทางเลือกที่เหมาะกับรถของคุณเบื้องต้น</p>
+      <div class="hero-actions">
+        <a class="hero-button hero-button-primary" href="#checkForm" target="_self">เริ่มกรอกข้อมูลรถ</a>
+        <a class="hero-button hero-button-secondary" href="https://line.me/R/ti/p/%40pp.asset" target="_blank" rel="noreferrer">ปรึกษาเจ้าหน้าที่</a>
+      </div>
+      <div class="steps-wrap" id="howItWorks">
+        <div class="steps">
+          <div class="step"><span class="step-num">1</span><strong>กรอกข้อมูลรถ</strong><p>บอกยี่ห้อ รุ่น และปีรถ เพื่อค้นหาแบบประกันสำหรับรถของคุณ</p></div>
+          <div class="step"><span class="step-num">2</span><strong>เลือกความคุ้มครอง</strong><p>ระบบจะแสดงประเภทที่สอดคล้องกับข้อมูลรถ</p></div>
+          <div class="step"><span class="step-num">3</span><strong>รับคำแนะนำจากผู้เชี่ยวชาญ</strong><p>เจ้าหน้าที่ตรวจสอบรายละเอียดเพิ่มเติมก่อนเสนอทางเลือก</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <section id="checkForm">
+      <div class="section-heading">
+        <div class="eyebrow">CHECK YOUR PLAN</div>
+                <h2>เช็กเบี้ยประกันรถยนต์</h2>
+                        <p>กรุณาเลือกข้อมูลให้ตรงกับรถและเล่มทะเบียนรถ เพื่อให้เราแนะนำประเภทประกันภัยตามความต้องการของคุณ</p>
+      </div>
+
+      <form class="form-card" id="insuranceForm" novalidate>
+        <div class="form-intro">
+                              <div><h3>ข้อมูลรถของคุณ</h3><p>กรุณาเลือกข้อมูลรถให้ครบถ้วน เพื่อให้เราแนะนำประเภทประกันภัยตามความต้องการของคุณ</p></div>
+          <div class="required-note">ข้อมูลที่จำเป็นต้องกรอก</div>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label for="vehicleCategoy">ประเภทรถ</label>
+            <select class="control" id="vehicleCategory" ne="vehicleCategory" required>
+              <option value="">กำลังเตรียมรายการ...</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="vehicleMake">ยี่ห้อรถ</label>
+            <select class="control" id="vehicleMake" name="vehicleMake" required disabled><option value="">เลือกประเภทรถก่อน</option></select>
+          </div>
+          <div class="field">
+            <label for="vehicleModel">รุ่นรถ</label>
+            <select class="control" id="vehicleModel" name="vehicleModel" required disabled><option value="">เลือกยี่ห้อรถก่อน</option></select>
+          </div>
+          <div class="field">
+            <label for="vehicleYear">ปีจดทะเบียน (ค.ศ.)</label>
+            <select class="control" id="vehicleYear" name="vehicleYear" required disabled><option value="">เลือกรุ่นรถก่อน</option></select>
+          </div>
+          <div class="field full">
+                        <label for="vehicleSubmodel">รุ่นย่อย / แบบตัวรถ</label>
+            <select class="control" id="vehicleSubmodel" name="vehicleSubmodel" required disabled><option value="">เลือกปีรถก่อน</option></select>
+          </div>
+          <div class="field">
+            <label for="registrationProvince">จังหวัดที่จดทะเบียนรถ</label>
+            <select class="control" id="registrationProvince" name="registrationProvince" required>
+              <option value="">กำลังเตรียมรายการ...</option>
+            </select>
+            <p class="hint">เลือกจังหวัดตามที่ระบุในเล่มทะเบียนรถ ไม่ใช่จังหวัดที่นำรถไปใช้งาน</p>
+          </div>
+          <div class="field">
+                        <label for="usageType">ลักษณะการใช้รถ</label>
+            <select class="control" id="usageType" name="usageType" required>
+              <option value="">กำลังเตรียมรายการ...</option>
+            </select>
+          </div>
+          <div class="field hidden" id="modificationField">
+                        <label for="modification">การต่อเติมรถ</label>
+            <select class="control" id="modification" name="modification"></select>
+            <p class="hint">เลือกตามลักษณะรถที่ใช้งานอยู่จริง</p>
+          </div>
+          <div class="field" id="coverageField">
+            <label for="coverageType">ประเภทประกันภัย</label>
+            <select class="control" id="coverageType" name="coverageType" disabled>
+              <option value="">กรุณาเลือกข้อมูลรถให้ครบถ้วนก่อน</option>
+            </select>
+            <p class="hint" id="coverageHint">เลือกประเภทที่ต้องการให้เจ้าหน้าที่เช็กเบี้ย โดยเจ้าหน้าที่จะตรวจสอบเงื่อนไขการรับประกันอีกครั้ง</p>
+          </div>
+          <div class="field full" id="companyPreferenceField">
+            <label>บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย <span class="optional">(เลือกได้ 1–3 บริษัท หรือไม่ระบุ)</span></label>
+            <div class="company-options" id="companyOptions" role="group" aria-label="บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย"></div>
+            <p class="hint">เลือกบริษัทได้สูงสุด 3 บริษัท หรือเลือก “ไม่ระบุ” เพื่อให้เจ้าหน้าที่แนะนำ</p>
+            <div class="company-selection-note" id="companyPreferenceMessage" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="primary-btn" type="submit" id="findButton" disabled>ตรวจสอบแผนประกันภัย</button>
+          <button class="secondary-btn" type="button" id="resetButton">ล้างข้อมูล</button>
+          <div class="status-line" id="formStatus" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultsSection" aria-live="polite">
+      <div class="results-head">
+        <div><div class="eyebrow">RESULT</div><h2>ผลการตรวจสอบเบื้องต้น</h2><p id="resultMessage"></p></div>
+        <div class="result-count" id="resultCount"></div>
+      </div>
+      <div class="notice"><span class="notice-icon">ⓘ</span><span>ผลการตรวจสอบนี้เป็นข้อมูลเบื้องต้น เบี้ยประกันภัยและความคุ้มครองจริงต้องตรวจสอบกับบริษัทประกันภัยก่อนจัดทำกรมธรรม์</span></div>
+      <div class="reference-price" id="dltReference" aria-live="polite"></div>
+      <div class="filters" id="sumFilters"><span class="filters-label">เลือกตามทุน:</span></div>
+
+      <div class="compare-bar" id="compareBar">
+        <div><strong>เลือกแผนสำหรับจัดทำใบเสนอราคา</strong><span class="compare-hint" id="compareHint">เลือกได้ตั้งแต่ 1–3 แผน สำหรับเปรียบเทียบและจัดทำใบเสนอราคา</span></div>
+        <div class="compare-actions"><span class="compare-count" id="compareCount">เลือกแล้ว 0/3 แผน</span><button class="secondary-btn compare-button" type="button" id="compareButton" disabled>ดูแผนที่เลือกสำหรับใบเสนอราคา</button></div>
+      </div>
+      <div class="compare-panel" id="comparePanel" aria-live="polite"></div>
+      <div id="resultsBody"></div>
+    </section>
+
+    <section id="contactSection">
+      <div class="contact-card">
+        <h3>ให้เจ้าหน้าที่ตรวจสอบและเสนอราคาเบี้ยประกันภัย</h3>
+        <p>กรอกชื่อและเบอร์โทรศัพท์ เพื่อให้เจ้าหน้าที่ติดต่อกลับและตรวจสอบเงื่อนไขให้</p>
+        <form id="contactForm" novalidate>
+<p>การส่งคำขอนี้ยังไม่ใช่การยืนยันราคา การรับประกันภัย หรือการออกกรมธรรม์</p>
+<div class="pp-broker-disclosure" role="note">
+  <p>ให้คำแนะนำและเสนอเบี้ยประกันภัยโดย<br><strong>นางวรันทร พงศธรธีรา</strong><br>นายหน้าประกันวินาศภัย ใบอนุญาตเลขที่ <strong>6304006858</strong></p>
+  <p>การส่งคำขอเช็กเบี้ยยังไม่ถือเป็นการรับประกันภัยหรือเริ่มความคุ้มครอง</p>
+</div>
+<label><input id="quoteConsent" type="checkbox"> ยินยอมให้ PP Asset Service ใช้ข้อมูลรถ ชื่อ และเบอร์โทร เพื่อดำเนินการตามคำขอเช็กเบี้ยและติดต่อกลับ หากเลือกรับข้อเสนอผ่าน LINE ยินยอมให้เชื่อมบัญชี LINE และชื่อที่แสดงกับคำขอนี้ เพื่อรับรายละเอียดและข้อความเกี่ยวกับคำขอ</label>
+          <div class="contact-fields">
+            <div><label for="contactName">ชื่อผู้ติดต่อ</label><input class="control" id="contactName" name="name" type="text" placeholder="กรุณากรอกชื่อและนามสกุล" required></div>
+            <div><label for="contactPhone">เบอร์โทรศัพท์</label><input class="control" id="contactPhone" name="phone" type="tel" inputmode="tel" placeholder="เช่น 08xxxxxxxx" required></div>
+          </div>
+          <div class="contact-actions"><button class="primary-btn" type="submit" id="contactButton">ส่งคำขอเช็กเบี้ย</button><div class="form-message" id="contactMessage" aria-live="polite"></div></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="footer-inner"><div><strong>PP ASSET SERVICE</strong><br>วิเคราะห์ก่อนแนะนำ ให้คำปรึกษาอย่างตรงไปตรงมา</div><div>ประกันภัยรถยนต์ · ข้อมูลเบื้องต้น</div></div></footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var state = { options: null, vehicles: [], rates: [], currentInput: null, selectedRate: null, compareRates: [], preferredInsurers: [] };
+      var $ = function (id) { return document.getElementById(id); };
+      var els = {
+        form: $('insuranceForm'), coverageType: $('coverageType'), category: $('vehicleCategory'), make: $('vehicleMake'), model: $('vehicleModel'), submodel: $('vehicleSubmodel'), year: $('vehicleYear'), province: $('registrationProvince'), usage: $('usageType'), modificationField: $('modificationField'), modification: $('modification'), companyOptions: $('companyOptions'), companyPreferenceMessage: $('companyPreferenceMessage'), findButton: $('findButton'), resetButton: $('resetButton'), status: $('formStatus'), results: $('resultsSection'), resultMessage: $('resultMessage'), resultCount: $('resultCount'), resultsBody: $('resultsBody'), filters: $('sumFilters'), dltReference: $('dltReference'), contact: $('contactSection'), contactForm: $('contactForm'), contactButton: $('contactButton'), contactMessage: $('contactMessage'), compareBar: $('compareBar'), compareHint: $('compareHint'), compareCount: $('compareCount'), compareButton: $('compareButton'), comparePanel: $('comparePanel')
+      };
+
+      function runServer(name, args, success, failure) {
+        var runner = google.script.run.withSuccessHandler(success).withFailureHandler(function (error) {
+          if (failure) failure(error); else showError(error && error.message ? error.message : 'ระบบไม่สามารถอ่านข้อมูลได้ในขณะนี้');
+        });
+        runner[name].apply(runner, args || []);
+      }
+      function setStatus(text, loading) { els.status.innerHTML = loading ? '<span class="spinner"></span>' + escapeHtml(text) : escapeHtml(text || ''); }
+      function showError(text) { setStatus(text, false); els.status.style.color = 'var(--danger)'; }
+      function clearStatus() { els.status.textContent = ''; els.status.style.color = ''; }
+      function escapeHtml(value) { return String(value == null ? '' : value).replace(/[&<>'"]/g, function (ch) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[ch]; }); }
+      function unique(list) { var seen = {}; return (list || []).filter(function (item) { var key = String(item == null ? '' : item); if (!key || seen[key]) return false; seen[key] = true; return true; }); }
+      function sortThai(list) { return (list || []).slice().sort(function (a, b) { return String(a).localeCompare(String(b), 'th'); }); }
+      function setOptions(select, values, placeholder, valueKey, labelKey) { select.innerHTML = ''; var first = document.createElement('option'); first.value = ''; first.textContent = placeholder; select.appendChild(first); (values || []).forEach(function (item) { var option = document.createElement('option'); var rawValue = valueKey ? item[valueKey] : item; option.value = rawValue; option.textContent = labelKey ? item[labelKey] : (select === els.category && rawValue === 'รถยนต์นั่งส่วนบุคคล' ? 'รถยนต์นั่งส่วนบุคคล / SUV / กระบะสี่ประตู' : item); select.appendChild(option); }); }
+      function setDisabled(select, disabled) { select.disabled = disabled; }
+      function selectedPreferredInsurers() {
+        if (!els.companyOptions) return [];
+        return Array.prototype.slice.call(els.companyOptions.querySelectorAll('input[data-company-name]:checked')).map(function (input) {
+          return input.dataset.companyName;
+        }).filter(Boolean);
+      }
+      function setCompanyPreferenceMessage(text, error) {
+        if (!els.companyPreferenceMessage) return;
+        els.companyPreferenceMessage.textContent = text || '';
+        els.companyPreferenceMessage.className = error ? 'company-selection-note error' : 'company-selection-note';
+      }
+      function setCompanyOptions(companies) {
+        if (!els.companyOptions) return;
+        els.companyOptions.innerHTML = '';
+        var noneLabel = document.createElement('label');
+        noneLabel.className = 'company-choice company-none';
+        var noneInput = document.createElement('input');
+        noneInput.type = 'checkbox';
+        noneInput.checked = false;
+        noneInput.value = '';
+        noneInput.dataset.noPreference = 'true';
+        noneInput.setAttribute('aria-label', 'ไม่ระบุบริษัทประกันภัย');
+        var noneText = document.createElement('span');
+        noneText.textContent = 'ไม่ระบุ — ให้เจ้าหน้าที่แนะนำบริษัท';
+        noneLabel.appendChild(noneInput);
+        noneLabel.appendChild(noneText);
+        els.companyOptions.appendChild(noneLabel);
+        (companies || []).forEach(function (item) {
+          var name = typeof item === 'string' ? item : (item && (item.name || item.label));
+          if (!name) return;
+          var label = document.createElement('label');
+          label.className = 'company-choice';
+          var input = document.createElement('input');
+          input.type = 'checkbox';
+          input.value = name;
+          input.dataset.companyName = name;
+          var text = document.createElement('span');
+          text.textContent = name;
+          label.appendChild(input);
+          label.appendChild(text);
+          els.companyOptions.appendChild(label);
+        });
+        state.preferredInsurers = [];
+        setCompanyPreferenceMessage('');
+      }
+      function onCompanyPreferenceChange(event) {
+        var input = event.target;
+        if (!input || input.type !== 'checkbox') return;
+        var none = els.companyOptions.querySelector('input[data-no-preference="true"]');
+        if (input.dataset.noPreference === 'true') {
+          if (input.checked) {
+            els.companyOptions.querySelectorAll('input[data-company-name]').forEach(function (item) { item.checked = false; });
+          }
+        } else if (input.checked) {
+          var chosen = selectedPreferredInsurers();
+          if (chosen.length > 3) {
+            input.checked = false;
+            setCompanyPreferenceMessage('เลือกบริษัทประกันภัยได้สูงสุด 3 บริษัท', true);
+            return;
+          }
+          if (none) none.checked = false;
+        }
+        var selected = selectedPreferredInsurers();
+        if (!selected.length && none) none.checked = true;
+        if (input.checked && (input.dataset.noPreference === 'true' || selected.length === 3)) {
+          requestAnimationFrame(function () {
+            var bar = document.querySelector('.topbar');
+            var offset = bar ? bar.getBoundingClientRect().height + 20 : 24;
+            window.scrollTo({top: Math.max(0, els.findButton.getBoundingClientRect().top + window.scrollY - offset), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+          });
+        }
+        state.preferredInsurers = selected;
+        setCompanyPreferenceMessage(selected.length ? 'เลือกแล้ว ' + selected.length + '/3 บริษัท' : '');
+        els.findButton.disabled = !els.coverageType.value;
+        updateFindButtonLabel();
+        els.results.style.display = 'none';
+        els.contact.style.display = 'none';
+      }
+      function selectedVehicleRows() { var year = Number(els.year.value || 0); return state.vehicles.filter(function (item) { var start = Number(item.yearMin || 1990); var end = Number(item.yearMax || new Date().getFullYear()); return (!els.category.value || item.category === els.category.value) && (!els.make.value || item.make === els.make.value) && (!els.model.value || item.model === els.model.value) && (!els.submodel.value || (item.submodel || 'รุ่นมาตรฐาน') === els.submodel.value) && (!year || (year >= start && year <= end)); }); }
+      function selectedVehicle() { return state.vehicles.filter(function (item) { return item.vehicleId === els.submodel.options[els.submodel.selectedIndex]?.dataset.vehicleId; })[0] || null; }
+      function selectedRowForYear() { return selectedVehicleRows()[0] || null; }
+      function isPickup() { var text = [els.category.value, els.submodel.value].join(' '); return /กระบะ|pickup/i.test(text); }
+      function refreshModification() { els.modificationField.classList.toggle('hidden', !isPickup()); if (!isPickup()) els.modification.value = 'ไม่มี'; }
+      function getBaseInput() { var vehicle = selectedRowForYear(); return { insuranceType: 'motor', coverageType: els.coverageType.value, vehicleId: vehicle ? vehicle.vehicleId : '', vehicleCategory: els.category.value, vehicleMake: els.make.value, vehicleModel: els.model.value, vehicleSubmodel: els.submodel.value, vehicleYear: Number(els.year.value || 0), registrationProvince: els.province.value, usageType: els.usage.value, modification: els.modification.value || 'ไม่มี', preferredInsurers: selectedPreferredInsurers() }; }
+      function enoughForTypeFilter() { return !!(els.submodel.value && els.year.value && els.province.value && els.usage.value); }
+      function legacyRefreshCoverageTypes(preserveValue) {
+        if (!enoughForTypeFilter()) { els.coverageType.disabled = true; els.coverageType.innerHTML = '<option value="">กรุณาเลือกข้อมูลรถให้ครบถ้วนก่อน</option>'; els.findButton.disabled = true; return; }
+        els.coverageType.disabled = true; els.coverageType.innerHTML = '<option value="">กำลังตรวจสอบประเภทประกันภัย...</option>'; els.findButton.disabled = true; setStatus('กำลังตรวจสอบประเภทประกันภัยที่เป็นไปได้', true);
+        runServer('webGetInsuranceCoverageOptions', [getBaseInput()], function (data) { renderCoverageTypes(data && data.options ? data.options : [], preserveValue); clearStatus(); }, function (error) { renderCoverageTypes([], preserveValue); showError(error && error.message ? error.message : 'ไม่สามารถตรวจสอบประเภทประกันภัยได้'); });
+      }
+      function legacyUpdateFindButtonLabel() { els.findButton.textContent = els.coverageType.value === '1' ? 'ส่งข้อมูลให้เจ้าหน้าที่' : 'ตรวจสอบแผนประกันภัย'; }
+      function renderCoverageTypes(options, preserveValue) { options=(options||[]).filter(function(item){return String(item.value||'')!=='';}); setOptions(els.coverageType,options,options.length?'เลือกประเภทประกันภัย':'ยังไม่พบประเภทประกันภัยที่ตรงกับข้อมูลรถ','value','label'); els.coverageType.disabled=!options.length; els.findButton.disabled=!options.length; var preserved = preserveValue && options.some(function(item){ return String(item.value||'') === String(preserveValue); }); if (preserved) els.coverageType.value = preserveValue; else if(options.length===1) els.coverageType.value=options[0].value; updateFindButtonLabel(); }
+      function resetSelect(select, text) { select.innerHTML = '<option value="">' + escapeHtml(text) + '</option>'; select.value = ''; select.disabled = true; }
+      
+
+      function onCategoryChange() { resetSelect(els.make, 'เลือกยี่ห้อรถ'); resetSelect(els.model, 'เลือกยี่ห้อรถก่อน'); resetSelect(els.year, 'เลือกรุ่นรถก่อน'); resetSelect(els.submodel, 'เลือกปีรถก่อน'); var makes = unique(state.vehicles.filter(function (v) { return v.category === els.category.value; }).map(function (v) { return v.make; })).sort(); setOptions(els.make, makes, 'เลือกยี่ห้อรถ'); els.make.disabled = !makes.length; refreshModification(); refreshCoverageTypes(); }
+      function onMakeChange() { resetSelect(els.model, 'เลือกรุ่นรถ'); resetSelect(els.year, 'เลือกรุ่นรถก่อน'); resetSelect(els.submodel, 'เลือกปีรถก่อน'); var models = unique(state.vehicles.filter(function (v) { return v.category === els.category.value && v.make === els.make.value; }).map(function (v) { return v.model; })).sort(); setOptions(els.model, models, 'เลือกรุ่นรถ'); els.model.disabled = !models.length; refreshModification(); refreshCoverageTypes(); }
+      function onModelChange() { resetSelect(els.year, 'เลือกรุ่นรถ'); resetSelect(els.submodel, 'เลือกปีรถก่อน'); var rows = state.vehicles.filter(function (v) { return v.category === els.category.value && v.make === els.make.value && v.model === els.model.value; }); var years = []; rows.forEach(function (row) { var start = Number(row.yearMin || 1990); var end = Number(row.yearMax || new Date().getFullYear()); for (var y = start; y <= end; y += 1) years.push(y); }); years = unique(years).sort(function (a, b) { return b - a; }); setOptions(els.year, years, 'เลือกปีรถ'); els.year.disabled = !years.length; refreshModification(); refreshCoverageTypes(); }
+      function onYearChange() { resetSelect(els.submodel, 'เลือกปีรถก่อน'); var year = Number(els.year.value || 0); var rows = state.vehicles.filter(function (v) { var start = Number(v.yearMin || 1990); var end = Number(v.yearMax || new Date().getFullYear()); return v.category === els.category.value && v.make === els.make.value && v.model === els.model.value && year >= start && year <= end; }); var labels = unique(rows.map(function (v) { return v.submodel || 'รุ่นมาตรฐาน'; })); els.submodel.innerHTML = '<option value="">เลือกรุ่นย่อย / ลักษณะตัวรถ</option>'; labels.sort().forEach(function (label) { var row = rows.filter(function (v) { return (v.submodel || 'รุ่นมาตรฐาน') === label; })[0]; var option = document.createElement('option'); option.value = label; option.textContent = label; option.dataset.vehicleId = row.vehicleId; els.submodel.appendChild(option); }); els.submodel.disabled = !labels.length; refreshModification(); refreshCoverageTypes(); }
+      function onSubmodelChange() { refreshModification(); refreshCoverageTypes(); }      function onBasicChange() { refreshModification(); refreshCoverageTypes(); els.results.style.display = 'none'; els.contact.style.display = 'none'; }
+      function loadOptions() {
+        setStatus('กำลังเตรียมข้อมูล...', true);
+        runServer('webGetQuoteRequestOptions', [], function (data) { state.options = data || {}; state.vehicles = data.vehicles || []; setOptions(els.category, data.vehicleCategories || [], 'เลือกประเภทรถ'); setOptions(els.province, data.provinces || [], 'เลือกจังหวัดที่จดทะเบียนรถ'); setOptions(els.usage, data.usageTypes || [], 'เลือกลักษณะการใช้งานรถ'); setOptions(els.modification, data.modifications || [], 'เลือกลักษณะรถและการต่อเติม'); setCompanyOptions(data.companies || []); clearStatus(); }, function (error) { showError(error && error.message ? error.message : 'ไม่สามารถเตรียมข้อมูลได้ในขณะนี้'); });
+      }
+      function formPayload() { return getBaseInput(); }
+      function legacySubmitCheck(event) { event.preventDefault(); if (!els.coverageType.value) { showError('กรุณาเลือกประเภทประกันภัย'); return; } setStatus('กำลังตรวจสอบแผนประกันภัย', true); els.findButton.disabled = true; runServer('webFindInsuranceQuotes', [formPayload()], function (data) { state.rates = (data && data.rates) || []; state.currentInput = formPayload(); renderResults(data || {}); els.findButton.disabled = false; clearStatus(); }, function (error) { els.findButton.disabled = false; showError(error && error.message ? error.message : 'ไม่สามารถตรวจสอบแผนประกันภัยได้ในขณะนี้'); }); }
+      function renderResults(data) { els.results.style.display = 'block'; state.compareRates = []; hideComparison(); els.resultMessage.textContent = data.message || ''; els.resultCount.textContent = data.matchCount ? 'พบ ' + data.matchCount + ' แผนประกันภัย' : ''; els.dltReference.textContent = ''; els.dltReference.classList.remove('show'); renderFilters(String((state.currentInput || {}).coverageType || '') === '3' ? [] : (data.sumOptions || [])); if (data.status === 'STAFF_QUOTE') { var preferred = data.preferredInsurers || ((state.currentInput || {}).preferredInsurers || []); var preferredText = preferred.length ? preferred.join(', ') : 'ไม่ระบุ'; els.resultsBody.innerHTML = '<div class="staff-box"><h3>' + escapeHtml(data.title || 'ให้เจ้าหน้าที่ตรวจสอบและเสนอราคาเบี้ยประกันภัย') + '</h3><p>' + escapeHtml(data.message || '') + '</p><p><strong>บริษัทที่สนใจ:</strong> ' + escapeHtml(preferredText) + '</p><a class="primary-btn" href="https://line.me/R/ti/p/%40pp.asset" target="_blank" rel="noopener noreferrer">ติดต่อผ่าน LINE OA</a></div>'; bindStaffButton(); return; } if (!state.rates.length) { els.resultsBody.innerHTML = '<div class="empty-state"><h3>' + escapeHtml(data.title || 'ยังไม่พบแพ็กเกจที่ตรงกับข้อมูล') + '</h3><p>กรุณาให้เจ้าหน้าที่ตรวจสอบและเสนอราคาเบี้ยประกันภัยตามเงื่อนไขจริง</p><button class="primary-btn" type="button" id="staffButton">ขอให้เจ้าหน้าที่ตรวจสอบ</button></div>'; bindStaffButton(); return; } renderRateCards(state.rates); els.contact.style.display = 'none'; }
+      function renderFilters(sums) { sums = (sums || []).slice().sort(function (a, b) { return Number(String(a).replace(/[^0-9.]/g, '')) - Number(String(b).replace(/[^0-9.]/g, '')); }); els.filters.innerHTML = '<span class="filters-label">เลือกตามทุน:</span>'; if (!sums.length) { els.filters.classList.remove('show'); return; } var all = document.createElement('button'); all.type = 'button'; all.className = 'filter-chip active'; all.textContent = 'ทั้งหมด'; all.dataset.sum = ''; els.filters.appendChild(all); sums.forEach(function (sum) { var button = document.createElement('button'); button.type = 'button'; button.className = 'filter-chip'; button.textContent = sum; button.dataset.sum = sum; els.filters.appendChild(button); }); els.filters.classList.add('show'); els.filters.querySelectorAll('.filter-chip').forEach(function (button) { button.addEventListener('click', function () { els.filters.querySelectorAll('.filter-chip').forEach(function (item) { item.classList.remove('active'); }); button.classList.add('active'); var chosen = button.dataset.sum; renderRateCards(chosen ? state.rates.filter(function (rate) { return rate.sumInsuredLabel === chosen; }) : state.rates); }); }); }
+      function renderRateCards(rates) {
+        els.resultsBody.innerHTML = '<div class="rate-grid">' + rates.map(rateCardHtml).join('') + '</div>';
+        els.contact.style.display = 'none';
+        els.compareBar.classList.add('show');
+        els.comparePanel.classList.remove('show');
+        els.resultsBody.querySelectorAll('.compare-toggle').forEach(function (input) {
+          input.addEventListener('change', function () { toggleCompareRate(input.dataset.rateId, input.checked); });
+        });
+        syncCompareControls();
+      }
+
+            function rateCardHtml(rate) {
+        var type = String(rate.insuranceType || '').trim();
+        var insurerName = String(rate.insurer || 'บริษัทประกันภัย').replace(/^บริษัท\s*/, '').replace(/\s*ประกันภัย\s*$/, '').trim();
+        var insurer = escapeHtml(insurerName || 'บริษัทประกันภัย');
+        var packageName = String(rate.packageName || 'แผนประกันภัยรถยนต์').trim();
+        if (type && packageName.indexOf('ประเภท ' + type) === 0) packageName = packageName.slice(('ประเภท ' + type).length).replace(/^[\s:–—-]+/, '').trim();
+        if (type && packageName.indexOf(type) === 0) packageName = packageName.slice(type.length).replace(/^[\s:–—-]+/, '').trim();
+        var modified = state.currentInput && state.currentInput.modification && state.currentInput.modification !== 'ไม่มี';
+        var coverage = rate.modificationCoverage;
+        var modHtml = modified && coverage ? '<div class="mod-coverage show"><div class="mod-title">คุ้มครองเพิ่มเติม</div><div class="mod-statuses"><span class="mod-status"><strong>แหนบ</strong> 2014 ' + escapeHtml(coverage.leafSpring || 'ไม่คุ้มครอง') + '</span><span class="mod-status"><strong>เพลาลอย</strong> 2014 ' + escapeHtml(coverage.floatingAxle || 'ไม่คุ้มครอง') + '</span></div></div>' : '';
+        var conditionText = String(rate.conditions || '').trim();
+        var conditionItems = conditionText.split(/[|•]/).map(function (item) { return item.trim(); }).filter(function (item) { return item; });
+        var extraHtml = conditionItems.length ? '<div class="extra"><span class="extra-label">คุ้มครองเพิ่มเติม</span><div class="extra-list">' + conditionItems.map(function (item) { return '<span class="extra-item">' + escapeHtml(item) + '</span>'; }).join('') + '</div></div>' : '';
+        var rateId = escapeHtml(rate.rateId || '');
+        var repair = String(rate.repairType || '').replace(/^ซ่อม/, '').trim();
+        var repairHtml = repair ? '<span class="repair-value">' + escapeHtml(repair) + '</span>' : '';
+        var sumHtml = type === '3' ? '' : '<div class="capital"><span class="capital-label">ทุน</span><span class="capital-value">' + escapeHtml(rate.sumInsuredLabel || 'ตามเงื่อนไขแผน') + '</span></div>';
+        return '<article class="rate-card"><div class="head"><div><div class="company">' + insurer + '</div><span class="package-name">' + escapeHtml(packageName || 'แผนประกันภัยรถยนต์') + '</span></div><div class="head-right"><div class="type-line"><span class="type-pill">' + escapeHtml(type) + '</span>' + repairHtml + '</div>' + sumHtml + '</div></div><div class="card-details"><div class="price"><div class="price-top"><span class="price-label">เบี้ยรวม</span><label class="compare"><span>เลือกทำใบเสนอราคา</span><input class="compare-toggle" type="checkbox" data-rate-id="' + rateId + '" aria-label="เลือก ' + insurer + ' เพื่อเปรียบเทียบ"></label></div><span class="price-value">' + escapeHtml(String(rate.premiumLabel || '-').replace(' บาท', '')) + '</span><span class="price-unit">บาท/ปี</span></div>' + extraHtml + modHtml + '</div><div class="foot"><div class="form-actions"><button class="secondary-btn rate-contact" type="button" data-rate-id="' + rateId + '">สอบถามแผนประกันภัยนี้</button></div></div></article>';
+      }
+      function compareSelected(rateId) { return state.compareRates.some(function (rate) { return String(rate.rateId || '') === String(rateId || ''); }); }
+      function compareCell(value) { var text = String(value == null ? '' : value).trim(); return text ? escapeHtml(text).replace(/\n/g, '<br>') : 'ไม่พบข้อมูลในฐาน'; }
+      function compareModificationCell(rate) { var coverage = rate && rate.modificationCoverage; if (!coverage) return 'ไม่พบข้อมูลในฐาน'; return compareCell('แหนบ: ' + (coverage.leafSpring || 'ไม่พบข้อมูลในฐาน') + ' / เพลาลอย: ' + (coverage.floatingAxle || 'ไม่พบข้อมูลในฐาน')); }
+      function syncCompareControls() {
+        var selectedCount = state.compareRates.length;
+        els.compareCount.textContent = 'เลือกแล้ว ' + selectedCount + '/3 แผน';
+        els.compareHint.textContent = selectedCount >= 3 ? 'ครบ 3 แผนแล้ว หากต้องการเปลี่ยนให้ยกเลิกหนึ่งรายการก่อน' : 'เลือกได้ตั้งแต่ 1–3 แผน สำหรับเปรียบเทียบและจัดทำใบเสนอราคา';
+        els.compareButton.disabled = selectedCount < 1;
+        els.resultsBody.querySelectorAll('.compare-toggle').forEach(function (input) {
+          input.checked = compareSelected(input.dataset.rateId);
+          input.disabled = !input.checked && selectedCount >= 3;
+        });
+      }
+      function toggleCompareRate(rateId, checked) {
+        var rate = state.rates.filter(function (item) { return String(item.rateId || '') === String(rateId || ''); })[0];
+        if (!rate) return;
+        if (checked) {
+          if (state.compareRates.length >= 3) {
+            setStatus('เลือกทำใบเสนอราคาได้สูงสุด 3 แผน', false);
+            syncCompareControls();
+            return;
+          }
+          state.compareRates.push(rate);
+          clearStatus();
+        } else {
+          state.compareRates = state.compareRates.filter(function (item) { return String(item.rateId || '') !== String(rateId || ''); });
+          els.comparePanel.classList.remove('show');
+          clearStatus();
+        }
+        syncCompareControls();
+      }
+      function hideComparison() {
+        els.compareBar.classList.remove('show');
+        els.comparePanel.classList.remove('show');
+        els.comparePanel.innerHTML = '';
+        els.compareCount.textContent = 'เลือกแล้ว 0/3 แผน';
+        els.compareHint.textContent = 'เลือกได้ตั้งแต่ 1–3 แผน สำหรับเปรียบเทียบและจัดทำใบเสนอราคา';
+      }
+      function renderComparison() {
+        if (state.compareRates.length < 1) {
+          setStatus('กรุณาเลือกอย่างน้อย 1 แผนสำหรับใบเสนอราคา', false);
+          return;
+        }
+        var header = '<tr><th scope="col">ข้อมูลเปรียบเทียบ</th>' + state.compareRates.map(function (rate) { return '<th scope="col">' + compareCell(rate.insurer || 'บริษัทประกันภัย') + '<br><span class="compare-hint">' + compareCell(rate.packageName || 'แผนประกันภัยรถยนต์') + '</span></th>'; }).join('') + '</tr>';
+        var rows = [
+          { label: 'ประเภทประกัน', value: function (rate) { return rate.insuranceType; } },
+          { label: 'เบี้ยประกัน', value: function (rate) { return rate.premiumLabel; } },
+          { label: 'ทุนประกัน', value: function (rate) { return rate.sumInsuredLabel; } },
+          { label: 'ประเภทการซ่อม', value: function (rate) { return rate.repairType; } },
+          { label: 'เงื่อนไขสำคัญ', value: function (rate) { return rate.conditions; } },
+          { label: 'ตรวจสอบข้อมูลล่าสุด', value: function (rate) { return rate.lastVerified; } }
+        ];
+        if (state.currentInput && state.currentInput.modification && state.currentInput.modification !== 'ไม่มี') {
+          rows.push({ label: 'ความคุ้มครองรถต่อเติม', value: compareModificationCell });
+        }
+        var body = rows.map(function (row) { return '<tr><th scope="row">' + row.label + '</th>' + state.compareRates.map(function (rate) { return '<td>' + (row.value === compareModificationCell ? row.value(rate) : compareCell(row.value(rate))) + '</td>'; }).join('') + '</tr>'; }).join('');
+        els.comparePanel.innerHTML = '<h3>เปรียบเทียบแผนประกันภัยที่เลือก</h3><table class="compare-table"><thead>' + header + '</thead><tbody>' + body + '</tbody></table><p class="hint">ข้อมูลเปรียบเทียบยึดจาก PP Asset Insurance Product Master และเป็นข้อมูลเบื้องต้น เจ้าหน้าที่จะตรวจสอบเงื่อนไขของบริษัทประกันภัยก่อนจัดทำกรมธรรม์</p>';
+        els.comparePanel.classList.add('show');
+        els.comparePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function bindStaffButton() { var button = $('staffButton'); if (button) button.addEventListener('click', function () { showContact(); }); }
+      function showContact() { els.contact.style.display = 'block'; els.contact.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      function resetAll() { els.form.reset(); state.currentInput = null; state.rates = []; state.compareRates = []; hideComparison(); setOptions(els.coverageType, [], 'กรุณาเลือกข้อมูลรถให้ครบถ้วนก่อน'); els.coverageType.disabled = true; updateFindButtonLabel(); resetSelect(els.make, 'เลือกประเภทรถก่อน'); resetSelect(els.year, 'เลือกรุ่นรถก่อน'); resetSelect(els.model, 'เลือกยี่ห้อรถก่อน'); resetSelect(els.submodel, 'เลือกปีรถก่อน'); els.modificationField.classList.add('hidden'); els.results.style.display = 'none'; els.dltReference.textContent = ''; els.dltReference.classList.remove('show'); els.contact.style.display = 'none'; els.filters.classList.remove('show'); clearStatus(); if (state.options) { setOptions(els.category, state.options.vehicleCategories || [], 'เลือกประเภทรถ'); setOptions(els.province, state.options.provinces || [], 'เลือกจังหวัดที่จดทะเบียนรถ'); setOptions(els.usage, state.options.usageTypes || [], 'เลือกลักษณะการใช้งานรถ'); setCompanyOptions(state.options.companies || []); } window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      function legacySubmitContact(event) { event.preventDefault(); var name = $('contactName').value.trim(); var phone = $('contactPhone').value.trim(); if (!name || !phone) { els.contactMessage.textContent = 'กรุณากรอกชื่อและเบอร์โทรศัพท์'; els.contactMessage.className = 'form-message error'; return; } els.contactButton.disabled = true; els.contactMessage.textContent = 'กำลังส่งข้อมูล...'; els.contactMessage.className = 'form-message'; var payload = Object.assign({}, state.currentInput || formPayload(), { name: name, phone: phone, quoteId: state.selectedRate ? state.selectedRate.quoteId : '', rateId: state.selectedRate ? state.selectedRate.rateId : '', insurer: state.selectedRate ? state.selectedRate.insurer : '', packageName: state.selectedRate ? state.selectedRate.packageName : '', premium: state.selectedRate ? state.selectedRate.premium : '', sumInsuredLabel: state.selectedRate ? state.selectedRate.sumInsuredLabel : '' }); runServer('webSubmitInsuranceLead', [payload], function (data) { els.contactButton.disabled = false; els.contactMessage.textContent = data && data.message ? data.message : 'ส่งข้อมูลเรียบร้อยแล้ว'; els.contactMessage.className = 'form-message success'; els.contactForm.reset(); }, function (error) { els.contactButton.disabled = false; els.contactMessage.textContent = error && error.message ? error.message : 'ยังไม่สามารถส่งข้อมูลได้ในขณะนี้'; els.contactMessage.className = 'form-message error'; }); }
+
+      var quoteSubmissionKey = null, quoteSubmissionPending = false;
+      var quoteSavedRequestId = '', quoteLineGeneration = 0;
+      function hideQuoteLineLink() {
+        quoteLineGeneration += 1; quoteSavedRequestId = '';
+        var panel = $('quoteLinePanel'); if (panel) panel.remove();
+        document.body.classList.remove('line-modal-open');
+      }
+      function showQuoteLineLink(requestId) {
+        var old = $('quoteLinePanel'); if (old) old.remove();
+        quoteSavedRequestId = requestId;
+        var generation = ++quoteLineGeneration, previousFocus = document.activeElement;
+        var panel = document.createElement('div'); panel.id = 'quoteLinePanel';
+        panel.className = 'line-connect-modal show'; panel.setAttribute('role','dialog');
+        panel.setAttribute('aria-modal','true'); panel.setAttribute('aria-labelledby','quoteLineTitle');
+        panel.innerHTML = '<div class="line-connect-modal-card"><button type="button" class="line-modal-close" aria-label="ปิด">×</button>' +
+          '<div class="line-connect-title" id="quoteLineTitle">รับเอกสารเสนอเบี้ยประกัน</div>' +
+          '<p class="line-connect-desc">รับข้อเสนอเบี้ยประกัน พร้อมคำแนะนำเปรียบเทียบความคุ้มครอง เพื่อเลือกแผนที่เหมาะกับรถ การใช้งาน และงบประมาณของคุณ</p>' +
+          '<div class="line-benefit-list">' +
+          '<div class="line-benefit-item"><span aria-hidden="true">⚡</span><div><strong>รับข้อเสนอเบี้ยประกัน</strong><small>เจ้าหน้าที่ตรวจสอบและจัดข้อเสนอให้ตามข้อมูลรถของคุณ</small></div></div>' +
+          '<div class="line-benefit-item"><span aria-hidden="true">💬</span><div><strong>เปรียบเทียบเบี้ยและความคุ้มครอง</strong><small>เลือกแผนที่เหมาะกับการใช้งานและงบประมาณ</small></div></div>' +
+          '<div class="line-benefit-item"><span aria-hidden="true">🖼️</span><div><strong>รับเอกสารเสนอเบี้ยในแชท</strong><small>ดูรายละเอียดและสอบถามเพิ่มเติมได้ใน LINE เดียว</small></div></div>' +
+          '<div class="line-benefit-item"><span aria-hidden="true">🔔</span><div><strong>ติดตามข้อเสนอได้สะดวก</strong><small>รับการแจ้งกลับเมื่อเจ้าหน้าที่เตรียมข้อเสนอแล้ว</small></div></div></div>' +
+          '<div class="line-required-note">คำขอบันทึกแล้ว รับรายละเอียดและกดยืนยันข้อมูลในแชท PP</div>' +
+          '<a class="line-login-button" target="_top" hidden>รับข้อเสนอเบี้ยผ่าน LINE</a>' +
+          '<button type="button" class="line-login-button" disabled>กำลังเตรียม LINE...</button>' +
+          '<p class="line-connect-status" role="status" aria-live="polite"></p></div>';
+        document.body.appendChild(panel); document.body.classList.add('line-modal-open');
+        var link=panel.querySelector('a'), retry=panel.querySelector('.line-login-button[type="button"]');
+        var message=panel.querySelector('[role="status"]'), close=panel.querySelector('.line-modal-close'), expiresAt=0;
+        function dismiss(){ panel.remove(); document.body.classList.remove('line-modal-open'); if(previousFocus && previousFocus.isConnected)previousFocus.focus(); }
+        close.addEventListener('click',dismiss); close.focus();
+        panel.addEventListener('keydown',function(event){
+          if(event.key==='Escape'){event.preventDefault();dismiss();}
+          if(event.key==='Tab'){
+            var items=Array.from(panel.querySelectorAll('button:not(:disabled),a[href]')).filter(function(el){return !el.hidden;});
+            if(event.shiftKey && document.activeElement===items[0]){event.preventDefault();items[items.length-1].focus();}
+            else if(!event.shiftKey && document.activeElement===items[items.length-1]){event.preventDefault();items[0].focus();}
+          }
+        });
+        function prepare(){
+          if(!quoteSubmissionKey)return;
+          retry.hidden=false; retry.disabled=true; retry.textContent='กำลังเตรียม LINE...'; link.hidden=true; message.textContent='';
+          runServer('webCreateInsuranceQuoteLineLink',[requestId,quoteSubmissionKey],function(data){
+            if(generation!==quoteLineGeneration || !panel.isConnected)return;
+            if(data && data.ok && /^https:\/\/liff\.line\.me\/2011333776-7CCq2hRE\?ticket=[a-f0-9]{64}$/.test(data.url||'')){
+              link.href=data.url; expiresAt=Number(data.expiresAt)||Date.now()+480000; link.hidden=false; retry.hidden=true;
+            }else{retry.disabled=false;retry.textContent='ลองเปิด LINE อีกครั้ง';message.textContent=data && data.message || 'ยังเตรียม LINE ไม่สำเร็จ คำขอของคุณบันทึกแล้ว';}
+          },function(){
+            if(generation!==quoteLineGeneration || !panel.isConnected)return;
+            retry.disabled=false;retry.textContent='ลองเปิด LINE อีกครั้ง';message.textContent='ยังเตรียม LINE ไม่สำเร็จ คำขอของคุณบันทึกแล้ว';
+          });
+        }
+        retry.addEventListener('click',prepare);
+        link.addEventListener('click',function(event){if(Date.now()>=expiresAt-30000){event.preventDefault();prepare();}});
+        prepare();
+      }
+
+      function newQuoteSubmissionKey() { if (!window.crypto || !window.crypto.getRandomValues) throw new Error('กรุณาใช้เบราว์เซอร์ที่รองรับการส่งคำขออย่างปลอดภัย'); var bytes = new Uint8Array(24); window.crypto.getRandomValues(bytes); return Array.from(bytes).map(function(b){return b.toString(16).padStart(2,'0');}).join(''); }
+      function refreshCoverageTypes(preserveValue) {
+        if (!enoughForTypeFilter()) { renderCoverageTypes([], ''); return; }
+        renderCoverageTypes((state.options || {}).coverageTypes || [], preserveValue || els.coverageType.value);
+        clearStatus();
+      }
+      function updateFindButtonLabel() { els.findButton.textContent = 'ดำเนินการส่งคำขอเช็กเบี้ย'; }
+      function submitCheck(event) {
+        event.preventDefault();
+        if (quoteSubmissionPending) return;
+        if (!enoughForTypeFilter() || !els.category.value || !els.make.value || !els.model.value || !els.coverageType.value) { showError('กรุณาเลือกข้อมูลรถและประเภทประกันให้ครบ'); return; }
+        state.currentInput = formPayload(); state.selectedRate = null;
+        els.results.style.display = 'none'; els.contact.style.display = 'block';
+        els.contact.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      function submitContact(event) {
+        event.preventDefault(); if (quoteSubmissionPending) return;
+        var name = $('contactName').value.trim(), phone = $('contactPhone').value.trim().replace(/[\s-]/g,'');
+        function fail(message) { els.contactMessage.textContent = message; els.contactMessage.className = 'form-message error'; }
+        if (name.length < 2 || !/^0\d{8,9}$/.test(phone)) { fail('กรุณาตรวจสอบชื่อและเบอร์โทรศัพท์'); return; }
+        if (!$('quoteConsent').checked) { fail('กรุณายินยอมให้ใช้ข้อมูลเพื่อดำเนินการเช็กเบี้ย'); return; }
+        if (!enoughForTypeFilter() || !els.coverageType.value) { fail('กรุณาเลือกข้อมูลรถและประเภทประกันให้ครบ'); return; }
+        try { quoteSubmissionKey = quoteSubmissionKey || newQuoteSubmissionKey(); } catch(error) { fail(error.message); return; }
+        var input = formPayload(), preferred = input.preferredInsurers || [];
+        var payload = {customer_name:name,customer_phone:phone,vehicle_id:input.vehicleId,vehicle_category:input.vehicleCategory,vehicle_make:input.vehicleMake,vehicle_model:input.vehicleModel,vehicle_submodel:input.vehicleSubmodel,registration_year:input.vehicleYear,registration_province:input.registrationProvince,usage_type:input.usageType,modification:input.modification,insurance_type:input.coverageType,preferred_insurers:preferred.length?preferred:['ไม่ระบุ'],consent:true,submission_key:quoteSubmissionKey};
+        quoteSubmissionPending = true; els.contactButton.disabled = true; els.resetButton.disabled = true; els.form.querySelectorAll('select,input').forEach(function(el){el.dataset.quoteWasDisabled=el.disabled?'1':'0';el.disabled=true;});
+        els.contactMessage.textContent = 'กำลังบันทึกคำขอ...'; els.contactMessage.className = 'form-message';
+        function finish() { quoteSubmissionPending=false;els.contactButton.disabled=false;els.resetButton.disabled=false;els.form.querySelectorAll('select,input').forEach(function(el){el.disabled=el.dataset.quoteWasDisabled==='1';delete el.dataset.quoteWasDisabled;}); }
+        runServer('webSubmitInsuranceQuoteRequest',[payload],function(data){
+          finish();
+          if (!data || data.ok !== true || !data.requestId) { fail(data && data.message || 'ยังยืนยันการบันทึกไม่ได้ กรุณาลองส่งอีกครั้ง'); return; }
+          els.contactMessage.textContent = 'บันทึกคำขอเช็กเบี้ยแล้ว เลขที่ '+data.requestId+' เจ้าหน้าที่จะตรวจสอบและติดต่อกลับเพื่อเสนอราคา';
+          els.contactMessage.className = 'form-message success'; els.contactButton.disabled = true;
+          showQuoteLineLink(data.requestId);
+          // Keep the key and contact values until a deliberate reset; retries cannot create a second request.
+        },function(error){finish();fail(error && error.message || 'ส่งไม่สำเร็จ กรุณาลองใหม่');});
+      }
+      els.resetButton.addEventListener('click',function(){ if(quoteSubmissionPending)return;hideQuoteLineLink();quoteSubmissionKey=null;els.contactForm.reset();els.contactMessage.textContent='';els.contactButton.disabled=false; });
+      els.companyOptions.addEventListener('change', onCompanyPreferenceChange); els.category.addEventListener('change', onCategoryChange); els.make.addEventListener('change', onMakeChange); els.year.addEventListener('change', onYearChange); els.model.addEventListener('change', onModelChange); els.submodel.addEventListener('change', onSubmodelChange); els.province.addEventListener('change', onBasicChange); els.usage.addEventListener('change', onBasicChange); els.modification.addEventListener('change', onBasicChange); els.coverageType.addEventListener('change', function () { els.findButton.disabled = !els.coverageType.value; updateFindButtonLabel(); }); els.form.addEventListener('submit', submitCheck); els.resetButton.addEventListener('click', resetAll); els.contactForm.addEventListener('submit', submitContact); els.resultsBody.addEventListener('click', function (event) { var button = event.target.closest('.rate-contact'); if (!button) return; state.selectedRate = state.rates.filter(function (rate) { return rate.rateId === button.dataset.rateId; })[0] || null; showContact(); }); els.compareButton.addEventListener('click', renderComparison);
+      loadOptions();
+    }());
+  </script>
+<script id="pp-check-form-scroll-v2">(function(){if(window.__ppCheckFormScrollV2)return;window.__ppCheckFormScrollV2=true;document.addEventListener("click",function(event){var link=event.target.closest&&event.target.closest('a[href="#checkForm"]');if(!link)return;var target=document.getElementById("checkForm")||document.querySelector("#checkForm, main");if(!target)return;event.preventDefault();target.scrollIntoView({behavior:"smooth",block:"start"});if(window.history&&history.replaceState)history.replaceState(null,"","#checkForm");},true);})();</script>
+<!-- Package eligibility patch retained in unchanged Index.html; inactive in quote-request TEST. -->
+
+<script>
+(function () {
+  'use strict';
+
+  var category = document.getElementById('vehicleCategory');
+  var usage = document.getElementById('usageType');
+  var modification = document.getElementById('modification');
+  var modificationField = document.getElementById('modificationField');
+
+
+  if (!category || !usage || !modification || !modificationField) return;
+
+  function relabelCategory() {
+    Array.prototype.forEach.call(category.options, function (option) {
+      if (option.value === 'รถยนต์นั่งส่วนบุคคล') {
+        option.textContent = 'รถยนต์นั่ง / รถเก๋ง / SUV';
+      }
+    });
+  }
+
+  function syncUsage(isPickup) {
+    Array.prototype.forEach.call(usage.options, function (option) {
+      if (!option.hasAttribute('data-pp-original-text')) {
+        option.setAttribute('data-pp-original-text', option.textContent);
+      }
+
+      var originalText = option.getAttribute('data-pp-original-text') || option.textContent;
+      var allowed = !isPickup ||
+        option.value === '' ||
+        option.value === 'ส่วนบุคคล' ||
+        option.value === 'รถพาณิชย์';
+
+      option.textContent = isPickup && option.value === 'รถพาณิชย์'
+        ? 'เพื่อการพาณิชย์'
+        : originalText;
+      option.hidden = !allowed;
+      option.disabled = !allowed;
+    });
+
+    if (isPickup &&
+        usage.value !== '' &&
+        usage.value !== 'ส่วนบุคคล' &&
+        usage.value !== 'รถพาณิชย์') {
+      usage.value = '';
+    }
+  }
+
+  function syncModificationOptions() {
+    var wanted = [
+      { value: '', text: 'เลือกลักษณะรถและการต่อเติม' },
+      { value: 'ไม่มี', text: 'ไม่มี' },
+      { value: 'คอก/แซง/รั้ว', text: 'คอก/แซง/รั้ว' },
+      { value: 'ตู้แห้ง', text: 'ตู้แห้ง' },
+      { value: 'ตู้ทึบ', text: 'ตู้ทึบ' },
+      { value: 'ตู้เย็น', text: 'ตู้เย็น' },
+      { value: 'ไม่แน่ใจ', text: 'ไม่แน่ใจ' }
+    ];
+
+    var currentSignature = Array.prototype.map.call(modification.options, function (option) {
+      return option.value + '|' + option.textContent;
+    }).join('||');
+    var wantedSignature = wanted.map(function (item) {
+      return item.value + '|' + item.text;
+    }).join('||');
+
+    if (currentSignature !== wantedSignature) {
+      var currentValue = modification.value;
+      modification.innerHTML = '';
+      wanted.forEach(function (item) {
+        var option = document.createElement('option');
+        option.value = item.value;
+        option.textContent = item.text;
+        modification.appendChild(option);
+      });
+      modification.value = wanted.some(function (item) {
+        return item.value === currentValue;
+      }) ? currentValue : '';
+    }
+  }
+
+  function syncVehicleBranch() {
+    relabelCategory();
+    syncModificationOptions();
+
+    var isPassenger = category.value === 'รถยนต์นั่งส่วนบุคคล';
+    var isPickup = category.value === 'รถกระบะ';
+
+    syncUsage(isPickup);
+
+    if (isPassenger) {
+      modification.value = 'ไม่มี';
+      modificationField.classList.add('hidden');
+    } else if (isPickup) {
+      modificationField.classList.remove('hidden');
+      modification.disabled = false;
+    }
+  }
+
+  category.addEventListener('change', function () {
+    window.setTimeout(syncVehicleBranch, 0);
+  });
+
+  var observer = new MutationObserver(function () {
+    window.setTimeout(syncVehicleBranch, 0);
+  });
+  observer.observe(category, { childList: true });
+  observer.observe(usage, { childList: true });
+  observer.observe(modification, { childList: true });
+
+  syncVehicleBranch();
+}());
+</script>
+<script>
+(function () {
+  var usageField = document.getElementById('usageType');
+  var modificationField = document.getElementById('modificationField');
+  var provinceField = document.getElementById('registrationProvince');
+  if (!usageField || !modificationField || !provinceField) return;
+  var usageWrap = usageField.closest('.field');
+  var provinceWrap = provinceField.closest('.field');
+  var container = usageWrap && usageWrap.parentElement;
+  if (!usageWrap || !provinceWrap || !container || modificationField.parentElement !== container || provinceWrap.parentElement !== container) return;
+  container.insertBefore(usageWrap, provinceWrap);
+  container.insertBefore(modificationField, provinceWrap);
+}());
+</script>
+<script>
+  (function(){var s=document.getElementById('modification');if(!s)return;function f(){Array.prototype.forEach.call(s.options,function(o){var v=String(o.value||'').trim(),t=String(o.textContent||'').trim();if(v==='คอก/แซง/รั้ว'||t==='คอก/แซง/รั้ว')o.textContent='คอก/รั้ว';if(v==='ตู้ทึบ'||t==='ตู้ทึบ'){o.hidden=true;o.disabled=true;if(s.value==='ตู้ทึบ')s.value='';}});}f();window.setTimeout(f,500);}());
+  </script>
+<script>
+    window.__ppUsageOption=new Function('o',"var k=window.__ppUsageAllowed.indexOf(o.value)>=0;o.hidden=!k;o.disabled=!k;if(o.value==='รถพาณิชย์')o.textContent='เพื่อการพาณิชย์';");
+    var c=document.getElementById('vehicleCategory'),u=document.getElementById('usageType');
+    var f=new Function("var a=c.value==='รถยนต์นั่งส่วนบุคคล'?['','ส่วนบุคคล','รถพาณิชย์','รถรับจ้างสาธารณะ/แท็กซี่','App Car','ไม่แน่ใจ']:c.value==='รถกระบะ'?['','ส่วนบุคคล','รถพาณิชย์','ไม่แน่ใจ']:c.value==='รถตู้'?['','ส่วนบุคคล','รถพาณิชย์','ไม่แน่ใจ']:c.value==='รถบัส'?['','รถพาณิชย์','ไม่แน่ใจ']:c.value==='รถบรรทุก'?['','รถพาณิชย์','ขนส่งสินค้า','ไม่แน่ใจ']:c.value==='รถจักรยานยนต์'?['','ส่วนบุคคล','รถพาณิชย์','ขนส่งสินค้า','ไม่แน่ใจ']:c.value==='รถเพื่อการเกษตร / เครื่องจักรกลการเกษตร'?['','รถพาณิชย์','ขนส่งสินค้า','ไม่แน่ใจ']:[''];window.__ppUsageAllowed=a;Array.prototype.forEach.call(u.options,window.__ppUsageOption);if(a.indexOf(u.value)<0)u.value='';");
+    c&&u&&f();c&&c.addEventListener('change',f);u&&u.addEventListener('change',f);window.setTimeout(f,500);
+    </script>
+<script>
+      var pu=document.getElementById('usageType');
+      var pf=function(){Array.prototype.forEach.call(pu.options,function(o){var k=o.value===''||o.value==='ส่วนบุคคล'||o.value==='รถพาณิชย์';o.hidden=!k;o.disabled=!k;if(o.value==='รถพาณิชย์')o.textContent='รับจ้าง/เพื่อการพาณิชย์';});};if(pu.value!=='ส่วนบุคคล'&&pu.value!=='รถพาณิชย์')pu.value='';
+      pu&&pf();pu&&window.setTimeout(pf,500);
+      </script>
+<script>
+        var pu2=document.getElementById('usageType');
+        var pf2=new Function("Array.prototype.forEach.call(pu2.options,function(o){var k=o.value===''||o.value==='ส่วนบุคคล'||o.value==='รถพาณิชย์';o.hidden=!k;o.disabled=!k;if(o.value==='รถพาณิชย์')o.textContent='รับจ้าง/เพื่อการพาณิชย์';});if(pu2.value!=='ส่วนบุคคล'&&pu2.value!=='รถพาณิชย์')pu2.value='';");
+        pu2&&pf2();pu2&&window.setTimeout(pf2,500);
+        </script>
+<script id="pp-steps-structure-fix-script">
+(function(){
+  function fixInsuranceSteps(){
+    var wrap=document.querySelector('.steps-wrap');
+    var container=wrap && wrap.querySelector('.steps');
+    if(!wrap || !container) return;
+    Array.prototype.slice.call(wrap.children).forEach(function(child){
+      if(child.classList && child.classList.contains('step')){
+        container.appendChild(child);
+      }
+    });
+    Array.prototype.slice.call(container.childNodes).forEach(function(node){
+      if(node.nodeType===3 && node.textContent.trim()==='p>') node.remove();
+    });
+    Array.prototype.slice.call(wrap.childNodes).forEach(function(node){
+      if(node.nodeType===3 && node.textContent.trim()==='p>') node.remove();
+    });
+    wrap.classList.add('pp-steps-structure-fixed');
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',fixInsuranceSteps);
+  }else{
+    fixInsuranceSteps();
+  }
+})();
+</script>
+<script id="pp-company-name-hard-fix-v2-script">
+(function(){
+  function ppForceCompanyNameSize(){
+    var names=document.querySelectorAll('.company-choice.company-logo-card .pp-company-name');
+    Array.prototype.forEach.call(names,function(name){
+      name.style.setProperty('font-size','11px','important');
+      name.style.setProperty('line-height','1.2','important');
+      name.style.setProperty('font-weight','600','important');
+      name.style.setProperty('min-height','36px','important');
+      name.style.setProperty('height','auto','important');
+      name.style.setProperty('max-height','none','important');
+      name.style.setProperty('overflow','visible','important');
+      name.style.setProperty('text-align','center','important');
+      name.style.setProperty('overflow-wrap','anywhere','important');
+    });
+  }
+  ppForceCompanyNameSize();
+  if(!window.__ppCompanyNameHardFixV2){
+    window.__ppCompanyNameHardFixV2=setTimeout(ppForceCompanyNameSize,300);
+  }
+})();
+</script>
+<script id="pp-hide-company-names-v1-script">
+(function(){
+  function ppHideVisibleCompanyNames(){
+    var cards=document.querySelectorAll('.company-choice.company-logo-card');
+    Array.prototype.forEach.call(cards,function(card){
+      var name=card.querySelector('.pp-company-name');
+      if(!name)return;
+      var text=(name.textContent||'').replace(/s+/g,' ').trim();
+      if(text){
+        card.setAttribute('title',text);
+        card.setAttribute('aria-label',text);
+        var input=card.querySelector('input[type="checkbox"]');
+        if(input)input.setAttribute('title',text);
+      }
+      name.style.setProperty('display','none','important');
+    });
+  }
+  ppHideVisibleCompanyNames();
+  if(!window.__ppHideCompanyNamesV1){
+    window.__ppHideCompanyNamesV1=setTimeout(ppHideVisibleCompanyNames,300);
+  }
+})();
+</script>
+<script id="pp-copy-responsive-v1">
+(function(){
+  if(window.__ppCopyResponsiveV1)return;
+  window.__ppCopyResponsiveV1=true;
+
+  function setText(selector,value){
+    var el=document.querySelector(selector);
+    if(el && el.textContent.trim()!==value)el.textContent=value;
+  }
+  function setTexts(selector,values){
+    var els=Array.prototype.slice.call(document.querySelectorAll(selector));
+    values.forEach(function(value,i){if(els[i] && els[i].textContent.trim()!==value)els[i].textContent=value;});
+  }
+  function replaceLeaf(oldText,newText){
+    var oldValue=String(oldText).replace(/\s+/g," ").trim();
+    document.querySelectorAll("body *").forEach(function(el){
+      if(el.children.length===0 && !/^(SCRIPT|STYLE)$/.test(el.tagName)){
+        var current=(el.textContent||"").replace(/\s+/g," ").trim();
+        if(current===oldValue && current!==newText)el.textContent=newText;
+      }
+    });
+  }
+  function patchCopy(){
+    document.title="ประเมินประกันรถยนต์ | PP Asset Service";
+
+    setTexts(".nav-links a",[
+      "วิธีการใช้งาน",
+      "ประเมินประกันรถยนต์",
+      "ติดต่อผู้เชี่ยวชาญ"
+    ]);
+    setText(".nav-cta","ติดต่อผู้เชี่ยวชาญ");
+
+    var hero=document.querySelector(".hero-inner");
+    if(hero){
+      setText(".hero .eyebrow","ประกันภัยรถยนต์");
+      var heroTitle=document.querySelector(".hero h1");
+      if(heroTitle)heroTitle.innerHTML='<span class="hero-title-line">เช็คเบี้ยประกันภัย</span><span class="hero-accent">เบื้องต้น</span>';
+      setText(".hero .hero-copy","กรอกข้อมูลจากเล่มทะเบียนรถ เพื่อให้เราคัดกรองประเภทประกันภัยและทางเลือกที่เหมาะกับรถของคุณเบื้องต้น");
+      var heroPs=Array.prototype.slice.call(hero.querySelectorAll("p"));
+      var supporting=heroPs.find(function(p){return !p.classList.contains("hero-copy");});
+      if(supporting)supporting.textContent="ใช้เวลาไม่นาน และกรอกเฉพาะข้อมูลที่จำเป็น เพื่อให้เราแนะนำทางเลือกได้ตรงประเด็นยิ่งขึ้น";
+      setTexts(".hero-points > *",[
+        "ใช้ข้อมูลตามเล่มทะเบียนรถ",
+        "กรอกเฉพาะข้อมูลที่จำเป็น",
+        "มีผู้เชี่ยวชาญตรวจสอบและให้คำแนะนำเพิ่มเติม"
+      ]);
+    }
+
+    var steps=Array.prototype.slice.call(document.querySelectorAll(".step"));
+    var stepCopy=[
+      ["กรอกข้อมูลรถ","บอกยี่ห้อ รุ่น และปีรถ เพื่อค้นหาแบบประกันสำหรับรถของคุณ"],
+      ["เลือกความคุ้มครอง","ระบบจะแสดงประเภทที่สอดคล้องกับข้อมูลรถ"],
+      ["รับคำแนะนำจากผู้เชี่ยวชาญ","เจ้าหน้าที่ตรวจสอบรายละเอียดเพิ่มเติมก่อนเสนอทางเลือก"]
+    ];
+    steps.slice(0,3).forEach(function(step,i){
+      var strong=step.querySelector("strong"), p=step.querySelector("p");
+      if(strong)strong.textContent=stepCopy[i][0];
+      if(p)p.textContent=stepCopy[i][1];
+    });
+
+    setText("#checkForm .section-heading .eyebrow","GET STARTED");
+    setText("#checkForm .section-heading h2","เช็คเบี้ยประกันภัยเบื้องต้น");
+    setText("#checkForm .section-heading p","ข้อมูลที่ถูกต้องช่วยให้เราคัดกรองทางเลือกความคุ้มครองได้ตรงกับรถของคุณมากขึ้น");
+    setText("#insuranceForm .form-intro h3","ข้อมูลรถสำหรับการประเมิน");
+    setText("#insuranceForm .form-intro p","กรุณาบอกยี่ห้อ รุ่น และปีรถ เพื่อค้นหาแบบประกันสำหรับรถของคุณ ระบบจะใช้ข้อมูลนี้เพื่อประเมินทางเลือกเบื้องต้นและลดการกรอกข้อมูลที่ไม่จำเป็น");
+    setText("#insuranceForm .required-note","ข้อมูลที่จำเป็น");
+    setText('label[for="registrationProvince"]',"จังหวัดจดทะเบียนรถ");
+    setText("#insuranceForm #coverageHint","เมื่อเลือกข้อมูลรถครบ ระบบจะแสดงประเภทประกันภัยที่สอดคล้องกับข้อมูลรถ");
+    setText("#findButton","ดูทางเลือกประกันภัย");
+    setText("#resetButton","เริ่มใหม่");
+
+    setText("#resultsSection .results-head .eyebrow","PRELIMINARY RESULTS");
+    setText("#resultsSection .results-head h2","ทางเลือกความคุ้มครองเบื้องต้น");
+    var notice=document.querySelector("#resultsSection .notice");
+    if(notice){
+      var spans=notice.querySelectorAll("span");
+      if(spans.length)spans[spans.length-1].textContent="ผลลัพธ์นี้เป็นข้อมูลเบื้องต้น เบี้ยประกันภัยและความคุ้มครองจริงต้องตรวจสอบกับบริษัทประกันภัยก่อนจัดทำกรมธรรม์";
+    }
+    setText(".filters-label","กรองตามวงเงินความคุ้มครอง:");
+    setText(".compare-bar strong","เลือกทางเลือกเพื่อเปรียบเทียบ");
+    setText(".compare-hint","เลือกได้สูงสุด 4 ทางเลือก และเลือกหลายทางเลือกจากบริษัทเดียวกันได้");
+    setText("#compareButton","เปรียบเทียบทางเลือกที่เลือก");
+
+    var contact=document.querySelector(".contact-card");
+    if(contact){
+      setText(".contact-card h3","รับข้อเสนอเบี้ยประกันภัย");
+      setText(".contact-card p","ฝากชื่อและเบอร์โทรศัพท์ไว้ เพื่อให้เจ้าหน้าที่ตรวจสอบเงื่อนไขและติดต่อกลับตามที่คุณสะดวก");
+      setText(".contact-card .primary-btn","ขอให้เจ้าหน้าที่ติดต่อกลับ");
+    }
+
+    replaceLeaf("บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย","บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย");
+    replaceLeaf("เลือกบริษัทที่ต้องการดูแพ็กเกจได้สูงสุด 4 บริษัท หรือเลือก “ไม่ระบุ” เพื่อดูบริษัทที่เข้าเงื่อนไขทั้งหมด","เลือกได้สูงสุด 3 บริษัท หรือเลือก “ไม่ระบุบริษัท” เพื่อดูทางเลือกที่เข้าเงื่อนไขทั้งหมด");
+    replaceLeaf("ไม่ระบุ — ให้เจ้าหน้าที่แนะนำบริษัท","ไม่ระบุบริษัท — แสดงทางเลือกที่เข้าเงื่อนไข");
+  }
+
+  patchCopy();
+  window.setTimeout(patchCopy,700);
+})();
+</script>
+<script id="pp-company-copy-v1">
+(function(){
+  if(window.__ppCompanyCopyV1)return;
+  window.__ppCompanyCopyV1=true;
+  function patchCompanyCopy(){
+    var field=document.getElementById("companyPreferenceField");
+    if(field){
+      var label=field.querySelector(":scope > label");
+      if(label){
+        var optional=label.querySelector(".optional");
+        Array.prototype.slice.call(label.childNodes).forEach(function(node){
+          if(node.nodeType===3)node.textContent="";
+        });
+        label.insertBefore(document.createTextNode("บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย "),label.firstChild||null);
+        if(optional)optional.textContent="(เลือกได้สูงสุด 3 บริษัท หรือไม่ระบุ)";
+      }
+      var options=document.getElementById("companyOptions");
+      if(options)options.setAttribute("aria-label","บริษัทประกันภัยที่ต้องการทราบค่าเบี้ย");
+    }
+  }
+  patchCompanyCopy();
+  window.setTimeout(patchCompanyCopy,700);
+})();
+</script>
+<script id="pp-original-logo-source-v4">
+(function(){
+  if(window.__ppOriginalLogoV4)return;
+  window.__ppOriginalLogoV4=true;
+  var base="https://insurance.ppassetservice.com/assets/insurance-network/originals/";
+  var map={
+    "วิริยะ ประกันภัย":"01-viriyah.png",
+    "คุ้มภัยโตเกียวมารีน ประกันภัย":"02-tokio-marine.png",
+    "กรุงเทพประกันภัย":"03-bangkok-insurance.png",
+    "ธนชาต ประกันภัย":"04-thanachart.png",
+    "เมืองไทย ประกันภัย":"05-muang-thai.png",
+    "ชับบ์สามัคคีประกันภัย":"06-chubb.png",
+    "เออร์โก ประกันภัย":"07-ergo.png",
+    "ทิพย ประกันภัย":"08-dhipaya.png",
+    "ไทยวิวัฒน์ ประกันภัย":"09-thaivivat.png",
+    "ไอโออิ กรุงเทพ ประกันภัย":"10-aioi-bangkok.png",
+    "กรุงไทยพานิช ประกันภัย":"11-kpi.png",
+    "ซมโปะ ประกันภัย":"12-sompo.png",
+    "เทเวศ ประกันภัย":"13-deves.png",
+    "ไทยไพบูลย์ ประกันภัย":"14-tpb.png",
+    "นวกิจ ประกันภัย":"15-nawakit.png",
+    "ฟอลคอน ประกันภัย":"16-falcon.png",
+    "สหมงคล ประกันภัย":"17-tgia.png",
+    "อลิอันซ์ อยุธยา ประกันภัย":"18-allianz.png",
+    "อินทร ประกันภัย":"19-indara.png",
+    "เอ็มเอสไอจี ประกันภัย":"20-msig.png",
+    "เอไอจี ประกันภัย":"21-aig.png",
+    "แอกซ่า ประกันภัย":"22-axa.png"
+  };
+  var names=Object.keys(map),preloadStarted=false,finished=false,observer=null;
+  function addStyle(){
+    if(document.getElementById("pp-original-logo-style-v4"))return;
+    var s=document.createElement("style");
+    s.id="pp-original-logo-style-v4";
+    s.textContent=".company-choice.company-logo-card{position:relative;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important;min-height:132px!important;padding:16px 12px!important;text-align:center!important}.company-choice.company-logo-card input[type=checkbox]{position:absolute!important;left:14px!important;top:14px!important;width:18px!important;height:18px!important;margin:0!important;z-index:3!important}.company-choice.company-logo-card .pp-logo-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:100px;width:100%}.company-choice.company-logo-card .pp-company-logo{display:block;width:92px;height:56px;object-fit:contain;object-position:center;margin:0 auto;visibility:hidden;opacity:0;transition:none!important}.company-choice.company-logo-card .pp-company-name{display:block;font-size:14px;font-weight:600;line-height:1.35;color:inherit;text-align:center;max-width:100%}.company-choice.company-logo-card:has(input:checked){border-color:rgba(132,255,77,.9)!important;box-shadow:0 0 0 2px rgba(132,255,77,.16),0 10px 26px rgba(0,0,0,.12)!important}.company-choice.company-logo-card.pp-best-seller-card,.company-choice.company-logo-card.pp-wow-card{position:relative!important}.company-choice.company-logo-card>.pp-best-seller-badge,.company-choice.company-logo-card>.pp-wow-badge{position:absolute!important;top:8px!important;right:8px!important;z-index:4!important;display:inline-flex!important;align-items:center!important;gap:3px!important;padding:3px 8px!important;border-radius:999px!important;font-size:11px!important;font-weight:800!important;line-height:1.2!important;white-space:nowrap!important}.company-choice.company-logo-card>.pp-best-seller-badge{background:#9CFF5B!important;color:#06101f!important}.company-choice.company-logo-card>.pp-wow-badge{background:#550075!important;color:#fff!important}";
+    document.head.appendChild(s);
+  }
+  function nameOf(el){
+    return [el.getAttribute("data-company-name")||"",el.getAttribute("title")||"",el.getAttribute("aria-label")||"",el.getAttribute("value")||"",el.textContent||""].join(" ").replace(/\s+/g," ").trim();
+  }
+  function buildCards(){
+    var found=0;
+    Array.prototype.forEach.call(document.querySelectorAll("label.company-choice"),function(l){
+      var input=l.querySelector("input[data-company-name]"),name=input&&input.getAttribute("data-company-name"),file=map[name];
+      if(!file)return;
+      found++;
+      var wrap=l.querySelector(".pp-logo-wrap"),old=l.querySelector("span:not(.pp-company-name)")||l.querySelector("span");
+      if(!wrap&&old){
+        wrap=document.createElement("div");wrap.className="pp-logo-wrap";
+        var img=document.createElement("img");img.className="pp-company-logo";img.alt=name+" โลโก้";img.loading="eager";img.decoding="async";img.referrerPolicy="no-referrer";
+        var tx=document.createElement("span");tx.className="pp-company-name";tx.textContent=(old.textContent||name).trim();
+        wrap.appendChild(img);wrap.appendChild(tx);old.style.display="none";l.appendChild(wrap);
+      }
+      if(wrap){
+        var image=wrap.querySelector("img.pp-company-logo");
+        if(image){image.dataset.ppOriginalSource=base+file;image.style.visibility="hidden";image.style.opacity="0";}
+        l.classList.add("company-logo-card");
+      }
+    });
+    return found;
+  }
+  function orderCards(){
+    var wrap=document.getElementById("companyOptions");if(!wrap)return;
+    var priority=[["ไอโออิ",9],["วิริยะ",0],["โตเกียวมารีน",1],["กรุงเทพ",2],["ธนชาต",3],["เมืองไทย",4],["ชับบ์",5],["เออร์โก",6],["ทิพย",7],["ไทยวิวัฒน์",8],["กรุงไทยพานิช",10],["ซมโปะ",11],["เทเวศ",12],["ไทยไพบูลย์",13],["นวกิจ",14],["ฟอลคอน",15],["สหมงคล",16],["อลิอันซ์",17],["อินทร",18],["เอ็มเอสไอจี",19],["เอไอจี",20],["แอกซ่า",21]];
+    var children=Array.prototype.slice.call(wrap.children);
+    children.forEach(function(el,i){if(!el.dataset.ppOriginalOrder)el.dataset.ppOriginalOrder=String(i);});
+    function score(el){if(el.classList.contains("company-none")||el.querySelector("[data-no-preference]"))return -1;var n=nameOf(el);for(var i=0;i<priority.length;i++)if(n.indexOf(priority[i][0])!==-1)return priority[i][1];return 100+Number(el.dataset.ppOriginalOrder||0);}
+    children.sort(function(a,b){var sa=score(a),sb=score(b);return sa===sb?Number(a.dataset.ppOriginalOrder||0)-Number(b.dataset.ppOriginalOrder||0):sa-sb;});
+    children.forEach(function(el){wrap.appendChild(el);});
+  }
+  function applyBadges(){
+    var wrap=document.getElementById("companyOptions");if(!wrap)return;
+    Array.prototype.slice.call(wrap.children).forEach(function(card){
+      var n=nameOf(card),top=!card.classList.contains("company-none")&&!card.querySelector("[data-no-preference]")&&["วิริยะ","โตเกียว","กรุงเทพ","ธนชาต","เมืองไทย"].some(function(k){return n.indexOf(k)!==-1;})&&n.indexOf("ไอโออิ")===-1;
+      var b=card.querySelector(":scope > .pp-best-seller-badge");
+      if(top){card.classList.add("pp-best-seller-card");if(!b){b=document.createElement("span");b.className="pp-best-seller-badge";b.setAttribute("aria-label","ขายดี");b.innerHTML="<span class=\"pp-best-seller-star\" aria-hidden=\"true\">★</span><span>ขายดี</span>";card.appendChild(b);}}else{card.classList.remove("pp-best-seller-card");if(b)b.remove();}
+      var chubb=n.indexOf("ชับบ์")!==-1||n.indexOf("CHUBB")!==-1,w=card.querySelector(":scope > .pp-wow-badge");
+      if(chubb){card.classList.add("pp-wow-card");if(!w){w=document.createElement("span");w.className="pp-wow-badge";w.setAttribute("role","status");w.setAttribute("aria-label","WOW");w.textContent="WOW";card.appendChild(w);}}else{card.classList.remove("pp-wow-card");if(w)w.remove();}
+    });
+  }
+  function reveal(){
+    if(finished)return;
+    finished=true;
+    if(observer)observer.disconnect();
+    orderCards();applyBadges();
+    Array.prototype.forEach.call(document.querySelectorAll("label.company-choice"),function(l){
+      var input=l.querySelector("input[data-company-name]"),name=input&&input.getAttribute("data-company-name"),file=map[name],img=l.querySelector("img.pp-company-logo");
+      if(file&&img){img.src=base+file;img.style.visibility="visible";img.style.opacity="1";}
+    });
+  }
+  function preload(){
+    if(preloadStarted)return;
+    if(buildCards()<names.length)return;
+    preloadStarted=true;
+    if(observer)observer.disconnect();
+    var pending=names.length,doneOnce=false;
+    function settled(){pending--;if(pending<=0&&!doneOnce){doneOnce=true;reveal();}}
+    names.forEach(function(name){var im=new Image();im.onload=settled;im.onerror=settled;im.src=base+map[name];});
+    window.setTimeout(function(){if(!doneOnce){doneOnce=true;reveal();}},5000);
+  }
+  function run(){if(finished)return;addStyle();buildCards();preload();}
+  observer=new MutationObserver(run);
+  observer.observe(document.documentElement||document.body,{childList:true,subtree:true});
+  run();
+  [200,500,900,1400,2200].forEach(function(ms){window.setTimeout(run,ms);});
+})();
+</script>
+<style id="pp-company-grid-layout-v1">#companyOptions.company-options{grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:12px!important;padding:16px!important}#companyOptions.company-options>.company-choice.company-logo-card{min-height:160px!important;padding:16px 10px!important}#companyOptions.company-options>.company-choice.company-logo-card .pp-logo-wrap{min-height:112px!important}#companyOptions.company-options>.company-choice.company-logo-card .pp-company-logo{width:92px!important;height:72px!important}@media (max-width:1200px){#companyOptions.company-options{grid-template-columns:repeat(5,minmax(0,1fr))!important}}@media (max-width:900px){#companyOptions.company-options{grid-template-columns:repeat(3,minmax(0,1fr))!important}}@media (max-width:600px){#companyOptions.company-options{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media (max-width:420px){#companyOptions.company-options{grid-template-columns:1fr!important}}</style><style id="pp-company-square-name-v1">#companyOptions.company-options>.company-choice.company-logo-card{aspect-ratio:1/1!important;min-height:0!important;height:auto!important;box-sizing:border-box!important;padding:14px 10px!important;overflow:visible!important}#companyOptions.company-options>.company-choice.company-logo-card .pp-logo-wrap{min-height:0!important;flex:1 1 auto!important;gap:6px!important;justify-content:center!important}#companyOptions.company-options>.company-choice.company-logo-card .pp-company-logo{width:72px!important;height:72px!important;flex:0 0 auto!important}#companyOptions.company-options>.company-choice.company-logo-card .pp-company-name{font-size:10px!important;font-weight:600!important;line-height:1.1!important;white-space:nowrap!important;letter-spacing:-.25px!important;display:block!important;width:150%!important;max-width:none!important;margin:0 -25%!important;transform:scaleX(.55)!important;transform-origin:center center!important}</style><style id="pp-chubb-wow-purple-v1">#companyOptions>label.pp-wow-card{border-color:#550075!important;box-shadow:0 0 0 1px rgba(85,0,117,.22),0 0 18px rgba(85,0,117,.42),0 4px 12px rgba(85,0,117,.16)!important}#companyOptions>label.pp-wow-card>.pp-wow-badge{background:#550075!important;color:#fff!important;border-color:#550075!important;box-shadow:0 0 0 1px rgba(85,0,117,.65),0 2px 8px rgba(85,0,117,.38)!important}</style><style id="pp-chubb-wow-green-frame-v1">#companyOptions>label.pp-wow-card{border-color:#9CFF5B!important;box-shadow:0 0 0 1px rgba(156,255,91,.65),0 0 18px rgba(156,255,91,.55),0 4px 12px rgba(156,255,91,.18)!important}</style><style id="pp-five-best-seller-green-frame-v1">#companyOptions>label.pp-best-seller-card{border-color:#9CFF5B!important;box-shadow:0 0 0 1px rgba(156,255,91,.65),0 0 18px rgba(156,255,91,.55),0 4px 12px rgba(156,255,91,.18)!important}#companyOptions>label.pp-wow-card{border-color:#550075!important;box-shadow:0 0 0 1px rgba(85,0,117,.22),0 0 18px rgba(85,0,117,.42),0 4px 12px rgba(85,0,117,.16)!important}</style><style id="pp-page-blue-unified-v1">:root{--pp-page-blue:#1266D9!important;--blue-700:#1266D9!important;--blue-600:#1266D9!important;--blue-500:#1266D9!important}html body .hero-button-primary,html body .primary-btn,html body .nav-cta,html body .brand-mark,html body .step-num,html body #howItWorks .steps .step .step-num{background:#1266D9!important}html body .hero-accent{background:#1266D9!important;text-shadow:0 0 34px rgba(18,102,217,.22)!important}html body .brand-name small,html body .nav-links a:hover,html body .eyebrow,html body .hero-points span::before,html body .hero-brand{color:#1266D9!important}html body .hero-button-primary{box-shadow:0 8px 20px rgba(18,102,217,.28)!important}html body .hero::after{border-color:rgba(18,102,217,.24)!important;box-shadow:0 0 0 42px rgba(18,102,217,.05),0 0 0 84px rgba(18,102,217,.035)!important}html body #howItWorks .steps .step{border-color:rgba(18,102,217,.52)!important;box-shadow:0 0 0 1px rgba(18,102,217,.18),0 0 18px rgba(18,102,217,.24)!important}</style>
+<!-- PP insurance navy-blue TEST presentation only -->
+<style id="pp-insurance-navy-blue-test">
+:root{--insurance-navy:#01122B;--insurance-blue:#1052A3;--insurance-sky:#1266D9;--insurance-white:#FFFFFF;--lime-500:#1266D9;--lime-600:#1266D9;}
+html body{background:#01122B!important;color:#fff!important;}
+html body .topbar{background:rgba(1,18,43,.97)!important;border-bottom:1px solid rgba(18,102,217,.2)!important;}
+html body .brand-name,html body .nav-links a{color:#fff!important;}
+html body .brand-mark,html body .nav-cta{background:#1266D9!important;color:#01122B!important;}
+html body #top.hero{background:radial-gradient(ellipse at 95% 8%,rgba(16,82,163,.35),transparent 45%),linear-gradient(135deg,#01122B,#071B34)!important;border:1px solid rgba(18,102,217,.23)!important;border-radius:28px!important;box-shadow:none!important;overflow:hidden!important;}
+html body #top .hero-inner{position:relative!important;display:block!important;padding:60px 64px 48px!important;}
+html body #top .service-pill{display:inline-flex!important;background:rgba(1,18,43,.7)!important;color:#c3d6e7!important;border-color:rgba(18,102,217,.3)!important;}
+html body #top .service-dot{background:#1266D9!important;box-shadow:0 0 16px rgba(18,102,217,.5)!important;}
+html body #top .hero-brand{color:#1266D9!important;margin-top:34px!important;font-weight:800!important;letter-spacing:.06em!important;}
+html body #top h1{color:#fff!important;font-size:clamp(36px,4.8vw,66px)!important;line-height:1.2!important;max-width:1000px!important;margin:14px 0 22px!important;text-align:left!important;}
+html body #top .hero-title-line,html body #top .hero-accent{display:block!important;}
+html body #top .hero-accent{color:#1266D9!important;background:none!important;-webkit-text-fill-color:#1266D9!important;text-shadow:none!important;}
+html body #top .hero-copy{color:#b7cada!important;font-size:18px!important;line-height:1.8!important;max-width:880px!important;}
+html body #top .hero-actions{justify-content:flex-start!important;margin:30px 0 40px!important;gap:14px!important;}
+html body #top .hero-button-primary,html body .primary-btn{background:#1266D9!important;color:#01122B!important;border-color:#1266D9!important;font-weight:800!important;box-shadow:0 8px 30px rgba(18,102,217,.17)!important;}
+html body #top .hero-button-secondary{background:transparent!important;border:1px solid rgba(18,102,217,.45)!important;color:#d3efff!important;}
+html body #top .steps-wrap{padding:0!important;margin:0!important;}
+html body #top .steps{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;max-width:1000px!important;}
+html body #top .step{display:flex!important;flex-direction:column!important;align-items:flex-start!important;text-align:left!important;background:#071B34!important;border:1px solid rgba(18,102,217,.23)!important;border-radius:20px!important;padding:20px!important;box-shadow:none!important;gap:10px!important;}
+html body #top .step-num{display:flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:44px!important;border-radius:14px!important;background:rgba(18,102,217,.1)!important;color:#1266D9!important;border:1px solid rgba(18,102,217,.35)!important;}
+html body #top .step strong{color:#fff!important;font-size:17px!important;}
+html body #top .step p{color:#b7cada!important;margin:0!important;line-height:1.7!important;}
+html body .section-heading h2,html body .section-heading p{color:#fff!important;}
+html body .eyebrow{color:#1266D9!important;}
+html body .form-card,html body .contact-card{background:#fff!important;color:#01122B!important;border:1px solid #c5dcec!important;box-shadow:none!important;}
+html body .form-card label,html body .contact-card label,html body .contact-card h3,html body .form-intro h3{color:#01122B!important;}
+html body .form-card .hint,html body .contact-card p,html body .form-intro p{color:#405c76!important;}
+html body .control:focus{border-color:#1052A3!important;outline:2px solid rgba(16,82,163,.18)!important;}
+html body input[type=checkbox]{accent-color:#1052A3!important;}
+html body .primary-btn:disabled{opacity:.65!important;box-shadow:none!important;}
+@media(max-width:700px){html body #top .hero-inner{padding:32px 22px!important;}html body #top .hero-brand{font-size:13px!important;}html body #top .hero-copy{font-size:16px!important;}html body #top .steps{grid-template-columns:1fr!important;}html body #top .hero-actions{flex-direction:column!important;}html body #top .hero-button{width:100%!important;}}
+</style>
+<script id="pp-insurance-navy-blue-copy-test">
+(function(){
+ function put(selector,text){var el=document.querySelector(selector);if(el && el.textContent!==text)el.textContent=text;}
+ function apply(){
+  var pill=document.querySelector('#top .service-pill');if(pill){Array.from(pill.childNodes).forEach(function(n){if(n.nodeType===3)n.textContent=' พร้อมรับคำขอเช็กเบี้ยประกัน';});}
+  put('#top .hero-title-line','เช็กเบี้ยประกันรถยนต์');
+  put('#top .hero-accent','ให้เจ้าหน้าที่ดูแลคุณ');
+  put('#top .hero-copy','เลือกข้อมูลรถ ประเภทประกัน และบริษัทที่สนใจ แล้วส่งคำขอให้เจ้าหน้าที่ตรวจสอบและติดต่อกลับเพื่อเสนอเบี้ยประกัน');
+  put('#top .hero-button-primary','เริ่มกรอกข้อมูลรถ ↓');
+  var cards=document.querySelectorAll('#top .step');
+  var copy=[['ข้อมูลรถจากเล่มทะเบียน','เลือกประเภทรถ ยี่ห้อ รุ่น ปีจดทะเบียน รุ่นย่อย และจังหวัด'],['เลือกประกันและบริษัท','ระบุประเภทประกันและบริษัทที่สนใจ เพื่อให้เจ้าหน้าที่เช็กเบี้ย'],['เจ้าหน้าที่เสนอเบี้ย','ฝากชื่อและเบอร์โทร แล้วเจ้าหน้าที่จะตรวจสอบและติดต่อกลับ']];
+  cards.forEach(function(card,i){if(!copy[i])return;var title=card.querySelector('strong'),description=card.querySelector('p');if(title)title.textContent=copy[i][0];if(description)description.textContent=copy[i][1];});
+ }
+ apply();setTimeout(apply,850);setTimeout(apply,1600);
+})();
+</script>
+<!-- End PP insurance navy-blue TEST presentation only -->
+
+
+<style id="pp-insurance-glow-layout-v2">
+html body#insuranceQuoteTest .topbar{background:#01122B!important;}
+html body#insuranceQuoteTest .nav{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important;max-width:1280px!important;margin:auto!important;padding:18px 32px!important;}
+html body#insuranceQuoteTest .nav-links{display:flex!important;align-items:center!important;gap:24px!important;}
+html body#insuranceQuoteTest .nav-links a{color:#f3f9ff!important;font-weight:700!important;}
+html body#insuranceQuoteTest .nav-links .nav-cta{background:#1266D9!important;color:#01122B!important;box-shadow:0 0 18px #1266D955!important;border:1px solid #1266D9!important;}
+html body#insuranceQuoteTest #top .hero-inner{padding:60px 32px 48px!important;max-width:1280px!important;margin:auto!important;}
+html body#insuranceQuoteTest #top .hero-brand{color:#1266D9!important;text-shadow:0 0 14px #1266D966!important;}
+html body#insuranceQuoteTest #top h1{font-size:clamp(36px,4.6vw,66px)!important;line-height:1.25!important;}
+html body#insuranceQuoteTest #top .hero-accent{color:#1266D9!important;-webkit-text-fill-color:#1266D9!important;background:none!important;text-shadow:0 0 22px #1266D966!important;}
+html body#insuranceQuoteTest #top .hero-copy{color:#d3e1ee!important;opacity:1!important;}
+html body#insuranceQuoteTest #top .hero-actions{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;align-items:center!important;gap:16px!important;margin:32px 0 44px!important;}
+html body#insuranceQuoteTest #top .hero-button-primary,html body#insuranceQuoteTest #findButton,html body#insuranceQuoteTest #contactButton{background:#1266D9!important;color:#01122B!important;text-shadow:none!important;border:1px solid #1266D9!important;box-shadow:0 0 22px #1266D955,0 8px 26px #1266D922!important;}
+html body#insuranceQuoteTest #top .hero-button-secondary{color:#d7f3ff!important;background:#071B34!important;border:1px solid #1266D9!important;box-shadow:0 0 18px #1266D944!important;}
+html body#insuranceQuoteTest #top .steps{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:1000px!important;gap:16px!important;}
+html body#insuranceQuoteTest #top .step{min-height:178px!important;padding:20px!important;border:1px solid #1266D955!important;background:#091B31!important;border-radius:20px!important;align-items:flex-start!important;gap:10px!important;}
+html body#insuranceQuoteTest #top .step-num{width:46px!important;height:46px!important;background:#102d45!important;color:#1266D9!important;border:1px solid #1266D988!important;box-shadow:0 0 14px #1266D933!important;text-shadow:0 0 8px #1266D988!important;}
+html body#insuranceQuoteTest #top .step strong{color:#fff!important;opacity:1!important;font-size:17px!important;}
+html body#insuranceQuoteTest #top .step p{color:#c6d9e8!important;opacity:1!important;font-size:15px!important;}
+html body#insuranceQuoteTest .form-card,html body#insuranceQuoteTest .contact-card{color:#01122B!important;}
+html body#insuranceQuoteTest .form-card h3,html body#insuranceQuoteTest .form-card label,html body#insuranceQuoteTest .contact-card h3,html body#insuranceQuoteTest .contact-card label{color:#01122B!important;opacity:1!important;}
+html body#insuranceQuoteTest .form-intro p,html body#insuranceQuoteTest .contact-card p,html body#insuranceQuoteTest .hint{color:#36516a!important;opacity:1!important;}
+html body#insuranceQuoteTest .control{color:#01122B!important;background:#fff!important;}
+html body#insuranceQuoteTest .control:disabled{color:#53677a!important;background:#edf2f7!important;opacity:1!important;}
+html body#insuranceQuoteTest #findButton:disabled,html body#insuranceQuoteTest #contactButton:disabled{color:#244256!important;background:#b6dded!important;opacity:1!important;box-shadow:none!important;border-color:#90bdcf!important;}
+html body#insuranceQuoteTest .form-message.success{color:#176137!important;}
+@media(max-width:700px){html body#insuranceQuoteTest .nav{padding:14px 18px!important;flex-wrap:wrap!important;gap:14px!important;}html body#insuranceQuoteTest .nav-links{width:100%!important;gap:14px!important;flex-wrap:wrap!important;font-size:14px!important;}html body#insuranceQuoteTest #top .hero-inner{padding:32px 22px!important;}html body#insuranceQuoteTest #top .steps{grid-template-columns:1fr!important;}html body#insuranceQuoteTest #top .hero-actions{align-items:stretch!important;flex-direction:column!important;}}
+</style>
+<script id="pp-insurance-visible-copy-v2">
+(function(){
+ function set(selector,text){var el=document.querySelector(selector);if(el&&el.textContent!==text)el.textContent=text;}
+ function apply(){
+  set('#findButton','ดำเนินการส่งคำขอเช็กเบี้ย');
+  set('#checkForm .form-intro h3','ข้อมูลรถสำหรับส่งคำขอเช็กเบี้ย');
+  set('#checkForm .form-intro p','เลือกข้อมูลตามเล่มทะเบียนรถ เพื่อให้เจ้าหน้าที่ตรวจสอบและเสนอเบี้ยประกัน');
+  set('#checkForm .section-heading p','กรอกข้อมูลรถ เลือกประกันและบริษัทที่สนใจ แล้วฝากข้อมูลให้เจ้าหน้าที่เสนอเบี้ย');
+ }
+ apply();
+ var root=document.getElementById('checkForm');if(root)new MutationObserver(apply).observe(root,{childList:true,subtree:true});
+})();
+</script>
+
+
+<style id="pp-insurance-dark-single-column-v3">
+html body#insuranceQuoteTest #checkForm .form-card,html body#insuranceQuoteTest #contactSection .contact-card{background:#0B182B!important;color:#F3F7FF!important;border:1px solid #20354C!important;border-radius:26px!important;padding:32px 30px!important;box-shadow:none!important;}
+html body#insuranceQuoteTest #checkForm .fields,html body#insuranceQuoteTest #contactForm .contact-fields{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:24px!important;}
+html body#insuranceQuoteTest #checkForm .field{grid-column:1!important;width:100%!important;min-width:0!important;}
+html body#insuranceQuoteTest #checkForm .field.hidden{display:none!important;}
+html body#insuranceQuoteTest #checkForm .form-intro{border:none!important;padding-bottom:0!important;margin-bottom:30px!important;}
+html body#insuranceQuoteTest #checkForm .form-intro h3,html body#insuranceQuoteTest #contactSection .contact-card h3{color:#F3F7FF!important;font-size:24px!important;}
+html body#insuranceQuoteTest #checkForm label,html body#insuranceQuoteTest #contactSection label{color:#D7E3F0!important;font-weight:700!important;}
+html body#insuranceQuoteTest #checkForm .form-intro p,html body#insuranceQuoteTest #checkForm .hint,html body#insuranceQuoteTest #contactSection .contact-card p,html body#insuranceQuoteTest #checkForm .required-note{color:#AFBED0!important;opacity:1!important;}
+html body#insuranceQuoteTest #checkForm .control,html body#insuranceQuoteTest #contactSection .control{width:100%!important;min-height:62px!important;border-radius:16px!important;background:#081424!important;color:#F3F7FF!important;border:1px solid #2B4058!important;padding:16px 20px!important;font-size:17px!important;font-weight:600!important;color-scheme:dark;}
+html body#insuranceQuoteTest #checkForm .control:disabled{background:#0A192A!important;color:#9AAABD!important;border-color:#21354B!important;opacity:1!important;}
+html body#insuranceQuoteTest #checkForm .control:focus,html body#insuranceQuoteTest #contactSection .control:focus{outline:2px solid #1266D955!important;border-color:#1266D9!important;box-shadow:0 0 18px #1266D922!important;}
+html body#insuranceQuoteTest #contactSection .control::placeholder{color:#9AAABD!important;opacity:1!important;}
+html body#insuranceQuoteTest #checkForm .company-choice{background:#081424!important;border:1px solid #2B4058!important;color:#F3F7FF!important;}
+html body#insuranceQuoteTest #checkForm .company-choice span{color:#F3F7FF!important;}
+html body#insuranceQuoteTest #checkForm .company-choice:has(input:checked){border-color:#1266D9!important;box-shadow:0 0 14px #1266D933!important;}
+html body#insuranceQuoteTest #checkForm .company-selection-note,html body#insuranceQuoteTest #checkForm .status-line{color:#D7E3F0!important;}
+html body#insuranceQuoteTest #contactSection .form-message.success{color:#B8F2D0!important;}
+@media(max-width:700px){html body#insuranceQuoteTest #checkForm .form-card,html body#insuranceQuoteTest #contactSection .contact-card{padding:26px 20px!important;}html body#insuranceQuoteTest #checkForm .fields{gap:22px!important;}}
+</style>
+
+</body>
+<style id="pp-previous-insurance-side-by-side-v1">
+#checkForm .fields > #coverageField,
+#checkForm .fields > #previousInsuranceField {
+  grid-column: span 1 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  align-self: start !important;
+}
+@media (max-width: 800px) {
+  #checkForm .fields > #coverageField,
+  #checkForm .fields > #previousInsuranceField {
+    grid-column: 1 / -1 !important;
+  }
+}
+</style>
+
+<style id="pp-loan-visual-parity-v1">
+/* Shared visual rhythm with PP Asset Loan; Insurance keeps its blue identity. */
+html body #top.hero {
+  width: min(1120px, calc(100% - 28px)) !important;
+  min-height: 430px !important;
+  margin: 26px auto 0 !important;
+  padding: 0 !important;
+  border-radius: 30px !important;
+}
+html body #top .hero-inner {
+  width: auto !important;
+  max-width: none !important;
+  padding: 58px 58px 46px !important;
+}
+html body #top .hero-title-line,
+html body #top .hero-accent { display: block !important; }
+html body #top h1 {
+  max-width: none !important;
+  margin: 10px 0 14px !important;
+  font-size: clamp(44px, 4.6vw, 62px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.03em !important;
+}
+html body #top .hero-accent {
+  color: #1266D9 !important;
+  -webkit-text-fill-color: #1266D9 !important;
+  background: none !important;
+}
+html body #top .hero-copy {
+  max-width: 680px !important;
+  margin: 0 !important;
+  color: #aebbd0 !important;
+  font-size: 17px !important;
+  line-height: 1.85 !important;
+}
+html body #top .hero-actions {
+  width: auto !important;
+  margin: 28px 0 0 !important;
+  padding: 0 !important;
+  gap: 12px !important;
+}
+html body #top .hero-button {
+  width: auto !important;
+  min-height: 48px !important;
+  padding: 0 20px !important;
+  border-radius: 13px !important;
+  font-weight: 900 !important;
+}
+html body #top #howItWorks.steps-wrap {
+  width: min(760px, 100%) !important;
+  margin: 36px 0 0 !important;
+}
+html body #top #howItWorks .steps {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  padding: 0 !important;
+}
+html body #top #howItWorks .step {
+  min-height: 118px !important;
+  padding: 14px 15px !important;
+  color: #aab9cc !important;
+  background: rgba(12,27,50,.58) !important;
+  border: 1px solid rgba(18,102,217,.28) !important;
+  border-radius: 15px !important;
+  box-shadow: none !important;
+}
+html body #top #howItWorks .step-num {
+  width: 38px !important;
+  height: 38px !important;
+  margin: 0 0 10px !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+}
+html body #top #howItWorks .step strong {
+  color: #f6faff !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+}
+html body #top #howItWorks .step p {
+  margin: 3px 0 0 !important;
+  color: #aab9cc !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+html body .main {
+  width: min(1120px, calc(100% - 28px)) !important;
+  margin-top: 46px !important;
+}
+html body #checkForm > .section-heading {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) minmax(280px,520px) !important;
+  align-items: end !important;
+  gap: 6px 20px !important;
+  max-width: none !important;
+  margin: 26px 0 14px !important;
+  padding: 0 4px !important;
+}
+html body #checkForm > .section-heading .eyebrow { grid-column: 1; grid-row: 1; }
+html body #checkForm > .section-heading h2 {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0 !important;
+  font-size: clamp(26px,4vw,36px) !important;
+  letter-spacing: -.02em !important;
+}
+html body #checkForm > .section-heading p {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  max-width: 520px !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  text-align: right !important;
+}
+html body .form-card {
+  border-radius: 26px !important;
+  padding: 34px !important;
+}
+@media (max-width: 760px) {
+  html body #top.hero { min-height: 0 !important; margin-top: 10px !important; border-radius: 22px !important; }
+  html body #top .hero-inner { padding: 32px 22px !important; }
+  html body #top h1 { font-size: 40px !important; }
+  html body #top #howItWorks.steps-wrap { width: 100% !important; margin-top: 26px !important; }
+  html body #top #howItWorks .steps { grid-template-columns: 1fr !important; gap: 9px !important; }
+  html body #top #howItWorks .step { min-height: 0 !important; }
+  html body #checkForm > .section-heading { display: block !important; }
+  html body #checkForm > .section-heading p { margin-top: 8px !important; text-align: left !important; }
+  html body .form-card { padding: 18px 12px !important; border-radius: 20px !important; }
+}
+@media (max-width: 430px) {
+  html body #top .hero-inner { padding: 28px 18px !important; }
+  html body #top h1 { font-size: 32px !important; }
+  html body #top .hero-copy { font-size: 15px !important; }
+  html body #top .hero-actions { align-items: stretch !important; }
+  html body #top .hero-button { width: 100% !important; }
+}
+</style>
+
+<style id="pp-insurance-color-balance-v4">
+html body#insuranceQuoteTest{background:#061324!important;color:#EAF2FC!important;}
+html body#insuranceQuoteTest #top.hero{background:linear-gradient(135deg,#081B32,#061629)!important;border-color:#203C57!important;box-shadow:0 12px 40px #00000022!important;}
+html body#insuranceQuoteTest #top .hero-accent{color:#1266D9!important;-webkit-text-fill-color:#1266D9!important;text-shadow:0 0 24px #1266D933!important;}
+html body#insuranceQuoteTest .eyebrow,html body#insuranceQuoteTest .hero-brand{color:#1266D9!important;}
+html body#insuranceQuoteTest #top .hero-copy,html body#insuranceQuoteTest .section-heading p{color:#BDCCDF!important;}
+html body#insuranceQuoteTest #findButton,html body#insuranceQuoteTest #contactButton,html body#insuranceQuoteTest #top .hero-button-primary{background:#1266D9!important;color:#061629!important;border:1px solid #1266D9!important;opacity:1!important;text-shadow:none!important;box-shadow:0 0 18px #1266D933,0 6px 18px #00000022!important;}
+html body#insuranceQuoteTest #findButton:not(:disabled):hover,html body#insuranceQuoteTest #contactButton:not(:disabled):hover,html body#insuranceQuoteTest #top .hero-button-primary:hover{background:#1266D9!important;box-shadow:0 0 24px #1266D955!important;}
+html body#insuranceQuoteTest #findButton:disabled,html body#insuranceQuoteTest #contactButton:disabled,html body#insuranceQuoteTest #resetButton:disabled{background:#1B3045!important;color:#BDCCDF!important;border:1px solid #36516A!important;opacity:1!important;box-shadow:none!important;text-shadow:none!important;cursor:not-allowed!important;}
+html body#insuranceQuoteTest #resetButton,html body#insuranceQuoteTest #top .hero-button-secondary{background:#10243A!important;color:#DDF3FF!important;border:1px solid #4880A3!important;box-shadow:none!important;}
+html body#insuranceQuoteTest #resetButton:not(:disabled):hover,html body#insuranceQuoteTest #top .hero-button-secondary:hover{background:#18364F!important;border-color:#1266D9!important;}
+html body#insuranceQuoteTest #top #howItWorks .step{background:#0B1C30!important;border-color:#26445F!important;box-shadow:none!important;}
+html body#insuranceQuoteTest #top #howItWorks .step-num{background:#1266D9!important;color:#061629!important;border:1px solid #1266D9!important;box-shadow:0 0 14px #1266D933!important;}
+html body#insuranceQuoteTest #contactSection .form-message{color:#BDCCDF!important;}
+html body#insuranceQuoteTest #contactSection .form-message.success{color:#1266D9!important;}
+html body#insuranceQuoteTest #contactSection .form-message.error{color:#FFB4BD!important;}
+html body#insuranceQuoteTest #checkForm .control:focus-visible,html body#insuranceQuoteTest #contactSection .control:focus-visible,html body#insuranceQuoteTest button:focus-visible,html body#insuranceQuoteTest a:focus-visible{outline:2px solid #1266D9!important;outline-offset:3px!important;}
+html body#insuranceQuoteTest input[type=checkbox]{accent-color:#1266D9;}
+</style>
+<style id="pp-insurance-cyan-glow-v5">
+html body#insuranceQuoteTest #top .hero-accent{
+  color:#1266D9!important;
+  -webkit-text-fill-color:#1266D9!important;
+  text-shadow:0 0 12px #1266D966,0 0 30px #1266D955!important;
+}
+html body#insuranceQuoteTest #findButton:not(:disabled),
+html body#insuranceQuoteTest #contactButton:not(:disabled),
+html body#insuranceQuoteTest #top .hero-button-primary{
+  box-shadow:0 0 12px #1266D966,0 0 30px #1266D944!important;
+}
+html body#insuranceQuoteTest #top .hero-button-secondary{
+  border-color:#1266D9!important;
+  box-shadow:0 0 16px #1266D933!important;
+}
+html body#insuranceQuoteTest #top #howItWorks .step-num{
+  box-shadow:0 0 12px #1266D966,0 0 24px #1266D944!important;
+}
+</style>
+
+<script id="pp-insurance-next-field-scroll-v1">
+(function () {
+  if (window.__ppInsuranceNextFieldScroll) return;
+  window.__ppInsuranceNextFieldScroll = true;
+
+  var ids = [
+    'vehicleCategory', 'vehicleMake', 'vehicleModel',
+    'vehicleYear', 'vehicleSubmodel', 'usageType',
+    'modification', 'registrationProvince', 'coverageType'
+  ];
+  var form = document.getElementById('insuranceForm');
+  if (!form) return;
+
+  form.addEventListener('change', function (event) {
+    var index = ids.indexOf(event.target.id);
+    if (index < 0 || !event.target.value) return;
+
+    requestAnimationFrame(function () {
+      var next = null;
+      for (var i = index + 1; i < ids.length; i++) {
+        var control = document.getElementById(ids[i]);
+        if (control && !control.disabled &&
+            control.getClientRects().length) {
+          next = control.closest('.field') || control;
+          break;
+        }
+      }
+      if (!next && event.target.id === 'coverageType') {
+        next = document.getElementById('companyPreferenceField');
+      }
+      if (!next) return;
+
+      var bar = document.querySelector('.topbar');
+      var offset = bar ? bar.getBoundingClientRect().height + 20 : 24;
+      var top = next.getBoundingClientRect().top + window.scrollY - offset;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: reduced ? 'auto' : 'smooth'
+      });
+    });
+  });
+})();
+</script>
+
+<style id="pp-insurance-white-logo-cyan-v1">
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice{
+  background:#FFFFFF!important;
+  color:#0A1545!important;
+  border:1px solid #1266D9!important;
+  box-shadow:0 0 12px #1266D944!important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice span{
+  color:#0A1545!important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice:has(input:checked){
+  border:2px solid #1A7CCE!important;
+  box-shadow:0 0 18px #1266D988!important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice .pp-best-seller-badge,
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice .pp-wow-badge{
+  background:#DDF3FF!important;
+  color:#0A1545!important;
+  border:1px solid #1266D9!important;
+  box-shadow:none!important;
+}
+</style>
+
+<style id="pp-insurance-buttons-match-hero-v1">
+html body#insuranceQuoteTest #findButton:not(:disabled){
+  background:#1266D9!important;
+  color:#01122B!important;
+  -webkit-text-fill-color:#01122B!important;
+  border:1px solid #1266D9!important;
+  border-radius:16px!important;
+  text-shadow:none!important;
+  box-shadow:0 0 22px #1266D955,0 8px 26px #1266D922!important;
+}
+html body#insuranceQuoteTest #resetButton{
+  background:#071B34!important;
+  color:#D7F3FF!important;
+  -webkit-text-fill-color:#D7F3FF!important;
+  border:1px solid #1266D9!important;
+  border-radius:16px!important;
+  text-shadow:none!important;
+  box-shadow:0 0 18px #1266D944!important;
+}
+</style>
+
+<style id="pp-insurance-steps-full-width-v1">
+html body#insuranceQuoteTest #top #howItWorks,
+html body#insuranceQuoteTest #top #howItWorks .steps{
+  width:100%!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+}
+html body#insuranceQuoteTest #top #howItWorks .steps{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:16px!important;
+}
+html body#insuranceQuoteTest #top #howItWorks .steps .step{
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  box-sizing:border-box!important;
+}
+@media(max-width:760px){
+  html body#insuranceQuoteTest #top #howItWorks .steps{
+    grid-template-columns:1fr!important;
+  }
+}
+</style>
+<style id="pp-insurance-blue-loan-reference-trial-v1">
+/* Insurance-only trial. Loan source is read-only. Palette uses cyan for text/glow,
+   saturated blue for button fills. Loan shadow geometry is retained. */
+html body#insuranceQuoteTest {
+  --insurance-accent: #42CFFF;
+  --insurance-accent-rgb: 66, 207, 255;
+  --insurance-fill: #1266D9;
+  --insurance-light: #DDF7FF;
+  --lime-500: var(--insurance-accent) !important;
+  --lime-600: #1587E8 !important;
+  --lime-700: #1266D9 !important;
+  --green-rgb: var(--insurance-accent-rgb);
+  --green-200: #DDF7FF;
+  --green-300: #8DE8FF;
+  --green-400: var(--insurance-accent);
+  --green-600: #1587E8;
+  --green-950: #06142E;
+}
+html body#insuranceQuoteTest #top.hero {
+  border-color: rgba(66,207,255,.42) !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,.34),0 0 36px rgba(66,207,255,.18) !important;
+}
+html body#insuranceQuoteTest #top.hero::before {
+  background: radial-gradient(circle,rgba(66,207,255,.18),transparent 68%) !important;
+}
+html body#insuranceQuoteTest #top.hero::after {
+  border-color: rgba(66,207,255,.24) !important;
+  box-shadow: 0 0 0 42px rgba(66,207,255,.05),0 0 0 84px rgba(66,207,255,.035) !important;
+}
+html body#insuranceQuoteTest #top .hero-accent {
+  background: linear-gradient(90deg,#DDF7FF 0%,#42CFFF 48%,#42CFFF 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 34px rgba(66,207,255,.22) !important;
+}
+html body#insuranceQuoteTest .eyebrow,
+html body#insuranceQuoteTest .hero-brand,
+html body#insuranceQuoteTest .brand-name small,
+html body#insuranceQuoteTest .nav-links a:hover,
+html body#insuranceQuoteTest #contactSection .form-message.success {
+  color: #42CFFF !important;
+}
+html body#insuranceQuoteTest .form-card,
+html body#insuranceQuoteTest .contact-card,
+html body#insuranceQuoteTest .rate-card {
+  border-color: rgba(66,207,255,.42) !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,.34),0 0 36px rgba(66,207,255,.18) !important;
+}
+html body#insuranceQuoteTest #top #howItWorks .steps .step {
+  border-color: rgba(66,207,255,.28) !important;
+  box-shadow: inset 0 0 18px rgba(66,207,255,.06),0 0 18px rgba(66,207,255,.06) !important;
+}
+html body#insuranceQuoteTest #findButton:not(:disabled),
+html body#insuranceQuoteTest #contactButton:not(:disabled),
+html body#insuranceQuoteTest #top .hero-button-primary,
+html body#insuranceQuoteTest .nav-cta,
+html body#insuranceQuoteTest .brand-mark,
+html body#insuranceQuoteTest #top #howItWorks .steps .step .step-num {
+  background: linear-gradient(135deg,#1266D9 0%,#1266D9 58%,#1052A3 100%) !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  border-color: #42CFFF !important;
+  text-shadow: none !important;
+  box-shadow: 0 10px 32px rgba(66,207,255,.22),0 0 26px rgba(66,207,255,.14) !important;
+}
+html body#insuranceQuoteTest #findButton:not(:disabled):hover,
+html body#insuranceQuoteTest #contactButton:not(:disabled):hover,
+html body#insuranceQuoteTest #top .hero-button-primary:hover,
+html body#insuranceQuoteTest .nav-cta:hover {
+  background: #1052A3 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 30px rgba(66,207,255,.24),0 10px 30px rgba(66,207,255,.12) !important;
+}
+html body#insuranceQuoteTest #resetButton,
+html body#insuranceQuoteTest #top .hero-button-secondary {
+  background: #071B34 !important;
+  color: #DDF7FF !important;
+  -webkit-text-fill-color: #DDF7FF !important;
+  border-color: #42CFFF !important;
+  box-shadow: inset 0 0 18px rgba(66,207,255,.06),0 0 18px rgba(66,207,255,.06) !important;
+}
+html body#insuranceQuoteTest #checkForm .control:focus,
+html body#insuranceQuoteTest #contactSection .control:focus {
+  border-color: rgba(66,207,255,.72) !important;
+  box-shadow: 0 0 0 3px rgba(66,207,255,.10),0 0 25px rgba(66,207,255,.08) !important;
+}
+html body#insuranceQuoteTest #checkForm .control:focus-visible,
+html body#insuranceQuoteTest #contactSection .control:focus-visible,
+html body#insuranceQuoteTest button:focus-visible,
+html body#insuranceQuoteTest a:focus-visible {
+  outline: 2px solid #42CFFF !important;
+  outline-offset: 3px !important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice {
+  border-color: #1587E8 !important;
+  box-shadow: 0 0 12px rgba(66,207,255,.20) !important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice:has(input:checked) {
+  border-color: #1266D9 !important;
+  box-shadow: 0 0 18px rgba(66,207,255,.40) !important;
+}
+html body#insuranceQuoteTest input[type=checkbox] { accent-color: #1266D9 !important; }
+html body#insuranceQuoteTest #findButton:disabled,
+html body#insuranceQuoteTest #contactButton:disabled,
+html body#insuranceQuoteTest #resetButton:disabled {
+  background: #1B3045 !important;
+  color: #BDCCDF !important;
+  -webkit-text-fill-color: #BDCCDF !important;
+  border-color: #36516A !important;
+  box-shadow: none !important;
+}
+
+</style>
+<style id="pp-insurance-popup-blue-trial-v2">/* Trial v2: popup styles only; no LINE handlers or consent behavior changes. */
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-modal-card {
+ border:1px solid rgba(66,207,255,.42)!important;
+ box-shadow:0 30px 90px rgba(0,0,0,.60),0 0 45px rgba(66,207,255,.13)!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-title {color:#FFFFFF!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-desc,
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item small,
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-status {color:#BDCCDF!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-required-note {
+ border-color:rgba(66,207,255,.32)!important;background:rgba(66,207,255,.06)!important;color:#DDF7FF!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-login-button:not(:disabled) {
+ background:linear-gradient(135deg,#1266D9,#1052A3)!important;
+ color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;
+ border:1px solid #42CFFF!important;
+ box-shadow:0 12px 34px rgba(66,207,255,.25),0 0 30px rgba(66,207,255,.13)!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-login-button:disabled {
+ background:#1B3045!important;color:#BDCCDF!important;-webkit-text-fill-color:#BDCCDF!important;
+ border:1px solid #36516A!important;box-shadow:none!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-modal-close {
+ color:#DDF7FF!important;border-color:rgba(66,207,255,.42)!important;background:#10243A!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-modal-close:hover {border-color:#42CFFF!important;}
+</style>
+
+<style id="pp-mobile-form-repair-v57">
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice.company-logo-card {
+  aspect-ratio:auto!important;height:auto!important;min-height:160px!important;
+  padding:38px 14px 14px!important;gap:8px!important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice.company-logo-card .pp-logo-wrap {
+  flex:0 0 auto!important;min-height:0!important;width:100%!important;gap:8px!important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice.company-logo-card .pp-company-logo {
+  width:min(160px,80%)!important;height:96px!important;object-fit:contain!important;
+}
+html body#insuranceQuoteTest #checkForm #companyOptions > label.company-choice.company-logo-card .pp-company-name {
+  width:100%!important;max-width:100%!important;margin:0!important;transform:none!important;
+  white-space:normal!important;font-size:14px!important;line-height:1.4!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel.line-connect-modal {
+  position:fixed!important;inset:0!important;width:100%!important;height:100%!important;
+  height:100dvh!important;box-sizing:border-box!important;padding:12px!important;
+  align-items:center!important;justify-content:center!important;overflow:hidden!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel.line-connect-modal .line-connect-modal-card {
+  box-sizing:border-box!important;width:100%!important;max-width:520px!important;
+  min-height:0!important;height:auto!important;max-height:calc(100vh - 24px)!important;
+  max-height:calc(100dvh - 24px)!important;overflow-y:auto!important;overflow-x:hidden!important;
+  overscroll-behavior:contain!important;padding:18px!important;position:relative!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-modal-close {
+  position:sticky!important;top:0!important;float:right!important;margin:0 0 6px 8px!important;
+  width:38px!important;height:38px!important;z-index:10!important;background:#0b2035!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-title {font-size:21px!important;line-height:1.35!important;padding-right:0!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-desc {font-size:14px!important;line-height:1.6!important;margin:12px 0!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item {padding:10px 0!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item strong {font-size:15px!important;line-height:1.4!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item small {font-size:13px!important;line-height:1.5!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item > span {font-size:26px!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-required-note {font-size:14px!important;padding:12px!important;line-height:1.5!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-login-button {font-size:16px!important;min-height:48px!important;padding:12px!important;white-space:normal!important;}
+</style>
+
+
+<style id="pp-compact-line-popup-v58">
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-list {display:block!important;margin:8px 0!important;}
+html body#insuranceQuoteTest #quoteLinePanel.line-connect-modal .line-connect-modal-card {
+ max-width:430px!important;max-height:calc(100svh - 32px)!important;
+ padding:18px!important;margin:0!important;border-radius:20px!important;
+}
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-desc {margin:10px 0!important;font-size:14px!important;line-height:1.5!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-required-note {margin:12px 0!important;padding:10px!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-connect-status:empty {display:none!important;}
+</style>
+<script id="pp-consent-next-name-v58">
+(function(){
+ var consent=document.getElementById('quoteConsent');
+ var name=document.getElementById('contactName');
+ if(!consent||!name)return;
+ consent.addEventListener('change',function(){
+  if(!consent.checked)return;
+  requestAnimationFrame(function(){
+   var bar=document.querySelector('.topbar');
+   var offset=bar?bar.getBoundingClientRect().height+20:24;
+   name.focus({preventScroll:true});
+   window.scrollTo({top:Math.max(0,name.parentElement.getBoundingClientRect().top+window.scrollY-offset),behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  });
+ });
+})();
+</script>
+
+<style id="pp-line-benefits-and-broker-v59">
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item {gap:10px!important;padding:8px 0!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item strong {font-size:14px!important;line-height:1.4!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item small {font-size:13px!important;line-height:1.45!important;margin-top:3px!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-benefit-item > span {font-size:24px!important;}
+html body#insuranceQuoteTest #quoteLinePanel .line-login-button:not([hidden]) {position:sticky!important;bottom:0!important;z-index:5!important;margin-top:12px!important;}
+html body#insuranceQuoteTest #contactSection .pp-broker-disclosure {
+ margin:16px 0!important;padding:14px 16px!important;border:1px solid #36516a!important;
+ border-radius:12px!important;background:#10243a!important;overflow-wrap:anywhere;
+}
+html body#insuranceQuoteTest #contactSection .pp-broker-disclosure p {margin:0!important;font-size:14px!important;line-height:1.65!important;color:#d7e3f0!important;}
+html body#insuranceQuoteTest #contactSection .pp-broker-disclosure p+p {margin-top:8px!important;font-size:13px!important;}
+html body#insuranceQuoteTest #contactSection .pp-broker-disclosure strong {color:#fff!important;}
+</style>
+
+</html>
