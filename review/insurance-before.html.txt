@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow">
+<title>รับข้อเสนอเบี้ยประกัน | PP Asset Service</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#050d17;color:#eaf3ff;font-family:system-ui,sans-serif;min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:14px}
+main{width:100%;max-width:430px;padding:24px 22px;border:1px solid rgba(66,207,255,.48);border-radius:18px;background:linear-gradient(145deg,rgba(9,30,44,.98),rgba(5,19,34,.98));box-shadow:0 20px 70px rgba(0,0,0,.48),0 0 34px rgba(66,207,255,.18);text-align:center}
+h1{color:#42CFFF;font-size:18px;font-weight:900;line-height:1.5;margin:0 0 7px}
+p{font-size:15px;line-height:1.65;margin:7px 0}
+button,a{display:block;width:100%;border:0;border-radius:14px;background:#42CFFF;color:#071425;padding:14px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;margin-top:16px}
+button:disabled{opacity:.6;cursor:wait}
+.spinner{width:30px;height:30px;border:4px solid rgba(66,207,255,.24);border-top-color:#42CFFF;border-radius:50%;margin:0 auto 13px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+[hidden]{display:none!important}
+.transport{position:absolute;width:1px;height:1px;left:-9999px;border:0}
+#quoteDetails{text-align:left;margin-top:16px;overflow-wrap:anywhere}
+.field{padding:9px 0;border-bottom:1px solid #243447}
+.field-label{display:block;color:#9fb0c4;font-size:13px;margin-bottom:4px}
+@media(max-width:600px){main{padding:22px 16px}}
+
+/* Insurance blue/cyan trial: every state shares these styles. */
+main{border-color:rgba(66,207,255,.48);box-shadow:0 20px 70px rgba(0,0,0,.48),0 0 34px rgba(66,207,255,.18)}
+h1{color:#42CFFF;text-shadow:0 0 24px rgba(66,207,255,.18)}
+button,a{background:linear-gradient(135deg,#1266D9,#1052A3);color:#FFFFFF;border:1px solid #42CFFF;box-shadow:0 10px 32px rgba(66,207,255,.22),0 0 26px rgba(66,207,255,.14)}
+button:hover:not(:disabled),a:hover{background:#1052A3;box-shadow:0 0 30px rgba(66,207,255,.24)}
+button:focus-visible,a:focus-visible{outline:2px solid #42CFFF;outline-offset:3px}
+button:disabled{background:#1B3045;color:#BDCCDF;border-color:#36516A;box-shadow:none;opacity:1}
+.spinner{border-color:rgba(66,207,255,.24);border-top-color:#42CFFF}
+.field{border-bottom-color:rgba(66,207,255,.20)}
+.field-label{color:#BDCCDF}
+</style>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js" defer></script>
+</head>
+<body>
+<main>
+<div class="spinner" id="spinner" aria-hidden="true"></div>
+<h1 id="heading">เชื่อม LINE เพื่อรับรายละเอียดคำขอประกัน</h1>
+<p id="status" role="status" aria-live="polite">กำลังเชื่อมต่อ LINE กรุณารอสักครู่</p>
+<a id="openLine" hidden>เปิดแอป LINE เพื่อเชื่อมต่อ</a>
+<a id="chat" href="https://line.me/R/oaMessage/%40pp.asset/" hidden>เปิดแชท PP Asset Service</a>
+<div id="quoteDetails" hidden></div>
+<button id="confirmQuote" type="button" hidden>ยืนยันข้อมูลถูกต้อง</button>
+<button id="retry" type="button" hidden>ลองอีกครั้ง</button>
+</main>
+<script>
+'use strict';
+const LIFF_ID='2011333776-7CCq2hRE';
+const BACKEND='https://script.google.com/macros/s/AKfycbyHQJ4xTePXxt285OjPzkBT93EDnccDXdiAae_Koqpw0iS0PPw9qFpxOeXp-uqRzOLM/exec';
+const statusBox=document.getElementById('status');
+const spinner=document.getElementById('spinner');
+const heading=document.getElementById('heading');
+const openLine=document.getElementById('openLine');
+const chat=document.getElementById('chat');
+const retry=document.getElementById('retry');
+const details=document.getElementById('quoteDetails');
+const confirmButton=document.getElementById('confirmQuote');
+let busy=false,initPromise=null,reviewedQuote=null;
+
+function locationParam(name){
+  const params=new URL(location.href).searchParams;
+  if(params.has(name))return params.get(name);
+  const state=params.get('liff.state');
+  if(state)return new URL(state,location.origin+location.pathname).searchParams.get(name);
+  return null;
+}
+function ticketFromLocation(){
+  let ticket=locationParam('ticket');
+  try{
+    if(ticket&&/^[a-f0-9]{64}$/.test(ticket)){
+      sessionStorage.setItem('pp_insurance_pending_v3',JSON.stringify({ticket,time:Date.now()}));
+    }else if(ticket===null){
+      const saved=JSON.parse(sessionStorage.getItem('pp_insurance_pending_v3')||'null');
+      if(saved&&Date.now()-saved.time<600000)ticket=saved.ticket;
+    }
+  }catch(_){}
+  if(!ticket||!/^[a-f0-9]{64}$/.test(ticket))throw new Error('ลิงก์คำขอไม่ครบ กรุณาเปิดจากปุ่มเชื่อม LINE ของคำขอเดิม');
+  return ticket;
+}
+function withDeadline(promise,ms,message){
+  let timer;
+  return Promise.race([promise,new Promise((_,reject)=>{
+    timer=setTimeout(()=>reject(new Error(message)),ms);
+  })]).finally(()=>clearTimeout(timer));
+}
+async function initLine(){
+  if(!window.liff)throw new Error('โหลด LINE ไม่สำเร็จ กรุณาลองอีกครั้ง');
+  if(!initPromise){
+    initPromise=liff.init({liffId:LIFF_ID,withLoginOnExternalBrowser:false});
+    initPromise.catch(()=>{initPromise=null;});
+  }
+  await withDeadline(initPromise,20000,'LINE ตอบกลับช้า กรุณากดลองอีกครั้ง');
+}
+function redirectFor(name,value){
+  const url=new URL(location.origin+location.pathname);
+  url.searchParams.set(name,value);
+  return url.href;
+}
+function freshToken(name,value){
+  const redirectUri=redirectFor(name,value);
+  if(!liff.isLoggedIn()){
+    statusBox.textContent='กำลังเปิดการยืนยันบัญชี LINE';
+    liff.login({redirectUri});
+    return null;
+  }
+  const idToken=liff.getIDToken();
+  const info=liff.getDecodedIDToken();
+  const expires=Number(info&&info.exp);
+  if(!idToken||!Number.isFinite(expires)||expires<=Date.now()/1000+60){
+    if(liff.isInClient())throw new Error('กรุณาปิดหน้านี้ แล้วเปิดลิงก์คำขอเดิมจาก LINE อีกครั้ง');
+    const key='pp_insurance_login_renew';
+    let lastRenew=0;
+    try{lastRenew=Number(sessionStorage.getItem(key)||0);}catch(_){}
+    if(Date.now()-lastRenew<60000)throw new Error('ยังยืนยันบัญชีไม่สำเร็จ กรุณารอสักครู่แล้วกดลองอีกครั้ง');
+    try{sessionStorage.setItem(key,String(Date.now()));}catch(_){}
+    statusBox.textContent='กำลังเข้าสู่ระบบ LINE ใหม่เพื่อดำเนินการกับคำขอเดิม';
+    liff.logout();
+    liff.login({redirectUri});
+    return null;
+  }
+  try{sessionStorage.removeItem('pp_insurance_login_renew');}catch(_){}
+  return idToken;
+}
+function showOpenLine(name,value){
+  if(!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||liff.isInClient())return false;
+  const query=name+'='+encodeURIComponent(value);
+  const url='https://liff.line.me/'+LIFF_ID+'?'+query;
+  openLine.href=/Android/i.test(navigator.userAgent)
+    ? 'intent://liff.line.me/'+LIFF_ID+'?'+query+'#Intent;scheme=https;package=jp.naver.line.android;S.browser_fallback_url='+encodeURIComponent(redirectFor(name,value))+';end'
+    : url;
+  openLine.textContent='เปิดแอป LINE เพื่อดำเนินการต่อ';
+  openLine.hidden=false;
+  statusBox.textContent='เปิดแอป LINE เพื่อดำเนินการต่อกับคำขอเดิม';
+  return true;
+}
+function sendReceipt(ticket,idToken,quoteAction){
+  return new Promise((resolve,reject)=>{
+    const requestId=Array.from(crypto.getRandomValues(new Uint8Array(16)),v=>v.toString(16).padStart(2,'0')).join('');
+    const iframe=document.createElement('iframe');
+    iframe.name='pp_receipt_'+requestId;
+    iframe.className='transport';
+    iframe.title='รับผลการดำเนินการ';
+    iframe.setAttribute('aria-hidden','true');
+    iframe.tabIndex=-1;
+    const form=document.createElement('form');
+    form.method='POST';form.action=BACKEND;form.target=iframe.name;form.hidden=true;
+    const payload=quoteAction
+      ? {flow:quoteAction.flow,quote:quoteAction.quote,idToken,format:'bridge',requestId}
+      : {flow:'insurance-line-link-v1',ticket,idToken,consent:'yes',format:'bridge',requestId};
+    if(quoteAction&&quoteAction.flow==='insurance-confirm-liff-v1')payload.confirmation='yes';
+    for(const [name,value]of Object.entries(payload)){
+      const input=document.createElement('input');
+      input.type='hidden';input.name=name;input.value=value;form.appendChild(input);
+    }
+    let timer;
+    function cleanup(){
+      clearTimeout(timer);window.removeEventListener('message',received);form.remove();iframe.remove();
+    }
+    function received(event){
+      const trusted=/^https:\/\/(?:script\.google\.com|[a-z0-9-]+\.googleusercontent\.com)$/.test(event.origin);
+      const data=event.data;
+      if(!trusted||!data||data.type!=='pp-insurance-receipt'||data.requestId!==requestId)return;
+      cleanup();resolve(data.result);
+    }
+    window.addEventListener('message',received);
+    timer=setTimeout(()=>{
+      cleanup();reject(new Error('ยังไม่ได้รับผลยืนยัน กรุณากดลองอีกครั้ง ไม่ต้องกรอกคำขอใหม่'));
+    },45000);
+    try{
+      document.body.appendChild(iframe);document.body.appendChild(form);form.submit();
+    }catch(error){cleanup();reject(error);}
+  });
+}
+function renderDetails(data){
+  details.replaceChildren();
+  const fields=[
+    ['เลขที่คำขอ',data.request_id],
+    ['ชื่อ / เบอร์โทร',[data.customer_name,data.customer_phone].join(' / ')],
+    ['รถ',[data.vehicle_make,data.vehicle_model,data.vehicle_submodel].filter(Boolean).join(' ')],
+    ['ปีจดทะเบียน / จังหวัด',[data.registration_year,data.registration_province].join(' / ')],
+    ['การใช้งาน',data.usage_type],
+    ['ประเภทประกัน','ชั้น '+data.insurance_type],
+    ['บริษัทที่สนใจ',data.preferred_insurers]
+  ];
+  for(const [label,value]of fields){
+    const row=document.createElement('div');row.className='field';
+    const title=document.createElement('span');title.className='field-label';title.textContent=label;
+    const content=document.createElement('span');content.textContent=String(value||'ไม่ระบุ');
+    row.append(title,content);details.appendChild(row);
+  }
+  details.hidden=false;
+}
+function showConfirmed(quote,acknowledged){
+  heading.textContent='ยืนยันข้อมูลเรียบร้อย';
+  statusBox.textContent='เลขคำขอ '+quote+' — บันทึกการยืนยันแล้ว เจ้าหน้าที่จะตรวจสอบเบี้ยและความคุ้มครองให้ค่ะ';
+  confirmButton.hidden=true;
+  chat.hidden=false;
+  retry.hidden=acknowledged===true;
+  retry.textContent='ตรวจสถานะอีกครั้ง';
+  if(acknowledged!==true)statusBox.textContent+=' ระบบยังส่งข้อความตอบรับในแชทไม่สำเร็จ กดตรวจสถานะอีกครั้งได้ค่ะ';
+}
+async function loadReview(quote,idToken){
+  const result=await sendReceipt(null,idToken,{flow:'insurance-review-liff-v1',quote});
+  if(!result||result.ok!==true||result.requestId!==quote||!result.detail)throw new Error(result&&result.message||'ยังโหลดข้อมูลคำขอไม่ได้ กรุณาลองอีกครั้ง');
+  renderDetails(result.detail);
+  if(result.confirmed===true){
+    showConfirmed(quote,result.acknowledged);
+    if(result.acknowledged!==true){
+      reviewedQuote=quote;
+      confirmButton.textContent='ส่งข้อความตอบรับอีกครั้ง';
+      confirmButton.hidden=false;
+    }
+  }else{
+    reviewedQuote=quote;
+    heading.textContent='ตรวจสอบข้อมูลคำขอประกัน';
+    statusBox.textContent='ตรวจสอบรายละเอียดด้านล่าง แล้วกดยืนยันข้อมูลถูกต้อง หากต้องการแก้ไข ให้แจ้งในแชท @pp.asset';
+    confirmButton.textContent='ยืนยันข้อมูลถูกต้อง';
+    confirmButton.hidden=false;
+  }
+}
+async function connect(){
+  if(busy)return;
+  busy=true;reviewedQuote=null;
+  retry.hidden=true;retry.textContent='ลองอีกครั้ง';openLine.hidden=true;chat.hidden=true;
+  confirmButton.hidden=true;confirmButton.disabled=false;details.hidden=true;spinner.hidden=false;
+  statusBox.textContent='กำลังเชื่อมต่อ LINE กรุณารอสักครู่';
+  try{
+    const initialQuote=locationParam('quote');
+    if(initialQuote===null)ticketFromLocation();
+    else if(!/^(?:INS\d{6,}|INS-\d{8}-[A-F0-9]{16})$/.test(initialQuote))throw new Error('ลิงก์ยืนยันไม่ครบ กรุณาเปิดจากรายละเอียดคำขอใน LINE');
+    await initLine();
+    const quote=locationParam('quote');
+    const name=quote===null?'ticket':'quote';
+    const value=quote===null?ticketFromLocation():quote;
+    if(name==='quote'&&!/^(?:INS\d{6,}|INS-\d{8}-[A-F0-9]{16})$/.test(value))throw new Error('ลิงก์ยืนยันไม่ครบ กรุณาเปิดจากรายละเอียดคำขอใน LINE');
+    if(showOpenLine(name,value))return;
+    const idToken=freshToken(name,value);
+    if(!idToken)return;
+    if(name==='quote'){
+      statusBox.textContent='กำลังโหลดรายละเอียดคำขอประกัน';
+      await loadReview(value,idToken);
+      return;
+    }
+    const friendship=await withDeadline(liff.getFriendship(),20000,'ตรวจสถานะเพื่อน LINE ไม่สำเร็จ กรุณาลองอีกครั้ง');
+    if(!friendship.friendFlag){
+      openLine.href='https://line.me/R/ti/p/%40pp.asset';
+      openLine.textContent='เพิ่มเพื่อน PP Asset Service';openLine.hidden=false;
+      statusBox.textContent='เพิ่มเพื่อน PP แล้วกลับมาหน้านี้ กดลองอีกครั้งเพื่อรับรายละเอียดคำขอเดิม';
+      retry.hidden=false;return;
+    }
+    statusBox.textContent='กำลังส่งรายละเอียดคำขอประกันให้ทางแชท LINE';
+    const result=await sendReceipt(value,idToken);
+    if(!result||result.ok!==true||result.receiptStatus!=='ACCEPTED')throw new Error(result&&result.message||'ยังส่งรายละเอียดไม่สำเร็จ คำขอบันทึกแล้ว กรุณาลองอีกครั้ง');
+    try{sessionStorage.removeItem('pp_insurance_pending_v3');}catch(_){}
+    heading.textContent='ดำเนินการเรียบร้อย';
+    statusBox.textContent='เลขคำขอ '+result.requestId+' — ส่งรายละเอียดแล้ว กรุณาเปิดแชทเพื่อตรวจสอบและยืนยันความถูกต้อง';
+    chat.hidden=false;
+  }catch(error){
+    statusBox.textContent=error.message||'เชื่อมต่อไม่สำเร็จ กรุณาลองอีกครั้ง';retry.hidden=false;
+  }finally{spinner.hidden=true;busy=false;}
+}
+async function confirmQuote(){
+  if(busy||!reviewedQuote)return;
+  const quote=reviewedQuote;
+  busy=true;confirmButton.disabled=true;retry.hidden=true;spinner.hidden=false;
+  statusBox.textContent='กำลังบันทึกการยืนยันข้อมูล';
+  try{
+    const idToken=freshToken('quote',quote);
+    if(!idToken)return;
+    const result=await sendReceipt(null,idToken,{flow:'insurance-confirm-liff-v1',quote});
+    if(!result||result.ok!==true||result.confirmed!==true||result.requestId!==quote)throw new Error(result&&result.message||'ยังไม่ได้รับผลยืนยัน กรุณาตรวจสถานะอีกครั้ง');
+    reviewedQuote=null;
+    showConfirmed(quote,result.acknowledged);
+  }catch(error){
+    reviewedQuote=null;confirmButton.hidden=true;
+    statusBox.textContent=error.message||'ยังไม่ได้รับผลยืนยัน กรุณาตรวจสถานะอีกครั้ง';
+    retry.textContent='ตรวจสถานะอีกครั้ง';retry.hidden=false;
+  }finally{busy=false;spinner.hidden=true;confirmButton.disabled=false;}
+}
+retry.addEventListener('click',connect);
+confirmButton.addEventListener('click',confirmQuote);
+window.addEventListener('DOMContentLoaded',connect);
+</script>
+</body>
+</html>
